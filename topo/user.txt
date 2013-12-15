@@ -1,0 +1,5 @@
+# username	prefix	node	join_time
+# for now, only node matters
+U11		/Node11	Node11		0
+U22		/Node22	Node22		0
+U24		/Node24	Node24		0

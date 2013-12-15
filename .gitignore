@@ -1,0 +1,10 @@
+.waf*
+.lock*
+build/
+.txt
+.png
+.pdf
+results/
+source-examples/
+tmp/
+.R

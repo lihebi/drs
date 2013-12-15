@@ -1,0 +1,69 @@
+# topo-grid-3x3.txt
+
+#   /--------\	    /-\	        /-\
+#   |Consumer|<---->| |<------->| |
+#   \--------/	    \-/	        \-/
+#       ^   	     ^ 	         ^
+#       |            |           |   1Mbps/10ms delay
+#       v            v           v
+#      /-\          /-\         /-\
+#      | |<-------->| |<------->| |
+#      \-/          \-/         \-/
+#       ^   	     ^ 	         ^
+#       |            |           |
+#       v            v           v
+#      /-\	    /-\	     /--------\
+#      | |<-------->| |<---->|Producer|
+#      \-/          \-/      \--------/
+
+#
+#                         1        2
+#                          x------x    -----100
+#                          |Group2|
+#                          |      |
+#                          x------x    -----80
+#                        /3        4 
+#                      /
+#                    /     |      |
+#   |100   |80     /       |20    |0
+#   |      |     /
+#              / 
+#  1        2/    
+#   x------x       -----20
+#   |Group1|
+#   |      |
+#   x------x       -----0
+#  3        4
+
+# router section defines topology nodes and their relative positions (e.g., to use in visualizer)
+router
+
+#node	comment	yPos	xPos
+Node11	NA	20	100
+Node12	NA	20	80
+Node13	NA	0	100
+Node14	NA	0	80
+Node21	NA	100	20
+Node22	NA	100	0
+Node23	NA	80	20
+Node24	NA	80	0
+
+link
+
+# bandwidth: link bandwidth
+# metric: routing metric
+# delay:  link delay
+# queue:  MaxPackets for transmission queue on the link (both directions)
+
+#srcNode	dstNode	bandwidth	metric	delay	queue
+Node11		Node12	1Mbps		1	10ms	10
+Node11		Node13	1Mbps		1	10ms	10
+Node14		Node12	1Mbps		1	10ms	10
+Node14		Node13	1Mbps		1	10ms	10
+
+Node21		Node22	1Mbps		1	10ms	10
+Node21		Node23	1Mbps		1	10ms	10
+Node24		Node22	1Mbps		1	10ms	10
+Node24		Node23	1Mbps		1	10ms	10
+
+Node12		Node23	1Mbps		1	10ms	10

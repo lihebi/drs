@@ -1,0 +1,30 @@
+# topo-grid-3x3.txt
+
+#                                                                                             
+#                                                                                             
+#                                                                                             
+#    1                       2                                                                
+#                                                                                             
+# 0  x --------------------- x                                                                
+#                                                                                             
+#                                                                                             
+#                                                                                             
+#    10                      100                                                              
+#                                                                                             
+
+# router section defines topology nodes and their relative positions (e.g., to use in visualizer)
+router
+
+#node	comment	yPos	xPos
+Node1	NA	0	10
+Node2	NA	0	100
+
+link
+
+# bandwidth: link bandwidth
+# metric: routing metric
+# delay:  link delay
+# queue:  MaxPackets for transmission queue on the link (both directions)
+
+#srcNode	dstNode	bandwidth	metric	delay	queue
+Node1		Node2	1Mbps		1	10ms	10
