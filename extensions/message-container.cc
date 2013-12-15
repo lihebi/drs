@@ -10,7 +10,7 @@ namespace ns3 {
  * 1. add message to m_message
  * 2. add index to m_record
  */
-void MessageContainer::Add(Message msg)
+bool MessageContainer::Add(Message msg)
 {
 	m_messages.push_back(msg);
 	const std::map<std::string, time_t> _label = msg.GetMap();
@@ -26,10 +26,20 @@ Message MessageContainer::GetMessage(int index)
 	return m_messages[index];
 }
 /*
- * get one person's latest time
+ * 1. get server's latest time
+ * 2. if no record, get global latest labels
  */
-void MessageContainer::GetLatestLabelByName(std::string name)
+std::string MessageContainer::GetLatestLabels(std::string name)
 {
+	if (m_record.find(name) != m_record.end()) {
+		std::vector<int> v=m_record[name];
+	std::cout<<v.size()<<std::endl;
+		Message _msg = m_messages[v[v.size()-1]];
+		time_t _time = _msg.GetTime(name);
+		return name+"_"+std::to_string(_time);
+	} else {
+		return GetLatestLabels();
+	}
 }
 /*
  * get all latest labels for everyone as the following format
@@ -81,6 +91,8 @@ std::vector<int> MessageContainer::GetIndexVector(std::string name)
 int MessageContainer::GetIndexNewerThan(std::string name, time_t theTime)
 {
 	std::vector<int> v = GetIndexVector(name);
+	if (v.empty())
+		return -2; // no record for this person
 	for (int i=0;i<v.size();i++) { // use another efficient way
 		if (v[i] > theTime) //need use miliseconds
 			return i;

@@ -48,7 +48,8 @@ main(int argc, char** argv)
 	ndn::AppHelper appHelper("ChatApp");
 	srand(time(NULL));
 	for (int i=0;i<chatterNodes.GetN();i++) {
-		appHelper.Install(chatterNodes.Get(i)).Start(Seconds(5*(double)rand()/RAND_MAX)); /* random start */
+		/* random start */
+		appHelper.Install(chatterNodes.Get(i)).Start(Seconds(5*(double)rand()/RAND_MAX));
 	}
 	/* routing configure */
 	ndn::GlobalRoutingHelper routingHelper;

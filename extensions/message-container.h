@@ -8,9 +8,9 @@ namespace ns3 {
 class MessageContainer
 {
 public:
-	void Add(Message msg);
+	bool Add(Message msg);
 	Message GetMessage(int index);
-	void GetLatestLabelByName(std::string name);
+	std::string GetLatestLabels(std::string name);
 	std::string GetLatestLabels();
 	size_t Size();
 	void AddIndex(std::string name, int index);
