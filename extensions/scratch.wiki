@@ -1,0 +1,116 @@
+= ChronoChat =
+== Interest: ==
+        | Prefix                                 | Data           |                        |
+        |----------------------------------------|----------------|------------------------|
+        | /broadcast/chronoapp/<digest>          | <name> + <seq> | <name> + <seq> + <msg> |
+        | /<name>/chronoapp/<seq>                | <data>         |                        |
+        | /broadcast/chronoapp/recovery/<digest> | <???>          |                        |
+
+== Data Structure: ==
+m_digest:
+        | Name(std::string) | Digest(std::string) | Seq(int) |
+        |-------------------|---------------------|----------|
+        | Alice             | sjgi842hg2h         | 138      |
+m_root_digest: std::string
+m_digest_log:
+        | Digest(std::string) | EventName(std::string) | EventSeq(int) |
+        |---------------------|------------------------|---------------|
+        | jr2ji43jhf79        | Alice                  | 138           |
+m_messages:
+        | Content     | Name  | Seq |
+        |-------------|-------|-----|
+        | Hello, haha | Alice | 138 |
+== Logic ==
+* OnInterest:
+	- /broadcast/chronoapp/<digest>
+		# the same as my root digest: keep
+		# in my log: return log indexs
+		# not recognize: schedule some time, and send recovery
+	- /<name>/chronoapp/<seq>
+		# return <data>
+	- /broadcast/chronoapp/recovery/<digest>
+		# in my log: return all participants' status(seq)
+* OnData:
+	- /broadcast/chronoapp/<digest>
+		# get <name> <seq>
+		# send /<name>/chronoapp/<seq>
+	- /<name>/chronoapp/<seq>
+		# update
+	- /broadcast/chronoapp/recovery/<digest>
+		# compare every participant's status
+		# if one is old, send /<name>/chronoapp/<seq> where seq=123, 124, 125, ...
+* update:
+	- insert into m_messages
+	- re-calculate m_digests' one record
+	- re-calculate m_root_digest
+	- insert into digest log
+	- process pending interest
+* Generate Message:
+	- every ran(2) seconds
+	- create msg
+	- update
+	- send interest[0]
+== Problem ==
+* NS3 has schedule.cancel??
+
+
+
+
+	                                                                                               
+
+
+
+
+= DRS: =
+
+| Prefix                                      | Data   |   |
+|---------------------------------------------|--------|---|
+| /broadcast/chapapp/anyserver/<level>        | <name> |   |
+| /broadcast/chapapp/anythingnew/<time-label> | <data> |   |
+| /<name>/chapapp/somethingnew/<index>        | NONE   |   |
+| /<name>/chapapp/giveme/<index>              | <data> |   |
+
+== Data Structure ==
+
+* Class Message:
+	- m_content
+	- m_labels
+		# name
+		# time
+* Class MessageContainer:
+	- m_messages
+	- m_record
+* Class ChapApp:
+	- m_msg_container
+
+
+== Logic ==
+* OnInterest:
+	- /broadcast/chatapp/anyserver/<level>
+		# ...
+		# ...
+	- /broadcast/chatapp/anythingnew/<time-label>
+		# ...
+		# ...
+	- /<name>/chatapp/somethingnew/<index>
+		# ...
+		# ...
+	- /<name>/chatapp/giveme/<index>
+		# ...
+		# ...
+* OnData
+	- /broadcast/chatapp/anyserver/<level>
+		# ...
+		# ...
+	- /broadcast/chatapp/anythingnew/<time-label>
+		# ...
+		# ...
+	- /<name>/chatapp/somethingnew/<index>
+		# ...
+		# ...
+	- /<name>/chatapp/giveme/<index>
+		# ...
+		# ...
+* Period
+	- SelectServer
+	- GenMessage
