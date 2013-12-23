@@ -20,9 +20,9 @@ void my_printer(Ptr<Node> node, Time next)
 int
 main(int argc, char** argv)
 {
-	Config::SetDefault("ns3::PointToPointNetDevice::DataRate", StringValue("1Mbps"));
-	Config::SetDefault("ns3::PointToPointChannel::Delay", StringValue("10ms"));
-	Config::SetDefault("ns3::DropTailQueue::MaxPackets", StringValue("20"));
+	//Config::SetDefault("ns3::PointToPointNetDevice::DataRate", StringValue("1Mbps"));
+	//Config::SetDefault("ns3::PointToPointChannel::Delay", StringValue("10ms"));
+	//Config::SetDefault("ns3::DropTailQueue::MaxPackets", StringValue("20"));
 
 	CommandLine cmd;
 	cmd.Parse(argc, argv);

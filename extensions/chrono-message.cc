@@ -4,19 +4,18 @@
 namespace ns3 {
 
 
-void ChronoMessages::Push(std::string name, int seq, std::string content)
+std::string ChronoMessage::Get(int seq);
 {
-	if (m_messages.find(name)) {
-		m_messages[name][seq] = content;
-	} else {
-		m_messages[name] = new std::map;
-		m_messages[name][seq] = content;
-	}
+	return m_messages[seq];
 }
-std::string ChronoMessages::Get(std::string name, int seq);
+/*
+ * not use return value yet
+ */
+bool ChronoMessage::Insert(int seq, std::string content)
 {
-	return m_messages[name][seq];
+	m_messages[seq] = content;
+	return true;
 }
 
 
-}
+} //ns3

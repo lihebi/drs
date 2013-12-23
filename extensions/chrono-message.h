@@ -1,13 +1,16 @@
 namespace ns3 {
 
-class ChronoMessages {
+class ChronoMessage {
 public:
-	void Push(std::string name, int seq, std::string content);
-	std::string Get(std::string name, int seq);
-
+	bool Insert(int seq, std::string content);
+	std::string Get(int seq);
 
 private:
-	std::map<std::string, std::map<int, std::string> > m_messages;
+	/*
+	 * seq ---> content
+	 * Only store my own generated messages. Cache everyone's message will be so large. Can output it into a log file.
+	 */
+	std::map<int, std::string> m_messages;
 
 };
 
