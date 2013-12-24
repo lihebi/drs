@@ -5,16 +5,16 @@ namespace hebi {
 /* 
  * will modify the string 
  */
-void StringSplit(std::string &s, char indent)
+void SplitStringByIndent(std::string &s, char indent)
 {
 	int index;
 	for (;;) {
-		index = name.find(indent);
+		index = s.find(indent);
 		if (index == -1) break;
-		else name[index] = ' ';
+		else s[index] = ' ';
 	}
 }
-std::string StringGet(const std::string &s, char indent, int seq)
+std::string GetSubStringByIndent(const std::string &s, char indent, int seq)
 {
 	int begin=-1;
 	int end;
@@ -26,8 +26,45 @@ std::string StringGet(const std::string &s, char indent, int seq)
 	else
 		return s.substr(begin, end-begin);
 }
-
-
-
-
+boost::tuple<long, long, long, long> GetPosixTime()
+{
+	boost::posix_time::ptime now = boost::posix_time::microsec_clock::local_time();
+	boost::posix_time::time_duration td = now.time_of_day();
+	const long hours = td.hours();
+	const long minutes = td.minutes();
+	const long seconds = td.seconds();
+	const long milliseconds = td.total_milliseconds() - ((hours*3600+minutes*60+seconds)*1000);
+	return boost::make_tuple(hours, minutes, seconds, milliseconds);
 }
+long GetPosixTime_Hours()
+{
+	boost::posix_time::ptime now = boost::posix_time::microsec_clock::local_time();
+	boost::posix_time::time_duration td = now.time_of_day();
+	return td.hours();
+}
+long GetPosixTime_Minutes()
+{
+	boost::posix_time::ptime now = boost::posix_time::microsec_clock::local_time();
+	boost::posix_time::time_duration td = now.time_of_day();
+	return td.minutes();
+}
+long GetPosixTime_Seconds()
+{
+	boost::posix_time::ptime now = boost::posix_time::microsec_clock::local_time();
+	boost::posix_time::time_duration td = now.time_of_day();
+	return td.seconds();
+}
+long GetPosixTime_Milli()
+{
+	boost::posix_time::ptime now = boost::posix_time::microsec_clock::local_time();
+	boost::posix_time::time_duration td = now.time_of_day();
+	const long hours = td.hours();
+	const long minutes = td.minutes();
+	const long seconds = td.seconds();
+	const long milliseconds = td.total_milliseconds() - ((hours*3600+minutes*60+seconds)*1000);
+	return milliseconds;
+}
+
+
+} //hebi
+

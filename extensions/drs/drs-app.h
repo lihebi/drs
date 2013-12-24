@@ -1,7 +1,7 @@
 #ifndef _CHATAPP_H_
 #define _CHATAPP_H_
 #include "ns3/ndn-app.h"
-#include "message-container.h"
+#include "drs-record-container.h"
 namespace ns3 {
 
 class ChatApp : public ndn::App

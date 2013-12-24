@@ -1,0 +1,13 @@
+= Interest & Data =
+
+* /b   /   /anyserver/<level>				ANYSERVER_INTEREST
+	name
+* /<server>/   /anythingnew/<label>			ANYTHING_NEW_INTEREST
+	- (name, time) -----> (name, time ---> dataname)
+	- (name, time)
+	  (name, time)
+	  (name, time)
+* /<server>/   /somethingndw/<myname>/<dataname>	SOMETHING_NEW_INTEREST
+	time
+* /<name>/   /<time>					DATA_INTEREST
+	content
