@@ -13,6 +13,7 @@ public:
 	void AddLabel(std::string name, time_t time);
 	std::string AsXML();
 	DRSRecord CreateDRSRecordFromXMLNode(pugi::xml_node);
+	DRSRecord CreateDRSRecord(std::string name, time_t time, std::string dataname);
 
 	std::map<std::string, time_t> m_label;
 	std::string m_dataName;

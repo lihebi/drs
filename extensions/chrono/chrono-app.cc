@@ -39,8 +39,8 @@ TypeId ChronoApp::GetTypeId()
 void ChronoApp::StartApplication()
 {
 	ndn::App::StartApplication();
-	ConfigFib();
 	Init();
+	ConfigFib();
 }
 void ChronoApp::ConfigFib()
 {
@@ -88,12 +88,12 @@ void ChronoApp::OnData(Ptr<const ndn::Data> contentObject)
 		case 2: ProcessDataData(contentObject);
 	}
 }
-void ChronoApp::SendSyncData(const Ptr<ndn::Name> &interest_name, const std::string &name, int seq)
+void ChronoApp::SendSyncData(Ptr<ndn::Name> interest_name, const std::string &name, int seq)
 {
 	std::string data_str = "<name>"+name+"</name><seq>"+std::to_string(seq)+"</seq>";
 	SendData(interest_name, data_str);
 }
-void ChronoApp::ProcessSyncInterest(const Ptr<const ndn::Interest> &interest)
+void ChronoApp::ProcessSyncInterest(Ptr<const ndn::Interest> interest)
 {
 	std::string digest = hebi::GetSubStringByIndent(interest->GetName().toUri(), '/', 3);
 	if (digest == m_digest_tree.GetRootDigest())
@@ -114,7 +114,7 @@ void ChronoApp::SendRecoveryInterest(long key)
 	}
 	m_pending_recovery_interest.erase(key);
 }
-void ChronoApp::ProcessRecoveryInterest(const Ptr<const ndn::Interest> &interest)
+void ChronoApp::ProcessRecoveryInterest(Ptr<const ndn::Interest> interest)
 {
 	std::string digest = hebi::GetSubStringByIndent(interest->GetName().toUri(), '/', 4);
 	if (digest == m_digest_tree.GetRootDigest() || m_digest_log.HasDigest(digest)) {
@@ -122,12 +122,12 @@ void ChronoApp::ProcessRecoveryInterest(const Ptr<const ndn::Interest> &interest
 		SendData(interest->GetName(), data_str);
 	}
 }
-void ChronoApp::ProcessDataInterest(const Ptr<const ndn::Interest> &interest)
+void ChronoApp::ProcessDataInterest(Ptr<const ndn::Interest> interest)
 {
 	int seq = atoi(hebi::GetSubStringByIndent(interest->GetName().toUri(), '/', 3));
 	SendData(interest->GetName(), m_messages.Get(seq));
 }
-void ChronoApp::ProcessSyncData(const Ptr<const ndn::Data> &contentObject);
+void ChronoApp::ProcessSyncData(Ptr<const ndn::Data> contentObject);
 {
 	int size = contentObject->GetPayload()->GetSize();
 	const unsigned char *data = contentObject->GetPayload()->PeekData();
@@ -137,14 +137,14 @@ void ChronoApp::ProcessSyncData(const Ptr<const ndn::Data> &contentObject);
 	std::string seq = doc.child("seq").text().get();
 	SendInterest("/"+name+"/chronoapp/"+seq);
 }
-std::string ChronoApp::GetStringFromData(const Ptr<const ndn::Data> &contentObject)
+std::string ChronoApp::GetStringFromData(Ptr<const ndn::Data> contentObject)
 {
 	int size = contentObject->GetPayload()->GetSize();
 	const unsigned char *data = contentObject->GetPayload()->PeekData();
 	std::string s(reinterpret_cast<const char*>(data), size);
 	return s;
 }
-void ChronoApp::ProcessRecoveryData(const Ptr<const ndn::Data> &contentObject);
+void ChronoApp::ProcessRecoveryData(Ptr<const ndn::Data> contentObject);
 {
 	std::string xml = GetStringFromData(contentObject);
 	vector<boost::tuple<std::string, int> > v = m_digest_log.CompareCurrentStateByXML(xml);
@@ -152,7 +152,7 @@ void ChronoApp::ProcessRecoveryData(const Ptr<const ndn::Data> &contentObject);
 		SendInterest("/"+v[i].get<0>()+"/chronoapp/"+std::to_string(v[i].get<1>()));
 	}
 }
-void ChronoApp::ProcessDataData(const Ptr<const ndn::Data> &contentObject);
+void ChronoApp::ProcessDataData(Ptr<const ndn::Data> contentObject);
 {
 	std::string name = hebi::GetSubStringByIndent(contentObject->GetName().toUri(), '/', 1);
 	int seq = atoi(hebi::GetSubStringByIndent(contentObject->GetName().toUri(), '/', 3));

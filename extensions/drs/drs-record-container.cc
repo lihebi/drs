@@ -20,6 +20,10 @@ void DRSRecordContainer::Insert(DRSRecord record)
 		m_nameTimeIndex[m.first][m.second] = m_records.size()-1;
 	}
 }
+int DRSRecordContainer::GetRecordSize()
+{
+	return m_records.size();
+}
 /*
  * 1. add label to m_record[i]
  * 2. add map to m_nameTimeIndex
@@ -36,12 +40,34 @@ int DRSRecordContainer::GetLatestIndexBySingleLabel(std::string name, time_t tim
 {
 	return m_nameTimeIndex[name][time];
 }
+/*
+ * Format:
+ * 	alice_13522342
+ */
+int DRSRecordContainer::GetLatestIndexBySingleLabel(std::string label)
+{
+	std::string name = label.substr(0, label.find("_"));
+	time_t time = atoi(label.substr(label.find("_")+1));
+	return GetLatestIndexBySingleLabel(name, time);
+}
 int DRSRecordContainer::GetLatestIndexByMultiLabels(std::vector<boost::tuple<std::string, time_t> > v)
 {
 	int result=-1;
 	typedef boost::tuple<std::string, time_t> m_vector_type;
 	BOOST_FOREACH(const m_vector_type &vi, v) {
-		int tmp = m_nameTimeIndex[vi.get<0>()][vi.get<1>()];
+		int tmp = GetLatestIndexBySingleLabel(vi.get<0>(), vi.get<1>());
+		if (result<tmp) result = tmp;
+	}
+	return result;
+}
+int DRSRecordContainer::GetLatestIndexByMultiLabels(std::string labels)
+{
+	int result = -1;
+	hebi::SplitStringByIndent(labels, ':');
+	std::stringstream ss(labels);
+	std::string stmp;
+	while(ss>>stmp) {
+		int tmp = GetLatestIndexBySingleLabel(stmp);
 		if (result<tmp) result = tmp;
 	}
 	return result;
@@ -64,7 +90,8 @@ std::string DRSRecordContainer::GetAfterIndexAsXML(int index)
 	pugi::xml_document doc;
 	doc.load("");
 	pugi::xml_document doctmp;
-	for (int i=index;i<m_records.size();i++) {
+	/* from index +1 */
+	for (int i=index+1;i<m_records.size();i++) {
 		doctmp.load(m_records[i].AsXML());
 		doc.append_child("li").append_copy(doctmp);
 	}
@@ -84,7 +111,7 @@ std::vector<std::string> DRSRecordContainer::InsertMultiByXML(std::string xml)
 	pugi::xml_node label;
 	std::vector<std::string> v;
 	for (li=doc.child("li");li;li=li.next_sibling) {
-		DRSRecord _record = CreateDRSRecordFromXMLNode(li);
+		DRSRecord _record = DRSRecord::CreateDRSRecordFromXMLNode(li);
 		Insert(_record);
 		v.push_back(_record.m_dataName);
 	}
@@ -98,7 +125,7 @@ std::string DRSRecordContainer::InsertSingleByXML(std::string xml)
 {
 	pugi::xml_document doc;
 	doc.load(xml);
-	DRSRecord _record = CreateDRSRecordFromXMLNode(doc);
+	DRSRecord _record = DRSRecord::CreateDRSRecordFromXMLNode(doc);
 	Insert(_record);
 	return _record.m_dataName;
 }

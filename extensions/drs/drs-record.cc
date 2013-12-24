@@ -48,6 +48,13 @@ DRSRecord DRSRecord::CreateDRSRecordFromXMLNode(pugi::xml_node root_node)
 	_record.m_dataName = root_node.child("dataname").text().get();
 	return _record;
 }
+DRSRecord DRSRecord::CreateDRSRecord(std::string name, time_t time, std::string dataname)
+{
+	DRSRecord _record = new DRSRecord;
+	_record.m_dataName = dataname;
+	_record[name] = time;
+	return _record;
+}
 
 
 } //ns3

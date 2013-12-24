@@ -26,6 +26,13 @@ std::string GetSubStringByIndent(const std::string &s, char indent, int seq)
 	else
 		return s.substr(begin, end-begin);
 }
+int MyStringFinder(const std::string &s, char indent, int seq)
+{
+	int result=-1;
+	for (int i=0;i<seq;i++)
+		result = s.find(indent, result+1);
+	return result;
+}
 boost::tuple<long, long, long, long> GetPosixTime()
 {
 	boost::posix_time::ptime now = boost::posix_time::microsec_clock::local_time();
@@ -63,6 +70,12 @@ long GetPosixTime_Milli()
 	const long seconds = td.seconds();
 	const long milliseconds = td.total_milliseconds() - ((hours*3600+minutes*60+seconds)*1000);
 	return milliseconds;
+}
+long GetPosixTime_TotalMilli()
+{
+	boost::posix_time::ptime now = boost::posix_time::microsec_clock::local_time();
+	boost::posix_time::time_duration td = now.time_of_day();
+	return td.total_milliseconds();
 }
 
 

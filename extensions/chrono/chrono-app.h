@@ -21,21 +21,21 @@ private:
 
 	int GetNameType(std::string name);
 
-	void ProcessSyncInterest(const Ptr<ndn::Interest> &interest);
-	void ProcessRecoveryInterest(const Ptr<ndn::Interest> &interest);
-	void ProcessDataInterest(const Ptr<ndn::Interest> &interest);
+	void ProcessSyncInterest(Ptr<ndn::Interest> interest);
+	void ProcessRecoveryInterest(Ptr<ndn::Interest> interest);
+	void ProcessDataInterest(Ptr<ndn::Interest> interest);
 
-	void ProcessSyncData(const Ptr<ndn::Data> &contentObject);
-	void ProcessRecoveryData(const Ptr<ndn::Data> &contentObject);
-	void ProcessDataData(const Ptr<ndn::Data> &contentObject);
+	void ProcessSyncData(Ptr<ndn::Data> contentObject);
+	void ProcessRecoveryData(Ptr<ndn::Data> contentObject);
+	void ProcessDataData(Ptr<ndn::Data> contentObject);
 
-	void SendSyncData(const ndn::Name &interest_name, const std::string &name, int seq);
+	void SendSyncData(Ptr<ndn::Name> interest_name, const std::string &name, int seq);
 	void SendRecoveryInterest(int index);
 	std::string GetStringFromData(const Ptr<const ndn::Data> &contentObject);
 	void UpdateAll(std::string name, int seq);
 
 	void SendData(const std::string &name, const std::string &msg);
-	void SendData(const ndn::Name &name, const std::string &msg);
+	void SendData(Ptr<ndn::Name> name, const std::string &msg);
 	void SendInterest(cosnt std::string &name)
 	void SendInterest(const Ptr<ndn::Name> &name)
 
