@@ -111,7 +111,8 @@ void DRSApp::GenMessagePeriod()
 }
 void DRSApp::GenMessage()
 {
-	long time = hebi::GetPosixTime_TotalMilli();
+	//long time = hebi::GetPosixTime_TotalMilli();
+	double time = Simulator::Now().GetSeconds();
 	std::string msg = "I'm " + m_name + " at " + std::to_string(time);
 	m_messages[time] = msg;
 	NS_LOG_DEBUG("Gen Msg: "<<msg);
@@ -201,11 +202,14 @@ void DRSApp::ProcessAnyserverData(Ptr<const ndn::Data> contentObject)
 void DRSApp::ProcessAnythingNewInterest(Ptr<const ndn::Interest> interest)
 {
 	std::string label = hebi::GetSubStringByIndent(interest->GetName().toUri(), '/', 4);
+	NS_LOG_DEBUG(label);
 	int index = m_recordContainer.GetLatestIndexByMultiLabels(label); // suitable for one lable
 	if (index == m_recordContainer.GetRecordSize()-1) {
 		m_pendingInterest = interest;
 	} else {
+		NS_LOG_DEBUG(index);
 		std::string xml = m_recordContainer.GetAfterIndexAsXML(index);
+		NS_LOG_DEBUG(xml);
 		SendData(interest->GetName(), xml);
 	}
 }
@@ -213,8 +217,10 @@ void DRSApp::ProcessAnythingNewData(Ptr<const ndn::Data> contentObject)
 {
 	std::string xml = GetStringFromData(contentObject);
 	/* insert the new record, together with my own label */
-	long time = hebi::GetPosixTime_TotalMilli();
+	//long time = hebi::GetPosixTime_TotalMilli();
+	double time = Simulator::Now().GetSeconds();
 	std::vector<std::string> vs = m_recordContainer.InsertMultiByXML(xml, m_name, time);
+	NS_LOG_DEBUG(xml);
 	/* send anything new interest */
 	SendAnythingNewInterest();
 	/* process pending interest */
@@ -233,7 +239,8 @@ void DRSApp::ProcessSomethingNewInterest(Ptr<const ndn::Interest> interest)
 	int index = hebi::MyStringFinder(interest->GetName().toUri(), '/', 5);
 	std::string dataname = interest->GetName().toUri().substr(index);
 	/* create record */
-	long time = hebi::GetPosixTime_TotalMilli();
+	//double time = hebi::GetPosixTime_TotalMilli();
+	double time = Simulator::Now().GetSeconds();
 	//DRSRecord _record = new DRSRecord(m_name, time, dataname);
 	DRSRecord _record(m_name, time, dataname);
 	/* send something new interest */
@@ -251,8 +258,8 @@ void DRSApp::ProcessSomethingNewData(Ptr<const ndn::Data> contentObject)
 {
 	std::string oldlabel = hebi::GetSubStringByIndent(contentObject->GetName().toUri(), '/', 4);
 	std::string oldname = oldlabel.substr(0, oldlabel.find('_'));
-	long oldtime = atoi(oldlabel.substr(oldlabel.find('_')+1).c_str());
-	long newtime = atoi((GetStringFromData(contentObject)).c_str());
+	double oldtime = atof(oldlabel.substr(oldlabel.find('_')+1).c_str());
+	double newtime = atof((GetStringFromData(contentObject)).c_str());
 	m_recordContainer.AddLabelByLabel(m_server, newtime, oldname, oldtime);
 	/* send anything new interest */
 	SendAnythingNewInterest();
@@ -262,7 +269,7 @@ void DRSApp::ProcessSomethingNewData(Ptr<const ndn::Data> contentObject)
  *--------------------------------*/
 void DRSApp::ProcessDataInterest(Ptr<const ndn::Interest> interest)
 {
-	long time = atoi((hebi::GetSubStringByIndent(interest->GetName().toUri(), '/', 3)).c_str());
+	double time = atof((hebi::GetSubStringByIndent(interest->GetName().toUri(), '/', 3)).c_str());
 	SendData(interest->GetName(), m_messages[time]);
 }
 void DRSApp::ProcessDataData(Ptr<const ndn::Data> contentObject)
@@ -285,7 +292,7 @@ void DRSApp::SendAnythingNewInterest()
 		SendInterest("/"+m_server+"/drsapp/anythingnew/"+stmp);
 	}
 }
-void DRSApp::SendSomethingNewInterest(long myTime, std::string dataName)
+void DRSApp::SendSomethingNewInterest(double myTime, std::string dataName)
 {
 	if (m_server!="") {
 		SendInterest("/"+m_server+"/drsapp/somethingnew/"+m_name+"_"+std::to_string(myTime)+"/"+dataName);

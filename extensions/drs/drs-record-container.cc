@@ -16,7 +16,7 @@ namespace ns3 {
 void DRSRecordContainer::Insert(DRSRecord record)
 {
 	m_records.push_back(record);
-	typedef std::map<std::string, time_t> m_map_type;
+	typedef std::map<std::string, double> m_map_type;
 	BOOST_FOREACH(const m_map_type::value_type &m, record.m_label) {
 		m_nameTimeIndex[m.first][m.second] = m_records.size()-1;
 	}
@@ -29,7 +29,7 @@ int DRSRecordContainer::GetRecordSize()
  * 1. add label to m_record[i]
  * 2. add map to m_nameTimeIndex
  */
-void DRSRecordContainer::AddLabelByLabel(std::string newname, time_t newtime, std::string oldname, time_t oldtime)
+void DRSRecordContainer::AddLabelByLabel(std::string newname, double newtime, std::string oldname, double oldtime)
 {
 	int index = m_nameTimeIndex[oldname][oldtime];
 	m_records[index].AddLabel(newname, newtime);
@@ -37,8 +37,19 @@ void DRSRecordContainer::AddLabelByLabel(std::string newname, time_t newtime, st
 /*
  * return nameTimeIndex[name][time]
  */
-int DRSRecordContainer::GetLatestIndexBySingleLabel(std::string name, time_t time)
+int DRSRecordContainer::GetLatestIndexBySingleLabel(std::string name, double time)
 {
+	std::cout<<"\t"<<name<<" "<<time<<std::endl;
+	printf("%lf\n", time);
+	std::map<double, int>::iterator iter;
+	for (iter=m_nameTimeIndex[name].begin();iter!=m_nameTimeIndex[name].end();iter++) {
+		printf("%lf\t%lf\n", time, iter->first);
+		if (time == iter->first)
+			std::cout<<iter->first<<", "<<iter->second<<std::endl;
+		if (atof(std::to_string(time).c_str()) == (iter->first))
+			std::cout<<"yes"<<std::endl;
+	}
+	std::cout<<m_nameTimeIndex[name][time]<<std::endl;
 	return m_nameTimeIndex[name][time];
 }
 /*
@@ -48,13 +59,13 @@ int DRSRecordContainer::GetLatestIndexBySingleLabel(std::string name, time_t tim
 int DRSRecordContainer::GetLatestIndexBySingleLabel(std::string label)
 {
 	std::string name = label.substr(0, label.find("_"));
-	time_t time = atoi((label.substr(label.find("_")+1)).c_str());
+	double time = atof((label.substr(label.find("_")+1)).c_str());
 	return GetLatestIndexBySingleLabel(name, time);
 }
-int DRSRecordContainer::GetLatestIndexByMultiLabels(std::vector<boost::tuple<std::string, time_t> > v)
+int DRSRecordContainer::GetLatestIndexByMultiLabels(std::vector<boost::tuple<std::string, double> > v)
 {
 	int result=-1;
-	typedef boost::tuple<std::string, time_t> m_vector_type;
+	typedef boost::tuple<std::string, double> m_vector_type;
 	BOOST_FOREACH(const m_vector_type &vi, v) {
 		int tmp = GetLatestIndexBySingleLabel(vi.get<0>(), vi.get<1>());
 		if (result<tmp) result = tmp;
@@ -107,7 +118,7 @@ std::string DRSRecordContainer::GetAfterIndexAsXML(int index)
  * Return:
  * 	vector<dataname>
  */
-std::vector<std::string> DRSRecordContainer::InsertMultiByXML(std::string xml, std::string newname, long newtime)
+std::vector<std::string> DRSRecordContainer::InsertMultiByXML(std::string xml, std::string newname, double newtime)
 {
 	pugi::xml_document doc;
 	doc.load(xml.c_str());
@@ -144,7 +155,7 @@ bool DRSRecordContainer::HasName(std::string name)
 }
 std::string DRSRecordContainer::GetNewestLabelByName(std::string name)
 {
-	long time = (--m_nameTimeIndex[name].end())->first;
+	double time = (--m_nameTimeIndex[name].end())->first;
 	return name+"_"+std::to_string(time);
 }
 std::string DRSRecordContainer::GetAllNewestLabels()

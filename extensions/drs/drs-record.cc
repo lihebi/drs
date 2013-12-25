@@ -7,7 +7,7 @@
 
 namespace ns3 {
 
-void DRSRecord::AddLabel(std::string name, time_t time)
+void DRSRecord::AddLabel(std::string name, double time)
 {
 	m_label[name] = time;
 }
@@ -26,7 +26,7 @@ std::string DRSRecord::AsXML()
 	doc.load(stmp.c_str());
 	pugi::xml_node label = doc.child("label");
 	pugi::xml_node node;
-	typedef std::map<std::string, time_t> m_map_type;
+	typedef std::map<std::string, double> m_map_type;
 	BOOST_FOREACH(m_map_type::value_type &mi, m_label) {
 		node = label.append_child("li");
 		node.append_child("name").text().set(mi.first.c_str());
@@ -41,15 +41,15 @@ DRSRecord::DRSRecord(pugi::xml_node root_node)
 {
 	pugi::xml_node node;
 	std::string name;
-	time_t time;
+	double time;
 	for (node=root_node.child("label").child("li");node;node=node.next_sibling()) {
 		name = node.child("name").text().get();
-		time = node.child("time").text().as_int();
+		time = node.child("time").text().as_double(); //a bug fixed here
 		m_label[name] = time;
 	}
 	m_dataName = root_node.child("dataname").text().get();
 }
-DRSRecord::DRSRecord(std::string name, time_t time, std::string dataname)
+DRSRecord::DRSRecord(std::string name, double time, std::string dataname)
 {
 	m_dataName = dataname;
 	m_label[name] = time;

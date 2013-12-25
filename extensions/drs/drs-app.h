@@ -39,7 +39,7 @@ private:
 	int GetNameType(std::string name);
 	std::string GetStringFromData(Ptr<const ndn::Data> contentObject);
 	void SendAnythingNewInterest();
-	void SendSomethingNewInterest(long myTime, std::string dataName);
+	void SendSomethingNewInterest(double myTime, std::string dataName);
 	void ProcessPendingInterest();
 	/* stable functions */
 	void SendData(const std::string &name, const std::string &msg);
@@ -53,7 +53,7 @@ private:
 	std::string m_server;
 	std::string m_name;
 	DRSRecordContainer m_recordContainer;
-	std::map<long, std::string> m_messages;
+	std::map<double, std::string> m_messages;
 	Ptr<const ndn::Interest> m_pendingInterest; // may there be many different pending interests?
 };
 
