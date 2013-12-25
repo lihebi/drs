@@ -1,10 +1,13 @@
+/*
+ * FILENAME: chrono-message.cc
+ */
 
 #include "chrono-message.h"
 
 namespace ns3 {
 
 
-std::string ChronoMessage::Get(int seq);
+std::string ChronoMessage::Get(int seq)
 {
 	return m_messages[seq];
 }

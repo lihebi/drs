@@ -1,0 +1,1602 @@
+Waf: Entering directory `/home/hebi/Documents/GitHub/ndn/ndnSIM/lihebi/test/build'
+Waf: Leaving directory `/home/hebi/Documents/GitHub/ndn/ndnSIM/lihebi/test/build'
+'build' finished successfully (0.153s)
+2.54418s 0 DRSApp:StartApplication(): 2.54418
+2.8452s 7 DRSApp:StartApplication(): 2.8452
+3.96942s 5 DRSApp:StartApplication(): 3.96942
+4.54418s 0 DRSApp:GenServerPeriod(): MY LEVEL=0, MY SERVER=
+4.54418s 0 DRSApp:SendInterest(): Send Interest /broadcast/drsapp/anyserver/0/4054013042.386983
+4.54418s 0 DRSApp:GenServerPeriod(): I'll wait for 10 milliseconds for anyserver
+4.54418s 0 DRSApp:GenMessage(): Gen Msg: I'm Node11 at 86113069
+4.55418s 0 DRSApp:AddLevel(): Not received data, so my level ++ to 1
+4.57591s 7 DRSApp:OnInterest(): Received Interest: /broadcast/drsapp/anyserver/0/4054013042.386983
+4.57591s 7 DRSApp:ProcessAnyserverInterest(): My Level is 0, received level is 0
+4.58648s 5 DRSApp:OnInterest(): Received Interest: /broadcast/drsapp/anyserver/0/4054013042.386983
+4.58648s 5 DRSApp:ProcessAnyserverInterest(): My Level is 0, received level is 0
+4.8452s 7 DRSApp:GenServerPeriod(): MY LEVEL=0, MY SERVER=
+4.8452s 7 DRSApp:SendInterest(): Send Interest /broadcast/drsapp/anyserver/0/2837832477.772013
+4.8452s 7 DRSApp:GenServerPeriod(): I'll wait for 10 milliseconds for anyserver
+4.8452s 7 DRSApp:GenMessage(): Gen Msg: I'm Node24 at 86113070
+4.8552s 7 DRSApp:AddLevel(): Not received data, so my level ++ to 1
+4.85578s 5 DRSApp:OnInterest(): Received Interest: /broadcast/drsapp/anyserver/0/2837832477.772013
+4.85578s 5 DRSApp:ProcessAnyserverInterest(): My Level is 0, received level is 0
+4.87693s 0 DRSApp:OnInterest(): Received Interest: /broadcast/drsapp/anyserver/0/2837832477.772013
+4.87693s 0 DRSApp:ProcessAnyserverInterest(): My Level is 1, received level is 0
+4.87693s 0 DRSApp:SendData(): Send Data for: /broadcast/drsapp/anyserver/0/2837832477.772013
+4.90895s 7 DRSApp:OnData(): Received Data for: /broadcast/drsapp/anyserver/0/2837832477.772013
+4.90895s 7 DRSApp:ProcessAnyserverData(): Too Late!!!
+5.96942s 5 DRSApp:GenServerPeriod(): MY LEVEL=0, MY SERVER=
+5.96942s 5 DRSApp:SendInterest(): Send Interest /broadcast/drsapp/anyserver/0/3056009282.287250
+5.96942s 5 DRSApp:GenServerPeriod(): I'll wait for 10 milliseconds for anyserver
+5.96942s 5 DRSApp:GenMessage(): Gen Msg: I'm Node22 at 86113073
+5.97942s 5 DRSApp:AddLevel(): Not received data, so my level ++ to 1
+5.97999s 7 DRSApp:OnInterest(): Received Interest: /broadcast/drsapp/anyserver/0/3056009282.287250
+5.97999s 7 DRSApp:ProcessAnyserverInterest(): My Level is 1, received level is 0
+5.97999s 7 DRSApp:SendData(): Send Data for: /broadcast/drsapp/anyserver/0/3056009282.287250
+5.99067s 5 DRSApp:OnData(): Received Data for: /broadcast/drsapp/anyserver/0/3056009282.287250
+5.99067s 5 DRSApp:ProcessAnyserverData(): Too Late!!!
+6.01172s 0 DRSApp:OnInterest(): Received Interest: /broadcast/drsapp/anyserver/0/3056009282.287250
+6.01172s 0 DRSApp:ProcessAnyserverInterest(): My Level is 1, received level is 0
+6.01172s 0 DRSApp:SendData(): Send Data for: /broadcast/drsapp/anyserver/0/3056009282.287250
+6.54418s 0 DRSApp:GenMessage(): Gen Msg: I'm Node11 at 86113076
+6.8452s 7 DRSApp:GenMessage(): Gen Msg: I'm Node24 at 86113076
+7.96942s 5 DRSApp:GenMessage(): Gen Msg: I'm Node22 at 86113077
+8.54418s 0 DRSApp:GenMessage(): Gen Msg: I'm Node11 at 86113079
+8.64437s 0 DRSApp:GenServerPeriod(): MY LEVEL=1, MY SERVER=
+8.64437s 0 DRSApp:SendInterest(): Send Interest /broadcast/drsapp/anyserver/1/751664174.227164
+8.64437s 0 DRSApp:GenServerPeriod(): I'll wait for 20 milliseconds for anyserver
+8.66437s 0 DRSApp:AddLevel(): Not received data, so my level ++ to 2
+8.67608s 7 DRSApp:OnInterest(): Received Interest: /broadcast/drsapp/anyserver/1/751664174.227164
+8.67608s 7 DRSApp:ProcessAnyserverInterest(): My Level is 1, received level is 1
+8.68664s 5 DRSApp:OnInterest(): Received Interest: /broadcast/drsapp/anyserver/1/751664174.227164
+8.68664s 5 DRSApp:ProcessAnyserverInterest(): My Level is 1, received level is 1
+8.8452s 7 DRSApp:GenMessage(): Gen Msg: I'm Node24 at 86113080
+9.00724s 7 DRSApp:GenServerPeriod(): MY LEVEL=1, MY SERVER=
+9.00724s 7 DRSApp:SendInterest(): Send Interest /broadcast/drsapp/anyserver/1/1347882812.962484
+9.00724s 7 DRSApp:GenServerPeriod(): I'll wait for 20 milliseconds for anyserver
+9.01782s 5 DRSApp:OnInterest(): Received Interest: /broadcast/drsapp/anyserver/1/1347882812.962484
+9.01782s 5 DRSApp:ProcessAnyserverInterest(): My Level is 1, received level is 1
+9.02724s 7 DRSApp:AddLevel(): Not received data, so my level ++ to 2
+9.03897s 0 DRSApp:OnInterest(): Received Interest: /broadcast/drsapp/anyserver/1/1347882812.962484
+9.03897s 0 DRSApp:ProcessAnyserverInterest(): My Level is 2, received level is 1
+9.03897s 0 DRSApp:SendData(): Send Data for: /broadcast/drsapp/anyserver/1/1347882812.962484
+9.07099s 7 DRSApp:OnData(): Received Data for: /broadcast/drsapp/anyserver/1/1347882812.962484
+9.07099s 7 DRSApp:ProcessAnyserverData(): Too Late!!!
+9.55277s 5 DRSApp:GenServerPeriod(): MY LEVEL=1, MY SERVER=
+9.55277s 5 DRSApp:SendInterest(): Send Interest /broadcast/drsapp/anyserver/1/1805049713.996074
+9.55277s 5 DRSApp:GenServerPeriod(): I'll wait for 20 milliseconds for anyserver
+9.56335s 7 DRSApp:OnInterest(): Received Interest: /broadcast/drsapp/anyserver/1/1805049713.996074
+9.56335s 7 DRSApp:ProcessAnyserverInterest(): My Level is 2, received level is 1
+9.56335s 7 DRSApp:SendData(): Send Data for: /broadcast/drsapp/anyserver/1/1805049713.996074
+9.57277s 5 DRSApp:AddLevel(): Not received data, so my level ++ to 2
+9.57402s 5 DRSApp:OnData(): Received Data for: /broadcast/drsapp/anyserver/1/1805049713.996074
+9.57402s 5 DRSApp:ProcessAnyserverData(): Too Late!!!
+9.59508s 0 DRSApp:OnInterest(): Received Interest: /broadcast/drsapp/anyserver/1/1805049713.996074
+9.59508s 0 DRSApp:ProcessAnyserverInterest(): My Level is 2, received level is 1
+9.59508s 0 DRSApp:SendData(): Send Data for: /broadcast/drsapp/anyserver/1/1805049713.996074
+9.96942s 5 DRSApp:GenMessage(): Gen Msg: I'm Node22 at 86113084
+10.5442s 0 DRSApp:GenMessage(): Gen Msg: I'm Node11 at 86113085
+10.8452s 7 DRSApp:GenMessage(): Gen Msg: I'm Node24 at 86113085
+11.7604s 7 DRSApp:GenServerPeriod(): MY LEVEL=2, MY SERVER=
+11.7604s 7 DRSApp:SendInterest(): Send Interest /broadcast/drsapp/anyserver/2/206744979.964269
+11.7604s 7 DRSApp:GenServerPeriod(): I'll wait for 40 milliseconds for anyserver
+11.771s 5 DRSApp:OnInterest(): Received Interest: /broadcast/drsapp/anyserver/2/206744979.964269
+11.771s 5 DRSApp:ProcessAnyserverInterest(): My Level is 2, received level is 2
+11.7921s 0 DRSApp:OnInterest(): Received Interest: /broadcast/drsapp/anyserver/2/206744979.964269
+11.7921s 0 DRSApp:ProcessAnyserverInterest(): My Level is 2, received level is 2
+11.8004s 7 DRSApp:AddLevel(): Not received data, so my level ++ to 3
+11.9694s 5 DRSApp:GenMessage(): Gen Msg: I'm Node22 at 86113087
+12.3167s 0 DRSApp:GenServerPeriod(): MY LEVEL=2, MY SERVER=
+12.3167s 0 DRSApp:SendInterest(): Send Interest /broadcast/drsapp/anyserver/2/4257622705.200143
+12.3167s 0 DRSApp:GenServerPeriod(): I'll wait for 40 milliseconds for anyserver
+12.3484s 7 DRSApp:OnInterest(): Received Interest: /broadcast/drsapp/anyserver/2/4257622705.200143
+12.3484s 7 DRSApp:ProcessAnyserverInterest(): My Level is 3, received level is 2
+12.3484s 7 DRSApp:SendData(): Send Data for: /broadcast/drsapp/anyserver/2/4257622705.200143
+12.3567s 0 DRSApp:AddLevel(): Not received data, so my level ++ to 3
+12.359s 5 DRSApp:OnInterest(): Received Interest: /broadcast/drsapp/anyserver/2/4257622705.200143
+12.359s 5 DRSApp:ProcessAnyserverInterest(): My Level is 2, received level is 2
+12.3804s 0 DRSApp:OnData(): Received Data for: /broadcast/drsapp/anyserver/2/4257622705.200143
+12.3804s 0 DRSApp:ProcessAnyserverData(): Too Late!!!
+12.5442s 0 DRSApp:GenMessage(): Gen Msg: I'm Node11 at 86113090
+12.8452s 7 DRSApp:GenMessage(): Gen Msg: I'm Node24 at 86113090
+13.8592s 5 DRSApp:GenServerPeriod(): MY LEVEL=2, MY SERVER=
+13.8592s 5 DRSApp:SendInterest(): Send Interest /broadcast/drsapp/anyserver/2/3775376206.957818
+13.8592s 5 DRSApp:GenServerPeriod(): I'll wait for 40 milliseconds for anyserver
+13.8698s 7 DRSApp:OnInterest(): Received Interest: /broadcast/drsapp/anyserver/2/3775376206.957818
+13.8698s 7 DRSApp:ProcessAnyserverInterest(): My Level is 3, received level is 2
+13.8698s 7 DRSApp:SendData(): Send Data for: /broadcast/drsapp/anyserver/2/3775376206.957818
+13.8804s 5 DRSApp:OnData(): Received Data for: /broadcast/drsapp/anyserver/2/3775376206.957818
+13.8804s 5 DRSApp:ProcessAnyserverData(): My Server is Set to: Node24
+13.9015s 0 DRSApp:OnInterest(): Received Interest: /broadcast/drsapp/anyserver/2/3775376206.957818
+13.9015s 0 DRSApp:ProcessAnyserverInterest(): My Level is 3, received level is 2
+13.9015s 0 DRSApp:SendData(): Send Data for: /broadcast/drsapp/anyserver/2/3775376206.957818
+13.9694s 5 DRSApp:GenMessage(): Gen Msg: I'm Node22 at 86113093
+13.9694s 5 DRSApp:SendInterest(): Send Interest /Node24/drsapp/somethingnew/Node22_86113093/Node22/drsapp/86113093
+13.9802s 7 DRSApp:OnInterest(): Received Interest: /Node24/drsapp/somethingnew/Node22_86113093/Node22/drsapp/86113093
+13.9802s 7 DRSApp:SendData(): Send Data for: /Node24/drsapp/somethingnew/Node22_86113093/Node22/drsapp/86113093
+13.9802s 7 DRSApp:SendInterest(): Send Interest /Node22/drsapp/86113093
+13.991s 5 DRSApp:OnData(): Received Data for: /Node24/drsapp/somethingnew/Node22_86113093/Node22/drsapp/86113093
+13.991s 5 DRSApp:SendInterest(): Send Interest /Node24/drsapp/anythingnew/Node22_86113093:
+13.9914s 5 DRSApp:OnInterest(): Received Interest: /Node22/drsapp/86113093
+13.9914s 5 DRSApp:SendData(): Send Data for: /Node22/drsapp/86113093
+14.0016s 7 DRSApp:OnInterest(): Received Interest: /Node24/drsapp/anythingnew/Node22_86113093:
+14.0016s 7 DRSApp:SendData(): Send Data for: /Node24/drsapp/anythingnew/Node22_86113093:
+14.0021s 7 DRSApp:OnData(): Received Data for: /Node22/drsapp/86113093
+14.0179s 5 DRSApp:OnData(): Received Data for: /Node24/drsapp/anythingnew/Node22_86113093:
+14.0179s 5 DRSApp:SendInterest(): Send Interest /Node24/drsapp/anythingnew/Node24_86113093
+14.0179s 5 DRSApp:SendInterest(): Send Interest /Node24/drsapp/86113076
+14.0179s 5 DRSApp:SendInterest(): Send Interest /Node24/drsapp/86113080
+14.0179s 5 DRSApp:SendInterest(): Send Interest /Node24/drsapp/86113085
+14.0179s 5 DRSApp:SendInterest(): Send Interest /Node24/drsapp/86113090
+14.0179s 5 DRSApp:SendInterest(): Send Interest /Node22/drsapp/86113093
+14.0179s 5 DRSApp:OnData(): Received Data for: /Node22/drsapp/86113093
+14.0284s 7 DRSApp:OnInterest(): Received Interest: /Node24/drsapp/anythingnew/Node24_86113093
+14.0288s 7 DRSApp:OnInterest(): Received Interest: /Node24/drsapp/86113076
+14.0288s 7 DRSApp:SendData(): Send Data for: /Node24/drsapp/86113076
+14.0291s 7 DRSApp:OnInterest(): Received Interest: /Node24/drsapp/86113080
+14.0291s 7 DRSApp:SendData(): Send Data for: /Node24/drsapp/86113080
+14.0295s 7 DRSApp:OnInterest(): Received Interest: /Node24/drsapp/86113085
+14.0295s 7 DRSApp:SendData(): Send Data for: /Node24/drsapp/86113085
+14.0299s 7 DRSApp:OnInterest(): Received Interest: /Node24/drsapp/86113090
+14.0299s 7 DRSApp:SendData(): Send Data for: /Node24/drsapp/86113090
+14.0394s 5 DRSApp:OnData(): Received Data for: /Node24/drsapp/86113076
+14.04s 5 DRSApp:OnData(): Received Data for: /Node24/drsapp/86113080
+14.0405s 5 DRSApp:OnData(): Received Data for: /Node24/drsapp/86113085
+14.0411s 5 DRSApp:OnData(): Received Data for: /Node24/drsapp/86113090
+14.5442s 0 DRSApp:GenMessage(): Gen Msg: I'm Node11 at 86113098
+14.8452s 7 DRSApp:GenMessage(): Gen Msg: I'm Node24 at 86113098
+14.8452s 7 DRSApp:SendData(): Send Data for: /Node24/drsapp/anythingnew/Node24_86113093
+14.8515s 0 DRSApp:GenServerPeriod(): MY LEVEL=3, MY SERVER=
+14.8515s 0 DRSApp:SendInterest(): Send Interest /broadcast/drsapp/anyserver/3/3262372769.233133
+14.8515s 0 DRSApp:GenServerPeriod(): I'll wait for 100 milliseconds for anyserver
+14.8571s 5 DRSApp:OnData(): Received Data for: /Node24/drsapp/anythingnew/Node24_86113093
+14.8571s 5 DRSApp:SendInterest(): Send Interest /Node24/drsapp/anythingnew/Node24_86113098
+14.8571s 5 DRSApp:SendInterest(): Send Interest /Node24/drsapp/86113098
+14.8676s 7 DRSApp:OnInterest(): Received Interest: /Node24/drsapp/anythingnew/Node24_86113098
+14.868s 7 DRSApp:OnInterest(): Received Interest: /Node24/drsapp/86113098
+14.868s 7 DRSApp:SendData(): Send Data for: /Node24/drsapp/86113098
+14.8786s 5 DRSApp:OnData(): Received Data for: /Node24/drsapp/86113098
+14.8832s 7 DRSApp:OnInterest(): Received Interest: /broadcast/drsapp/anyserver/3/3262372769.233133
+14.8832s 7 DRSApp:ProcessAnyserverInterest(): My Level is 3, received level is 3
+14.8938s 5 DRSApp:OnInterest(): Received Interest: /broadcast/drsapp/anyserver/3/3262372769.233133
+14.8938s 5 DRSApp:ProcessAnyserverInterest(): My Level is 2, received level is 3
+14.9515s 0 DRSApp:AddLevel(): Not received data, so my level ++ to 4
+14.9781s 7 DRSApp:GenServerPeriod(): MY LEVEL=3, MY SERVER=
+14.9781s 7 DRSApp:SendInterest(): Send Interest /broadcast/drsapp/anyserver/3/2860522658.865588
+14.9781s 7 DRSApp:GenServerPeriod(): I'll wait for 100 milliseconds for anyserver
+14.9887s 5 DRSApp:OnInterest(): Received Interest: /broadcast/drsapp/anyserver/3/2860522658.865588
+14.9887s 5 DRSApp:ProcessAnyserverInterest(): My Level is 2, received level is 3
+15.0098s 0 DRSApp:OnInterest(): Received Interest: /broadcast/drsapp/anyserver/3/2860522658.865588
+15.0098s 0 DRSApp:ProcessAnyserverInterest(): My Level is 4, received level is 3
+15.0098s 0 DRSApp:SendData(): Send Data for: /broadcast/drsapp/anyserver/3/2860522658.865588
+15.0419s 7 DRSApp:OnData(): Received Data for: /broadcast/drsapp/anyserver/3/2860522658.865588
+15.0419s 7 DRSApp:ProcessAnyserverData(): My Server is Set to: Node11
+15.9694s 5 DRSApp:GenMessage(): Gen Msg: I'm Node22 at 86113103
+15.9694s 5 DRSApp:SendInterest(): Send Interest /Node24/drsapp/somethingnew/Node22_86113103/Node22/drsapp/86113103
+15.9802s 7 DRSApp:OnInterest(): Received Interest: /Node24/drsapp/somethingnew/Node22_86113103/Node22/drsapp/86113103
+15.9802s 7 DRSApp:SendInterest(): Send Interest /Node11/drsapp/somethingnew/Node24_86113103/Node22/drsapp/86113103
+15.9802s 7 DRSApp:SendData(): Send Data for: /Node24/drsapp/anythingnew/Node24_86113098
+15.9802s 7 DRSApp:SendData(): Send Data for: /Node24/drsapp/somethingnew/Node22_86113103/Node22/drsapp/86113103
+15.9802s 7 DRSApp:SendInterest(): Send Interest /Node22/drsapp/86113103
+15.991s 5 DRSApp:OnData(): Received Data for: /Node24/drsapp/somethingnew/Node22_86113103/Node22/drsapp/86113103
+15.991s 5 DRSApp:SendInterest(): Send Interest /Node24/drsapp/anythingnew/Node24_86113098
+15.9914s 5 DRSApp:OnInterest(): Received Interest: /Node22/drsapp/86113103
+15.9914s 5 DRSApp:SendData(): Send Data for: /Node22/drsapp/86113103
+16.0021s 7 DRSApp:OnData(): Received Data for: /Node22/drsapp/86113103
+16.0124s 0 DRSApp:OnInterest(): Received Interest: /Node11/drsapp/somethingnew/Node24_86113103/Node22/drsapp/86113103
+16.0124s 0 DRSApp:SendData(): Send Data for: /Node11/drsapp/somethingnew/Node24_86113103/Node22/drsapp/86113103
+16.0124s 0 DRSApp:SendInterest(): Send Interest /Node22/drsapp/86113103
+16.0134s 5 DRSApp:OnData(): Received Data for: /Node24/drsapp/anythingnew/Node24_86113098
+16.0134s 5 DRSApp:SendInterest(): Send Interest /Node24/drsapp/anythingnew/Node24_86113103
+16.0134s 5 DRSApp:SendInterest(): Send Interest /Node22/drsapp/86113103
+16.0134s 5 DRSApp:OnData(): Received Data for: /Node22/drsapp/86113103
+16.0239s 7 DRSApp:OnInterest(): Received Interest: /Node24/drsapp/anythingnew/Node24_86113103
+16.045s 7 DRSApp:OnData(): Received Data for: /Node11/drsapp/somethingnew/Node24_86113103/Node22/drsapp/86113103
+16.045s 7 DRSApp:SendInterest(): Send Interest /Node11/drsapp/anythingnew/Node22_86113093:Node24_86113103:
+16.077s 0 DRSApp:OnInterest(): Received Interest: /Node11/drsapp/anythingnew/Node22_86113093:Node24_86113103:
+16.077s 0 DRSApp:SendData(): Send Data for: /Node11/drsapp/anythingnew/Node22_86113093:Node24_86113103:
+16.0976s 0 DRSApp:OnData(): Received Data for: /Node22/drsapp/86113103
+16.1296s 7 DRSApp:OnData(): Received Data for: /Node11/drsapp/anythingnew/Node22_86113093:Node24_86113103:
+16.1296s 7 DRSApp:SendInterest(): Send Interest /Node11/drsapp/anythingnew/Node11_86113106
+16.1296s 7 DRSApp:SendData(): Send Data for: /Node24/drsapp/anythingnew/Node24_86113103
+16.1296s 7 DRSApp:SendInterest(): Send Interest /Node11/drsapp/86113076
+16.1296s 7 DRSApp:SendInterest(): Send Interest /Node11/drsapp/86113079
+16.1296s 7 DRSApp:SendInterest(): Send Interest /Node11/drsapp/86113085
+16.1296s 7 DRSApp:SendInterest(): Send Interest /Node11/drsapp/86113090
+16.1296s 7 DRSApp:SendInterest(): Send Interest /Node11/drsapp/86113098
+16.1296s 7 DRSApp:SendInterest(): Send Interest /Node22/drsapp/86113103
+16.1296s 7 DRSApp:OnData(): Received Data for: /Node22/drsapp/86113103
+16.1501s 5 DRSApp:OnData(): Received Data for: /Node24/drsapp/anythingnew/Node24_86113103
+16.1501s 5 DRSApp:SendInterest(): Send Interest /Node24/drsapp/anythingnew/Node24_86113109
+16.1501s 5 DRSApp:SendInterest(): Send Interest /Node11/drsapp/86113076
+16.1501s 5 DRSApp:SendInterest(): Send Interest /Node11/drsapp/86113079
+16.1501s 5 DRSApp:SendInterest(): Send Interest /Node11/drsapp/86113085
+16.1501s 5 DRSApp:SendInterest(): Send Interest /Node11/drsapp/86113090
+16.1501s 5 DRSApp:SendInterest(): Send Interest /Node11/drsapp/86113098
+16.1501s 5 DRSApp:SendInterest(): Send Interest /Node22/drsapp/86113103
+16.1501s 5 DRSApp:OnData(): Received Data for: /Node22/drsapp/86113103
+16.1606s 7 DRSApp:OnInterest(): Received Interest: /Node24/drsapp/anythingnew/Node24_86113109
+16.1612s 0 DRSApp:OnInterest(): Received Interest: /Node11/drsapp/anythingnew/Node11_86113106
+16.1616s 0 DRSApp:OnInterest(): Received Interest: /Node11/drsapp/86113076
+16.1616s 0 DRSApp:SendData(): Send Data for: /Node11/drsapp/86113076
+16.162s 0 DRSApp:OnInterest(): Received Interest: /Node11/drsapp/86113079
+16.162s 0 DRSApp:SendData(): Send Data for: /Node11/drsapp/86113079
+16.1623s 0 DRSApp:OnInterest(): Received Interest: /Node11/drsapp/86113085
+16.1623s 0 DRSApp:SendData(): Send Data for: /Node11/drsapp/86113085
+16.1627s 0 DRSApp:OnInterest(): Received Interest: /Node11/drsapp/86113090
+16.1627s 0 DRSApp:SendData(): Send Data for: /Node11/drsapp/86113090
+16.1631s 0 DRSApp:OnInterest(): Received Interest: /Node11/drsapp/86113098
+16.1631s 0 DRSApp:SendData(): Send Data for: /Node11/drsapp/86113098
+16.1934s 7 DRSApp:OnData(): Received Data for: /Node11/drsapp/86113076
+16.194s 7 DRSApp:OnData(): Received Data for: /Node11/drsapp/86113079
+16.1945s 7 DRSApp:OnData(): Received Data for: /Node11/drsapp/86113085
+16.1951s 7 DRSApp:OnData(): Received Data for: /Node11/drsapp/86113090
+16.1957s 7 DRSApp:OnData(): Received Data for: /Node11/drsapp/86113098
+16.204s 5 DRSApp:OnData(): Received Data for: /Node11/drsapp/86113076
+16.2045s 5 DRSApp:OnData(): Received Data for: /Node11/drsapp/86113079
+16.2051s 5 DRSApp:OnData(): Received Data for: /Node11/drsapp/86113085
+16.2057s 5 DRSApp:OnData(): Received Data for: /Node11/drsapp/86113090
+16.2063s 5 DRSApp:OnData(): Received Data for: /Node11/drsapp/86113098
+16.5442s 0 DRSApp:GenMessage(): Gen Msg: I'm Node11 at 86113114
+16.5442s 0 DRSApp:SendData(): Send Data for: /Node11/drsapp/anythingnew/Node11_86113106
+16.5798s 7 DRSApp:OnData(): Received Data for: /Node11/drsapp/anythingnew/Node11_86113106
+16.5798s 7 DRSApp:SendInterest(): Send Interest /Node11/drsapp/anythingnew/Node11_86113114
+16.5798s 7 DRSApp:SendData(): Send Data for: /Node24/drsapp/anythingnew/Node24_86113109
+16.5798s 7 DRSApp:SendInterest(): Send Interest /Node11/drsapp/86113114
+16.5921s 5 DRSApp:OnData(): Received Data for: /Node24/drsapp/anythingnew/Node24_86113109
+16.5921s 5 DRSApp:SendInterest(): Send Interest /Node24/drsapp/anythingnew/Node24_86113114
+16.5921s 5 DRSApp:SendInterest(): Send Interest /Node11/drsapp/86113114
+16.6027s 7 DRSApp:OnInterest(): Received Interest: /Node24/drsapp/anythingnew/Node24_86113114
+16.6114s 0 DRSApp:OnInterest(): Received Interest: /Node11/drsapp/anythingnew/Node11_86113114
+16.6117s 0 DRSApp:OnInterest(): Received Interest: /Node11/drsapp/86113114
+16.6117s 0 DRSApp:SendData(): Send Data for: /Node11/drsapp/86113114
+16.6435s 7 DRSApp:OnData(): Received Data for: /Node11/drsapp/86113114
+16.6541s 5 DRSApp:OnData(): Received Data for: /Node11/drsapp/86113114
+16.8452s 7 DRSApp:GenMessage(): Gen Msg: I'm Node24 at 86113116
+16.8452s 7 DRSApp:SendInterest(): Send Interest /Node11/drsapp/somethingnew/Node24_86113116/Node24/drsapp/86113116
+16.8452s 7 DRSApp:SendData(): Send Data for: /Node24/drsapp/anythingnew/Node24_86113114
+16.8571s 5 DRSApp:OnData(): Received Data for: /Node24/drsapp/anythingnew/Node24_86113114
+16.8571s 5 DRSApp:SendInterest(): Send Interest /Node24/drsapp/anythingnew/Node24_86113116
+16.8571s 5 DRSApp:SendInterest(): Send Interest /Node24/drsapp/86113116
+16.8676s 7 DRSApp:OnInterest(): Received Interest: /Node24/drsapp/anythingnew/Node24_86113116
+16.868s 7 DRSApp:OnInterest(): Received Interest: /Node24/drsapp/86113116
+16.868s 7 DRSApp:SendData(): Send Data for: /Node24/drsapp/86113116
+16.8774s 0 DRSApp:OnInterest(): Received Interest: /Node11/drsapp/somethingnew/Node24_86113116/Node24/drsapp/86113116
+16.8774s 0 DRSApp:SendData(): Send Data for: /Node11/drsapp/anythingnew/Node11_86113114
+16.8774s 0 DRSApp:SendData(): Send Data for: /Node11/drsapp/somethingnew/Node24_86113116/Node24/drsapp/86113116
+16.8774s 0 DRSApp:SendInterest(): Send Interest /Node24/drsapp/86113116
+16.8786s 5 DRSApp:OnData(): Received Data for: /Node24/drsapp/86113116
+16.913s 7 DRSApp:OnData(): Received Data for: /Node11/drsapp/anythingnew/Node11_86113114
+16.913s 7 DRSApp:SendInterest(): Send Interest /Node11/drsapp/anythingnew/Node11_86113117
+16.913s 7 DRSApp:SendData(): Send Data for: /Node24/drsapp/anythingnew/Node24_86113116
+16.913s 7 DRSApp:SendInterest(): Send Interest /Node24/drsapp/86113116
+16.913s 7 DRSApp:OnData(): Received Data for: /Node24/drsapp/86113116
+16.9139s 7 DRSApp:OnData(): Received Data for: /Node11/drsapp/somethingnew/Node24_86113116/Node24/drsapp/86113116
+16.9139s 7 DRSApp:SendInterest(): Send Interest /Node11/drsapp/anythingnew/Node11_86113117
+16.9254s 5 DRSApp:OnData(): Received Data for: /Node24/drsapp/anythingnew/Node24_86113116
+16.9254s 5 DRSApp:SendInterest(): Send Interest /Node24/drsapp/anythingnew/Node24_86113118
+16.9254s 5 DRSApp:SendInterest(): Send Interest /Node24/drsapp/86113116
+16.9254s 5 DRSApp:OnData(): Received Data for: /Node24/drsapp/86113116
+16.9359s 7 DRSApp:OnInterest(): Received Interest: /Node24/drsapp/anythingnew/Node24_86113118
+16.9446s 0 DRSApp:OnInterest(): Received Interest: /Node11/drsapp/anythingnew/Node11_86113117
+16.9455s 0 DRSApp:OnInterest(): Received Interest: /Node11/drsapp/anythingnew/Node11_86113117
+16.9462s 0 DRSApp:OnData(): Received Data for: /Node24/drsapp/86113116
+17.8321s 7 DRSApp:GenServerPeriod(): MY LEVEL=3, MY SERVER=Node11
+17.9694s 5 DRSApp:GenMessage(): Gen Msg: I'm Node22 at 86113122
+17.9694s 5 DRSApp:SendInterest(): Send Interest /Node24/drsapp/somethingnew/Node22_86113122/Node22/drsapp/86113122
+17.9802s 7 DRSApp:OnInterest(): Received Interest: /Node24/drsapp/somethingnew/Node22_86113122/Node22/drsapp/86113122
+17.9802s 7 DRSApp:SendInterest(): Send Interest /Node11/drsapp/somethingnew/Node24_86113122/Node22/drsapp/86113122
+17.9802s 7 DRSApp:SendData(): Send Data for: /Node24/drsapp/anythingnew/Node24_86113118
+17.9802s 7 DRSApp:SendData(): Send Data for: /Node24/drsapp/somethingnew/Node22_86113122/Node22/drsapp/86113122
+17.9802s 7 DRSApp:SendInterest(): Send Interest /Node22/drsapp/86113122
+17.991s 5 DRSApp:OnData(): Received Data for: /Node24/drsapp/somethingnew/Node22_86113122/Node22/drsapp/86113122
+17.991s 5 DRSApp:SendInterest(): Send Interest /Node24/drsapp/anythingnew/Node24_86113118
+17.9914s 5 DRSApp:OnInterest(): Received Interest: /Node22/drsapp/86113122
+17.9914s 5 DRSApp:SendData(): Send Data for: /Node22/drsapp/86113122
+18.0021s 7 DRSApp:OnData(): Received Data for: /Node22/drsapp/86113122
+18.0124s 0 DRSApp:OnInterest(): Received Interest: /Node11/drsapp/somethingnew/Node24_86113122/Node22/drsapp/86113122
+18.0124s 0 DRSApp:SendData(): Send Data for: /Node11/drsapp/anythingnew/Node11_86113117
+18.0124s 0 DRSApp:SendData(): Send Data for: /Node11/drsapp/somethingnew/Node24_86113122/Node22/drsapp/86113122
+18.0124s 0 DRSApp:SendInterest(): Send Interest /Node22/drsapp/86113122
+18.0134s 5 DRSApp:OnData(): Received Data for: /Node24/drsapp/anythingnew/Node24_86113118
+18.0134s 5 DRSApp:SendInterest(): Send Interest /Node24/drsapp/anythingnew/Node24_86113122
+18.0134s 5 DRSApp:SendInterest(): Send Interest /Node22/drsapp/86113122
+18.0134s 5 DRSApp:OnData(): Received Data for: /Node22/drsapp/86113122
+18.0239s 7 DRSApp:OnInterest(): Received Interest: /Node24/drsapp/anythingnew/Node24_86113122
+18.045s 7 DRSApp:OnData(): Received Data for: /Node11/drsapp/somethingnew/Node24_86113122/Node22/drsapp/86113122
+18.045s 7 DRSApp:SendInterest(): Send Interest /Node11/drsapp/anythingnew/Node11_86113117
+18.0976s 0 DRSApp:OnData(): Received Data for: /Node22/drsapp/86113122
+18.1121s 7 DRSApp:OnData(): Received Data for: /Node11/drsapp/anythingnew/Node11_86113117
+18.1121s 7 DRSApp:SendInterest(): Send Interest /Node11/drsapp/anythingnew/Node11_86113125
+18.1121s 7 DRSApp:SendData(): Send Data for: /Node24/drsapp/anythingnew/Node24_86113122
+18.1121s 7 DRSApp:SendInterest(): Send Interest /Node22/drsapp/86113122
+18.1121s 7 DRSApp:OnData(): Received Data for: /Node22/drsapp/86113122
+18.1245s 5 DRSApp:OnData(): Received Data for: /Node24/drsapp/anythingnew/Node24_86113122
+18.1245s 5 DRSApp:SendInterest(): Send Interest /Node24/drsapp/anythingnew/Node24_86113127
+18.1245s 5 DRSApp:SendInterest(): Send Interest /Node22/drsapp/86113122
+18.1245s 5 DRSApp:OnData(): Received Data for: /Node22/drsapp/86113122
+18.135s 7 DRSApp:OnInterest(): Received Interest: /Node24/drsapp/anythingnew/Node24_86113127
+18.1437s 0 DRSApp:OnInterest(): Received Interest: /Node11/drsapp/anythingnew/Node11_86113125
+18.5442s 0 DRSApp:GenMessage(): Gen Msg: I'm Node11 at 86113128
+18.5442s 0 DRSApp:SendData(): Send Data for: /Node11/drsapp/anythingnew/Node11_86113125
+18.561s 5 DRSApp:GenServerPeriod(): MY LEVEL=2, MY SERVER=Node24
+18.5798s 7 DRSApp:OnData(): Received Data for: /Node11/drsapp/anythingnew/Node11_86113125
+18.5798s 7 DRSApp:SendInterest(): Send Interest /Node11/drsapp/anythingnew/Node11_86113128
+18.5798s 7 DRSApp:SendData(): Send Data for: /Node24/drsapp/anythingnew/Node24_86113127
+18.5798s 7 DRSApp:SendInterest(): Send Interest /Node11/drsapp/86113128
+18.5921s 5 DRSApp:OnData(): Received Data for: /Node24/drsapp/anythingnew/Node24_86113127
+18.5921s 5 DRSApp:SendInterest(): Send Interest /Node24/drsapp/anythingnew/Node24_86113129
+18.5921s 5 DRSApp:SendInterest(): Send Interest /Node11/drsapp/86113128
+18.6027s 7 DRSApp:OnInterest(): Received Interest: /Node24/drsapp/anythingnew/Node24_86113129
+18.6114s 0 DRSApp:OnInterest(): Received Interest: /Node11/drsapp/anythingnew/Node11_86113128
+18.6117s 0 DRSApp:OnInterest(): Received Interest: /Node11/drsapp/86113128
+18.6117s 0 DRSApp:SendData(): Send Data for: /Node11/drsapp/86113128
+18.6435s 7 DRSApp:OnData(): Received Data for: /Node11/drsapp/86113128
+18.6541s 5 DRSApp:OnData(): Received Data for: /Node11/drsapp/86113128
+18.8452s 7 DRSApp:GenMessage(): Gen Msg: I'm Node24 at 86113131
+18.8452s 7 DRSApp:SendInterest(): Send Interest /Node11/drsapp/somethingnew/Node24_86113131/Node24/drsapp/86113131
+18.8452s 7 DRSApp:SendData(): Send Data for: /Node24/drsapp/anythingnew/Node24_86113129
+18.8571s 5 DRSApp:OnData(): Received Data for: /Node24/drsapp/anythingnew/Node24_86113129
+18.8571s 5 DRSApp:SendInterest(): Send Interest /Node24/drsapp/anythingnew/Node24_86113131
+18.8571s 5 DRSApp:SendInterest(): Send Interest /Node24/drsapp/86113131
+18.8676s 7 DRSApp:OnInterest(): Received Interest: /Node24/drsapp/anythingnew/Node24_86113131
+18.868s 7 DRSApp:OnInterest(): Received Interest: /Node24/drsapp/86113131
+18.868s 7 DRSApp:SendData(): Send Data for: /Node24/drsapp/86113131
+18.8774s 0 DRSApp:OnInterest(): Received Interest: /Node11/drsapp/somethingnew/Node24_86113131/Node24/drsapp/86113131
+18.8774s 0 DRSApp:SendData(): Send Data for: /Node11/drsapp/anythingnew/Node11_86113128
+18.8774s 0 DRSApp:SendData(): Send Data for: /Node11/drsapp/somethingnew/Node24_86113131/Node24/drsapp/86113131
+18.8774s 0 DRSApp:SendInterest(): Send Interest /Node24/drsapp/86113131
+18.8786s 5 DRSApp:OnData(): Received Data for: /Node24/drsapp/86113131
+18.913s 7 DRSApp:OnData(): Received Data for: /Node11/drsapp/anythingnew/Node11_86113128
+18.913s 7 DRSApp:SendInterest(): Send Interest /Node11/drsapp/anythingnew/Node11_86113132
+18.913s 7 DRSApp:SendData(): Send Data for: /Node24/drsapp/anythingnew/Node24_86113131
+18.913s 7 DRSApp:SendInterest(): Send Interest /Node24/drsapp/86113131
+18.913s 7 DRSApp:OnData(): Received Data for: /Node24/drsapp/86113131
+18.9139s 7 DRSApp:OnData(): Received Data for: /Node11/drsapp/somethingnew/Node24_86113131/Node24/drsapp/86113131
+18.9139s 7 DRSApp:SendInterest(): Send Interest /Node11/drsapp/anythingnew/Node11_86113132
+18.9254s 5 DRSApp:OnData(): Received Data for: /Node24/drsapp/anythingnew/Node24_86113131
+18.9254s 5 DRSApp:SendInterest(): Send Interest /Node24/drsapp/anythingnew/Node24_86113133
+18.9254s 5 DRSApp:SendInterest(): Send Interest /Node24/drsapp/86113131
+18.9254s 5 DRSApp:OnData(): Received Data for: /Node24/drsapp/86113131
+18.9359s 7 DRSApp:OnInterest(): Received Interest: /Node24/drsapp/anythingnew/Node24_86113133
+18.9446s 0 DRSApp:OnInterest(): Received Interest: /Node11/drsapp/anythingnew/Node11_86113132
+18.9455s 0 DRSApp:OnInterest(): Received Interest: /Node11/drsapp/anythingnew/Node11_86113132
+18.9462s 0 DRSApp:OnData(): Received Data for: /Node24/drsapp/86113131
+19.6169s 0 DRSApp:GenServerPeriod(): MY LEVEL=4, MY SERVER=
+19.6169s 0 DRSApp:SendInterest(): Send Interest /broadcast/drsapp/anyserver/4/2672457952.801632
+19.6169s 0 DRSApp:GenServerPeriod(): I'll wait for 200 milliseconds for anyserver
+19.6486s 7 DRSApp:OnInterest(): Received Interest: /broadcast/drsapp/anyserver/4/2672457952.801632
+19.6486s 7 DRSApp:ProcessAnyserverInterest(): My Level is 3, received level is 4
+19.6592s 5 DRSApp:OnInterest(): Received Interest: /broadcast/drsapp/anyserver/4/2672457952.801632
+19.6592s 5 DRSApp:ProcessAnyserverInterest(): My Level is 2, received level is 4
+19.8169s 0 DRSApp:AddLevel(): Not received data, so my level ++ to 5
+19.9694s 5 DRSApp:GenMessage(): Gen Msg: I'm Node22 at 86113137
+19.9694s 5 DRSApp:SendInterest(): Send Interest /Node24/drsapp/somethingnew/Node22_86113137/Node22/drsapp/86113137
+19.9802s 7 DRSApp:OnInterest(): Received Interest: /Node24/drsapp/somethingnew/Node22_86113137/Node22/drsapp/86113137
+19.9802s 7 DRSApp:SendInterest(): Send Interest /Node11/drsapp/somethingnew/Node24_86113137/Node22/drsapp/86113137
+19.9802s 7 DRSApp:SendData(): Send Data for: /Node24/drsapp/anythingnew/Node24_86113133
+19.9802s 7 DRSApp:SendData(): Send Data for: /Node24/drsapp/somethingnew/Node22_86113137/Node22/drsapp/86113137
+19.9802s 7 DRSApp:SendInterest(): Send Interest /Node22/drsapp/86113137
+19.991s 5 DRSApp:OnData(): Received Data for: /Node24/drsapp/somethingnew/Node22_86113137/Node22/drsapp/86113137
+19.991s 5 DRSApp:SendInterest(): Send Interest /Node24/drsapp/anythingnew/Node24_86113133
+19.9914s 5 DRSApp:OnInterest(): Received Interest: /Node22/drsapp/86113137
+19.9914s 5 DRSApp:SendData(): Send Data for: /Node22/drsapp/86113137
+20.0021s 7 DRSApp:OnData(): Received Data for: /Node22/drsapp/86113137
+20.0124s 0 DRSApp:OnInterest(): Received Interest: /Node11/drsapp/somethingnew/Node24_86113137/Node22/drsapp/86113137
+20.0124s 0 DRSApp:SendData(): Send Data for: /Node11/drsapp/anythingnew/Node11_86113132
+20.0124s 0 DRSApp:SendData(): Send Data for: /Node11/drsapp/somethingnew/Node24_86113137/Node22/drsapp/86113137
+20.0124s 0 DRSApp:SendInterest(): Send Interest /Node22/drsapp/86113137
+20.0134s 5 DRSApp:OnData(): Received Data for: /Node24/drsapp/anythingnew/Node24_86113133
+20.0134s 5 DRSApp:SendInterest(): Send Interest /Node24/drsapp/anythingnew/Node24_86113137
+20.0134s 5 DRSApp:SendInterest(): Send Interest /Node22/drsapp/86113137
+20.0134s 5 DRSApp:OnData(): Received Data for: /Node22/drsapp/86113137
+20.0239s 7 DRSApp:OnInterest(): Received Interest: /Node24/drsapp/anythingnew/Node24_86113137
+20.045s 7 DRSApp:OnData(): Received Data for: /Node11/drsapp/somethingnew/Node24_86113137/Node22/drsapp/86113137
+20.045s 7 DRSApp:SendInterest(): Send Interest /Node11/drsapp/anythingnew/Node11_86113132
+20.0976s 0 DRSApp:OnData(): Received Data for: /Node22/drsapp/86113137
+20.1121s 7 DRSApp:OnData(): Received Data for: /Node11/drsapp/anythingnew/Node11_86113132
+20.1121s 7 DRSApp:SendInterest(): Send Interest /Node11/drsapp/anythingnew/Node11_86113141
+20.1121s 7 DRSApp:SendData(): Send Data for: /Node24/drsapp/anythingnew/Node24_86113137
+20.1121s 7 DRSApp:SendInterest(): Send Interest /Node22/drsapp/86113137
+20.1121s 7 DRSApp:OnData(): Received Data for: /Node22/drsapp/86113137
+20.1245s 5 DRSApp:OnData(): Received Data for: /Node24/drsapp/anythingnew/Node24_86113137
+20.1245s 5 DRSApp:SendInterest(): Send Interest /Node24/drsapp/anythingnew/Node24_86113142
+20.1245s 5 DRSApp:SendInterest(): Send Interest /Node22/drsapp/86113137
+20.1245s 5 DRSApp:OnData(): Received Data for: /Node22/drsapp/86113137
+20.135s 7 DRSApp:OnInterest(): Received Interest: /Node24/drsapp/anythingnew/Node24_86113142
+20.1437s 0 DRSApp:OnInterest(): Received Interest: /Node11/drsapp/anythingnew/Node11_86113141
+20.5442s 0 DRSApp:GenMessage(): Gen Msg: I'm Node11 at 86113144
+20.5442s 0 DRSApp:SendData(): Send Data for: /Node11/drsapp/anythingnew/Node11_86113141
+20.5798s 7 DRSApp:OnData(): Received Data for: /Node11/drsapp/anythingnew/Node11_86113141
+20.5798s 7 DRSApp:SendInterest(): Send Interest /Node11/drsapp/anythingnew/Node11_86113144
+20.5798s 7 DRSApp:SendData(): Send Data for: /Node24/drsapp/anythingnew/Node24_86113142
+20.5798s 7 DRSApp:SendInterest(): Send Interest /Node11/drsapp/86113144
+20.5921s 5 DRSApp:OnData(): Received Data for: /Node24/drsapp/anythingnew/Node24_86113142
+20.5921s 5 DRSApp:SendInterest(): Send Interest /Node24/drsapp/anythingnew/Node24_86113144
+20.5921s 5 DRSApp:SendInterest(): Send Interest /Node11/drsapp/86113144
+20.6027s 7 DRSApp:OnInterest(): Received Interest: /Node24/drsapp/anythingnew/Node24_86113144
+20.6114s 0 DRSApp:OnInterest(): Received Interest: /Node11/drsapp/anythingnew/Node11_86113144
+20.6117s 0 DRSApp:OnInterest(): Received Interest: /Node11/drsapp/86113144
+20.6117s 0 DRSApp:SendData(): Send Data for: /Node11/drsapp/86113144
+20.6435s 7 DRSApp:OnData(): Received Data for: /Node11/drsapp/86113144
+20.6541s 5 DRSApp:OnData(): Received Data for: /Node11/drsapp/86113144
+20.8452s 7 DRSApp:GenMessage(): Gen Msg: I'm Node24 at 86113146
+20.8452s 7 DRSApp:SendInterest(): Send Interest /Node11/drsapp/somethingnew/Node24_86113146/Node24/drsapp/86113146
+20.8452s 7 DRSApp:SendData(): Send Data for: /Node24/drsapp/anythingnew/Node24_86113144
+20.8571s 5 DRSApp:OnData(): Received Data for: /Node24/drsapp/anythingnew/Node24_86113144
+20.8571s 5 DRSApp:SendInterest(): Send Interest /Node24/drsapp/anythingnew/Node24_86113146
+20.8571s 5 DRSApp:SendInterest(): Send Interest /Node24/drsapp/86113146
+20.8676s 7 DRSApp:OnInterest(): Received Interest: /Node24/drsapp/anythingnew/Node24_86113146
+20.868s 7 DRSApp:OnInterest(): Received Interest: /Node24/drsapp/86113146
+20.868s 7 DRSApp:SendData(): Send Data for: /Node24/drsapp/86113146
+20.8774s 0 DRSApp:OnInterest(): Received Interest: /Node11/drsapp/somethingnew/Node24_86113146/Node24/drsapp/86113146
+20.8774s 0 DRSApp:SendData(): Send Data for: /Node11/drsapp/anythingnew/Node11_86113144
+20.8774s 0 DRSApp:SendData(): Send Data for: /Node11/drsapp/somethingnew/Node24_86113146/Node24/drsapp/86113146
+20.8774s 0 DRSApp:SendInterest(): Send Interest /Node24/drsapp/86113146
+20.8786s 5 DRSApp:OnData(): Received Data for: /Node24/drsapp/86113146
+20.913s 7 DRSApp:OnData(): Received Data for: /Node11/drsapp/anythingnew/Node11_86113144
+20.913s 7 DRSApp:SendInterest(): Send Interest /Node11/drsapp/anythingnew/Node11_86113147
+20.913s 7 DRSApp:SendData(): Send Data for: /Node24/drsapp/anythingnew/Node24_86113146
+20.913s 7 DRSApp:SendInterest(): Send Interest /Node24/drsapp/86113146
+20.913s 7 DRSApp:OnData(): Received Data for: /Node24/drsapp/86113146
+20.9139s 7 DRSApp:OnData(): Received Data for: /Node11/drsapp/somethingnew/Node24_86113146/Node24/drsapp/86113146
+20.9139s 7 DRSApp:SendInterest(): Send Interest /Node11/drsapp/anythingnew/Node11_86113147
+20.9254s 5 DRSApp:OnData(): Received Data for: /Node24/drsapp/anythingnew/Node24_86113146
+20.9254s 5 DRSApp:SendInterest(): Send Interest /Node24/drsapp/anythingnew/Node24_86113148
+20.9254s 5 DRSApp:SendInterest(): Send Interest /Node24/drsapp/86113146
+20.9254s 5 DRSApp:OnData(): Received Data for: /Node24/drsapp/86113146
+20.9359s 7 DRSApp:OnInterest(): Received Interest: /Node24/drsapp/anythingnew/Node24_86113148
+20.9446s 0 DRSApp:OnInterest(): Received Interest: /Node11/drsapp/anythingnew/Node11_86113147
+20.9455s 0 DRSApp:OnInterest(): Received Interest: /Node11/drsapp/anythingnew/Node11_86113147
+20.9462s 0 DRSApp:OnData(): Received Data for: /Node24/drsapp/86113146
+21.9361s 5 DRSApp:GenServerPeriod(): MY LEVEL=2, MY SERVER=Node24
+21.9694s 5 DRSApp:GenMessage(): Gen Msg: I'm Node22 at 86113152
+21.9694s 5 DRSApp:SendInterest(): Send Interest /Node24/drsapp/somethingnew/Node22_86113152/Node22/drsapp/86113152
+21.9802s 7 DRSApp:OnInterest(): Received Interest: /Node24/drsapp/somethingnew/Node22_86113152/Node22/drsapp/86113152
+21.9802s 7 DRSApp:SendInterest(): Send Interest /Node11/drsapp/somethingnew/Node24_86113152/Node22/drsapp/86113152
+21.9802s 7 DRSApp:SendData(): Send Data for: /Node24/drsapp/anythingnew/Node24_86113148
+21.9802s 7 DRSApp:SendData(): Send Data for: /Node24/drsapp/somethingnew/Node22_86113152/Node22/drsapp/86113152
+21.9802s 7 DRSApp:SendInterest(): Send Interest /Node22/drsapp/86113152
+21.991s 5 DRSApp:OnData(): Received Data for: /Node24/drsapp/somethingnew/Node22_86113152/Node22/drsapp/86113152
+21.991s 5 DRSApp:SendInterest(): Send Interest /Node24/drsapp/anythingnew/Node24_86113148
+21.9914s 5 DRSApp:OnInterest(): Received Interest: /Node22/drsapp/86113152
+21.9914s 5 DRSApp:SendData(): Send Data for: /Node22/drsapp/86113152
+22.0021s 7 DRSApp:OnData(): Received Data for: /Node22/drsapp/86113152
+22.0124s 0 DRSApp:OnInterest(): Received Interest: /Node11/drsapp/somethingnew/Node24_86113152/Node22/drsapp/86113152
+22.0124s 0 DRSApp:SendData(): Send Data for: /Node11/drsapp/anythingnew/Node11_86113147
+22.0124s 0 DRSApp:SendData(): Send Data for: /Node11/drsapp/somethingnew/Node24_86113152/Node22/drsapp/86113152
+22.0124s 0 DRSApp:SendInterest(): Send Interest /Node22/drsapp/86113152
+22.0134s 5 DRSApp:OnData(): Received Data for: /Node24/drsapp/anythingnew/Node24_86113148
+22.0134s 5 DRSApp:SendInterest(): Send Interest /Node24/drsapp/anythingnew/Node24_86113152
+22.0134s 5 DRSApp:SendInterest(): Send Interest /Node22/drsapp/86113152
+22.0134s 5 DRSApp:OnData(): Received Data for: /Node22/drsapp/86113152
+22.0239s 7 DRSApp:OnInterest(): Received Interest: /Node24/drsapp/anythingnew/Node24_86113152
+22.045s 7 DRSApp:OnData(): Received Data for: /Node11/drsapp/somethingnew/Node24_86113152/Node22/drsapp/86113152
+22.045s 7 DRSApp:SendInterest(): Send Interest /Node11/drsapp/anythingnew/Node11_86113147
+22.0976s 0 DRSApp:OnData(): Received Data for: /Node22/drsapp/86113152
+22.1121s 7 DRSApp:OnData(): Received Data for: /Node11/drsapp/anythingnew/Node11_86113147
+22.1121s 7 DRSApp:SendInterest(): Send Interest /Node11/drsapp/anythingnew/Node11_86113155
+22.1121s 7 DRSApp:SendData(): Send Data for: /Node24/drsapp/anythingnew/Node24_86113152
+22.1121s 7 DRSApp:SendInterest(): Send Interest /Node22/drsapp/86113152
+22.1121s 7 DRSApp:OnData(): Received Data for: /Node22/drsapp/86113152
+22.1245s 5 DRSApp:OnData(): Received Data for: /Node24/drsapp/anythingnew/Node24_86113152
+22.1245s 5 DRSApp:SendInterest(): Send Interest /Node24/drsapp/anythingnew/Node24_86113157
+22.1245s 5 DRSApp:SendInterest(): Send Interest /Node22/drsapp/86113152
+22.1245s 5 DRSApp:OnData(): Received Data for: /Node22/drsapp/86113152
+22.135s 7 DRSApp:OnInterest(): Received Interest: /Node24/drsapp/anythingnew/Node24_86113157
+22.1437s 0 DRSApp:OnInterest(): Received Interest: /Node11/drsapp/anythingnew/Node11_86113155
+22.5442s 0 DRSApp:GenMessage(): Gen Msg: I'm Node11 at 86113158
+22.5442s 0 DRSApp:SendData(): Send Data for: /Node11/drsapp/anythingnew/Node11_86113155
+22.5798s 7 DRSApp:OnData(): Received Data for: /Node11/drsapp/anythingnew/Node11_86113155
+22.5798s 7 DRSApp:SendInterest(): Send Interest /Node11/drsapp/anythingnew/Node11_86113158
+22.5798s 7 DRSApp:SendData(): Send Data for: /Node24/drsapp/anythingnew/Node24_86113157
+22.5798s 7 DRSApp:SendInterest(): Send Interest /Node11/drsapp/86113158
+22.5921s 5 DRSApp:OnData(): Received Data for: /Node24/drsapp/anythingnew/Node24_86113157
+22.5921s 5 DRSApp:SendInterest(): Send Interest /Node24/drsapp/anythingnew/Node24_86113159
+22.5921s 5 DRSApp:SendInterest(): Send Interest /Node11/drsapp/86113158
+22.6027s 7 DRSApp:OnInterest(): Received Interest: /Node24/drsapp/anythingnew/Node24_86113159
+22.6114s 0 DRSApp:OnInterest(): Received Interest: /Node11/drsapp/anythingnew/Node11_86113158
+22.6117s 0 DRSApp:OnInterest(): Received Interest: /Node11/drsapp/86113158
+22.6117s 0 DRSApp:SendData(): Send Data for: /Node11/drsapp/86113158
+22.6435s 7 DRSApp:OnData(): Received Data for: /Node11/drsapp/86113158
+22.6541s 5 DRSApp:OnData(): Received Data for: /Node11/drsapp/86113158
+22.7365s 7 DRSApp:GenServerPeriod(): MY LEVEL=3, MY SERVER=Node11
+22.8452s 7 DRSApp:GenMessage(): Gen Msg: I'm Node24 at 86113161
+22.8452s 7 DRSApp:SendInterest(): Send Interest /Node11/drsapp/somethingnew/Node24_86113161/Node24/drsapp/86113161
+22.8452s 7 DRSApp:SendData(): Send Data for: /Node24/drsapp/anythingnew/Node24_86113159
+22.8571s 5 DRSApp:OnData(): Received Data for: /Node24/drsapp/anythingnew/Node24_86113159
+22.8571s 5 DRSApp:SendInterest(): Send Interest /Node24/drsapp/anythingnew/Node24_86113161
+22.8571s 5 DRSApp:SendInterest(): Send Interest /Node24/drsapp/86113161
+22.8676s 7 DRSApp:OnInterest(): Received Interest: /Node24/drsapp/anythingnew/Node24_86113161
+22.868s 7 DRSApp:OnInterest(): Received Interest: /Node24/drsapp/86113161
+22.868s 7 DRSApp:SendData(): Send Data for: /Node24/drsapp/86113161
+22.8774s 0 DRSApp:OnInterest(): Received Interest: /Node11/drsapp/somethingnew/Node24_86113161/Node24/drsapp/86113161
+22.8774s 0 DRSApp:SendData(): Send Data for: /Node11/drsapp/anythingnew/Node11_86113158
+22.8774s 0 DRSApp:SendData(): Send Data for: /Node11/drsapp/somethingnew/Node24_86113161/Node24/drsapp/86113161
+22.8774s 0 DRSApp:SendInterest(): Send Interest /Node24/drsapp/86113161
+22.8786s 5 DRSApp:OnData(): Received Data for: /Node24/drsapp/86113161
+22.913s 7 DRSApp:OnData(): Received Data for: /Node11/drsapp/anythingnew/Node11_86113158
+22.913s 7 DRSApp:SendInterest(): Send Interest /Node11/drsapp/anythingnew/Node11_86113162
+22.913s 7 DRSApp:SendData(): Send Data for: /Node24/drsapp/anythingnew/Node24_86113161
+22.913s 7 DRSApp:SendInterest(): Send Interest /Node24/drsapp/86113161
+22.913s 7 DRSApp:OnData(): Received Data for: /Node24/drsapp/86113161
+22.9139s 7 DRSApp:OnData(): Received Data for: /Node11/drsapp/somethingnew/Node24_86113161/Node24/drsapp/86113161
+22.9139s 7 DRSApp:SendInterest(): Send Interest /Node11/drsapp/anythingnew/Node11_86113162
+22.9254s 5 DRSApp:OnData(): Received Data for: /Node24/drsapp/anythingnew/Node24_86113161
+22.9254s 5 DRSApp:SendInterest(): Send Interest /Node24/drsapp/anythingnew/Node24_86113163
+22.9254s 5 DRSApp:SendInterest(): Send Interest /Node24/drsapp/86113161
+22.9254s 5 DRSApp:OnData(): Received Data for: /Node24/drsapp/86113161
+22.9359s 7 DRSApp:OnInterest(): Received Interest: /Node24/drsapp/anythingnew/Node24_86113163
+22.9446s 0 DRSApp:OnInterest(): Received Interest: /Node11/drsapp/anythingnew/Node11_86113162
+22.9455s 0 DRSApp:OnInterest(): Received Interest: /Node11/drsapp/anythingnew/Node11_86113162
+22.9462s 0 DRSApp:OnData(): Received Data for: /Node24/drsapp/86113161
+23.8394s 0 DRSApp:GenServerPeriod(): MY LEVEL=5, MY SERVER=
+23.8394s 0 DRSApp:SendInterest(): Send Interest /broadcast/drsapp/anyserver/5/4251346221.897642
+23.8394s 0 DRSApp:GenServerPeriod(): I'll wait for 400 milliseconds for anyserver
+23.8711s 7 DRSApp:OnInterest(): Received Interest: /broadcast/drsapp/anyserver/5/4251346221.897642
+23.8711s 7 DRSApp:ProcessAnyserverInterest(): My Level is 3, received level is 5
+23.8817s 5 DRSApp:OnInterest(): Received Interest: /broadcast/drsapp/anyserver/5/4251346221.897642
+23.8817s 5 DRSApp:ProcessAnyserverInterest(): My Level is 2, received level is 5
+23.9694s 5 DRSApp:GenMessage(): Gen Msg: I'm Node22 at 86113167
+23.9694s 5 DRSApp:SendInterest(): Send Interest /Node24/drsapp/somethingnew/Node22_86113167/Node22/drsapp/86113167
+23.9697s 5 DRSApp:GenServerPeriod(): MY LEVEL=2, MY SERVER=Node24
+23.9802s 7 DRSApp:OnInterest(): Received Interest: /Node24/drsapp/somethingnew/Node22_86113167/Node22/drsapp/86113167
+23.9802s 7 DRSApp:SendInterest(): Send Interest /Node11/drsapp/somethingnew/Node24_86113167/Node22/drsapp/86113167
+23.9802s 7 DRSApp:SendData(): Send Data for: /Node24/drsapp/anythingnew/Node24_86113163
+23.9802s 7 DRSApp:SendData(): Send Data for: /Node24/drsapp/somethingnew/Node22_86113167/Node22/drsapp/86113167
+23.9802s 7 DRSApp:SendInterest(): Send Interest /Node22/drsapp/86113167
+23.991s 5 DRSApp:OnData(): Received Data for: /Node24/drsapp/somethingnew/Node22_86113167/Node22/drsapp/86113167
+23.991s 5 DRSApp:SendInterest(): Send Interest /Node24/drsapp/anythingnew/Node24_86113163
+23.9914s 5 DRSApp:OnInterest(): Received Interest: /Node22/drsapp/86113167
+23.9914s 5 DRSApp:SendData(): Send Data for: /Node22/drsapp/86113167
+24.0021s 7 DRSApp:OnData(): Received Data for: /Node22/drsapp/86113167
+24.0124s 0 DRSApp:OnInterest(): Received Interest: /Node11/drsapp/somethingnew/Node24_86113167/Node22/drsapp/86113167
+24.0124s 0 DRSApp:SendData(): Send Data for: /Node11/drsapp/anythingnew/Node11_86113162
+24.0124s 0 DRSApp:SendData(): Send Data for: /Node11/drsapp/somethingnew/Node24_86113167/Node22/drsapp/86113167
+24.0124s 0 DRSApp:SendInterest(): Send Interest /Node22/drsapp/86113167
+24.0134s 5 DRSApp:OnData(): Received Data for: /Node24/drsapp/anythingnew/Node24_86113163
+24.0134s 5 DRSApp:SendInterest(): Send Interest /Node24/drsapp/anythingnew/Node24_86113167
+24.0134s 5 DRSApp:SendInterest(): Send Interest /Node22/drsapp/86113167
+24.0134s 5 DRSApp:OnData(): Received Data for: /Node22/drsapp/86113167
+24.0239s 7 DRSApp:OnInterest(): Received Interest: /Node24/drsapp/anythingnew/Node24_86113167
+24.045s 7 DRSApp:OnData(): Received Data for: /Node11/drsapp/somethingnew/Node24_86113167/Node22/drsapp/86113167
+24.045s 7 DRSApp:SendInterest(): Send Interest /Node11/drsapp/anythingnew/Node11_86113162
+24.0976s 0 DRSApp:OnData(): Received Data for: /Node22/drsapp/86113167
+24.1121s 7 DRSApp:OnData(): Received Data for: /Node11/drsapp/anythingnew/Node11_86113162
+24.1121s 7 DRSApp:SendInterest(): Send Interest /Node11/drsapp/anythingnew/Node11_86113170
+24.1121s 7 DRSApp:SendData(): Send Data for: /Node24/drsapp/anythingnew/Node24_86113167
+24.1121s 7 DRSApp:SendInterest(): Send Interest /Node22/drsapp/86113167
+24.1121s 7 DRSApp:OnData(): Received Data for: /Node22/drsapp/86113167
+24.1245s 5 DRSApp:OnData(): Received Data for: /Node24/drsapp/anythingnew/Node24_86113167
+24.1245s 5 DRSApp:SendInterest(): Send Interest /Node24/drsapp/anythingnew/Node24_86113172
+24.1245s 5 DRSApp:SendInterest(): Send Interest /Node22/drsapp/86113167
+24.1245s 5 DRSApp:OnData(): Received Data for: /Node22/drsapp/86113167
+24.135s 7 DRSApp:OnInterest(): Received Interest: /Node24/drsapp/anythingnew/Node24_86113172
+24.1437s 0 DRSApp:OnInterest(): Received Interest: /Node11/drsapp/anythingnew/Node11_86113170
+24.2394s 0 DRSApp:AddLevel(): Not received data, so my level ++ to 6
+24.5442s 0 DRSApp:GenMessage(): Gen Msg: I'm Node11 at 86113174
+24.5442s 0 DRSApp:SendData(): Send Data for: /Node11/drsapp/anythingnew/Node11_86113170
+24.5798s 7 DRSApp:OnData(): Received Data for: /Node11/drsapp/anythingnew/Node11_86113170
+24.5798s 7 DRSApp:SendInterest(): Send Interest /Node11/drsapp/anythingnew/Node11_86113174
+24.5798s 7 DRSApp:SendData(): Send Data for: /Node24/drsapp/anythingnew/Node24_86113172
+24.5798s 7 DRSApp:SendInterest(): Send Interest /Node11/drsapp/86113174
+24.5921s 5 DRSApp:OnData(): Received Data for: /Node24/drsapp/anythingnew/Node24_86113172
+24.5921s 5 DRSApp:SendInterest(): Send Interest /Node24/drsapp/anythingnew/Node24_86113174
+24.5921s 5 DRSApp:SendInterest(): Send Interest /Node11/drsapp/86113174
+24.6027s 7 DRSApp:OnInterest(): Received Interest: /Node24/drsapp/anythingnew/Node24_86113174
+24.6114s 0 DRSApp:OnInterest(): Received Interest: /Node11/drsapp/anythingnew/Node11_86113174
+24.6117s 0 DRSApp:OnInterest(): Received Interest: /Node11/drsapp/86113174
+24.6117s 0 DRSApp:SendData(): Send Data for: /Node11/drsapp/86113174
+24.6435s 7 DRSApp:OnData(): Received Data for: /Node11/drsapp/86113174
+24.6541s 5 DRSApp:OnData(): Received Data for: /Node11/drsapp/86113174
+24.8452s 7 DRSApp:GenMessage(): Gen Msg: I'm Node24 at 86113176
+24.8452s 7 DRSApp:SendInterest(): Send Interest /Node11/drsapp/somethingnew/Node24_86113176/Node24/drsapp/86113176
+24.8452s 7 DRSApp:SendData(): Send Data for: /Node24/drsapp/anythingnew/Node24_86113174
+24.8571s 5 DRSApp:OnData(): Received Data for: /Node24/drsapp/anythingnew/Node24_86113174
+24.8571s 5 DRSApp:SendInterest(): Send Interest /Node24/drsapp/anythingnew/Node24_86113176
+24.8571s 5 DRSApp:SendInterest(): Send Interest /Node24/drsapp/86113176
+24.8676s 7 DRSApp:OnInterest(): Received Interest: /Node24/drsapp/anythingnew/Node24_86113176
+24.868s 7 DRSApp:OnInterest(): Received Interest: /Node24/drsapp/86113176
+24.868s 7 DRSApp:SendData(): Send Data for: /Node24/drsapp/86113176
+24.8774s 0 DRSApp:OnInterest(): Received Interest: /Node11/drsapp/somethingnew/Node24_86113176/Node24/drsapp/86113176
+24.8774s 0 DRSApp:SendData(): Send Data for: /Node11/drsapp/anythingnew/Node11_86113174
+24.8774s 0 DRSApp:SendData(): Send Data for: /Node11/drsapp/somethingnew/Node24_86113176/Node24/drsapp/86113176
+24.8774s 0 DRSApp:SendInterest(): Send Interest /Node24/drsapp/86113176
+24.8786s 5 DRSApp:OnData(): Received Data for: /Node24/drsapp/86113176
+24.913s 7 DRSApp:OnData(): Received Data for: /Node11/drsapp/anythingnew/Node11_86113174
+24.913s 7 DRSApp:SendInterest(): Send Interest /Node11/drsapp/anythingnew/Node11_86113177
+24.913s 7 DRSApp:SendData(): Send Data for: /Node24/drsapp/anythingnew/Node24_86113176
+24.913s 7 DRSApp:SendInterest(): Send Interest /Node24/drsapp/86113176
+24.913s 7 DRSApp:OnData(): Received Data for: /Node24/drsapp/86113176
+24.9139s 7 DRSApp:OnData(): Received Data for: /Node11/drsapp/somethingnew/Node24_86113176/Node24/drsapp/86113176
+24.9139s 7 DRSApp:SendInterest(): Send Interest /Node11/drsapp/anythingnew/Node11_86113177
+24.9254s 5 DRSApp:OnData(): Received Data for: /Node24/drsapp/anythingnew/Node24_86113176
+24.9254s 5 DRSApp:SendInterest(): Send Interest /Node24/drsapp/anythingnew/Node24_86113178
+24.9254s 5 DRSApp:SendInterest(): Send Interest /Node24/drsapp/86113176
+24.9254s 5 DRSApp:OnData(): Received Data for: /Node24/drsapp/86113176
+24.9359s 7 DRSApp:OnInterest(): Received Interest: /Node24/drsapp/anythingnew/Node24_86113178
+24.9446s 0 DRSApp:OnInterest(): Received Interest: /Node11/drsapp/anythingnew/Node11_86113177
+24.9455s 0 DRSApp:OnInterest(): Received Interest: /Node11/drsapp/anythingnew/Node11_86113177
+24.9462s 0 DRSApp:OnData(): Received Data for: /Node24/drsapp/86113176
+25.0896s 7 DRSApp:GenServerPeriod(): MY LEVEL=3, MY SERVER=Node11
+25.9694s 5 DRSApp:GenMessage(): Gen Msg: I'm Node22 at 86113182
+25.9694s 5 DRSApp:SendInterest(): Send Interest /Node24/drsapp/somethingnew/Node22_86113182/Node22/drsapp/86113182
+25.9802s 7 DRSApp:OnInterest(): Received Interest: /Node24/drsapp/somethingnew/Node22_86113182/Node22/drsapp/86113182
+25.9802s 7 DRSApp:SendInterest(): Send Interest /Node11/drsapp/somethingnew/Node24_86113182/Node22/drsapp/86113182
+25.9802s 7 DRSApp:SendData(): Send Data for: /Node24/drsapp/anythingnew/Node24_86113178
+25.9802s 7 DRSApp:SendData(): Send Data for: /Node24/drsapp/somethingnew/Node22_86113182/Node22/drsapp/86113182
+25.9802s 7 DRSApp:SendInterest(): Send Interest /Node22/drsapp/86113182
+25.991s 5 DRSApp:OnData(): Received Data for: /Node24/drsapp/somethingnew/Node22_86113182/Node22/drsapp/86113182
+25.991s 5 DRSApp:SendInterest(): Send Interest /Node24/drsapp/anythingnew/Node24_86113178
+25.9914s 5 DRSApp:OnInterest(): Received Interest: /Node22/drsapp/86113182
+25.9914s 5 DRSApp:SendData(): Send Data for: /Node22/drsapp/86113182
+26.0021s 7 DRSApp:OnData(): Received Data for: /Node22/drsapp/86113182
+26.0124s 0 DRSApp:OnInterest(): Received Interest: /Node11/drsapp/somethingnew/Node24_86113182/Node22/drsapp/86113182
+26.0124s 0 DRSApp:SendData(): Send Data for: /Node11/drsapp/anythingnew/Node11_86113177
+26.0124s 0 DRSApp:SendData(): Send Data for: /Node11/drsapp/somethingnew/Node24_86113182/Node22/drsapp/86113182
+26.0124s 0 DRSApp:SendInterest(): Send Interest /Node22/drsapp/86113182
+26.0134s 5 DRSApp:OnData(): Received Data for: /Node24/drsapp/anythingnew/Node24_86113178
+26.0134s 5 DRSApp:SendInterest(): Send Interest /Node24/drsapp/anythingnew/Node24_86113182
+26.0134s 5 DRSApp:SendInterest(): Send Interest /Node22/drsapp/86113182
+26.0134s 5 DRSApp:OnData(): Received Data for: /Node22/drsapp/86113182
+26.0239s 7 DRSApp:OnInterest(): Received Interest: /Node24/drsapp/anythingnew/Node24_86113182
+26.045s 7 DRSApp:OnData(): Received Data for: /Node11/drsapp/somethingnew/Node24_86113182/Node22/drsapp/86113182
+26.045s 7 DRSApp:SendInterest(): Send Interest /Node11/drsapp/anythingnew/Node11_86113177
+26.0976s 0 DRSApp:OnData(): Received Data for: /Node22/drsapp/86113182
+26.1121s 7 DRSApp:OnData(): Received Data for: /Node11/drsapp/anythingnew/Node11_86113177
+26.1121s 7 DRSApp:SendInterest(): Send Interest /Node11/drsapp/anythingnew/Node11_86113185
+26.1121s 7 DRSApp:SendData(): Send Data for: /Node24/drsapp/anythingnew/Node24_86113182
+26.1121s 7 DRSApp:SendInterest(): Send Interest /Node22/drsapp/86113182
+26.1121s 7 DRSApp:OnData(): Received Data for: /Node22/drsapp/86113182
+26.1245s 5 DRSApp:OnData(): Received Data for: /Node24/drsapp/anythingnew/Node24_86113182
+26.1245s 5 DRSApp:SendInterest(): Send Interest /Node24/drsapp/anythingnew/Node24_86113187
+26.1245s 5 DRSApp:SendInterest(): Send Interest /Node22/drsapp/86113182
+26.1245s 5 DRSApp:OnData(): Received Data for: /Node22/drsapp/86113182
+26.135s 7 DRSApp:OnInterest(): Received Interest: /Node24/drsapp/anythingnew/Node24_86113187
+26.1437s 0 DRSApp:OnInterest(): Received Interest: /Node11/drsapp/anythingnew/Node11_86113185
+26.5442s 0 DRSApp:GenMessage(): Gen Msg: I'm Node11 at 86113188
+26.5442s 0 DRSApp:SendData(): Send Data for: /Node11/drsapp/anythingnew/Node11_86113185
+26.5751s 5 DRSApp:GenServerPeriod(): MY LEVEL=2, MY SERVER=Node24
+26.5798s 7 DRSApp:OnData(): Received Data for: /Node11/drsapp/anythingnew/Node11_86113185
+26.5798s 7 DRSApp:SendInterest(): Send Interest /Node11/drsapp/anythingnew/Node11_86113188
+26.5798s 7 DRSApp:SendData(): Send Data for: /Node24/drsapp/anythingnew/Node24_86113187
+26.5798s 7 DRSApp:SendInterest(): Send Interest /Node11/drsapp/86113188
+26.5921s 5 DRSApp:OnData(): Received Data for: /Node24/drsapp/anythingnew/Node24_86113187
+26.5921s 5 DRSApp:SendInterest(): Send Interest /Node24/drsapp/anythingnew/Node24_86113189
+26.5921s 5 DRSApp:SendInterest(): Send Interest /Node11/drsapp/86113188
+26.6027s 7 DRSApp:OnInterest(): Received Interest: /Node24/drsapp/anythingnew/Node24_86113189
+26.6114s 0 DRSApp:OnInterest(): Received Interest: /Node11/drsapp/anythingnew/Node11_86113188
+26.6117s 0 DRSApp:OnInterest(): Received Interest: /Node11/drsapp/86113188
+26.6117s 0 DRSApp:SendData(): Send Data for: /Node11/drsapp/86113188
+26.6435s 7 DRSApp:OnData(): Received Data for: /Node11/drsapp/86113188
+26.6541s 5 DRSApp:OnData(): Received Data for: /Node11/drsapp/86113188
+26.8452s 7 DRSApp:GenMessage(): Gen Msg: I'm Node24 at 86113191
+26.8452s 7 DRSApp:SendInterest(): Send Interest /Node11/drsapp/somethingnew/Node24_86113191/Node24/drsapp/86113191
+26.8452s 7 DRSApp:SendData(): Send Data for: /Node24/drsapp/anythingnew/Node24_86113189
+26.8571s 5 DRSApp:OnData(): Received Data for: /Node24/drsapp/anythingnew/Node24_86113189
+26.8571s 5 DRSApp:SendInterest(): Send Interest /Node24/drsapp/anythingnew/Node24_86113191
+26.8571s 5 DRSApp:SendInterest(): Send Interest /Node24/drsapp/86113191
+26.8676s 7 DRSApp:OnInterest(): Received Interest: /Node24/drsapp/anythingnew/Node24_86113191
+26.868s 7 DRSApp:OnInterest(): Received Interest: /Node24/drsapp/86113191
+26.868s 7 DRSApp:SendData(): Send Data for: /Node24/drsapp/86113191
+26.8774s 0 DRSApp:OnInterest(): Received Interest: /Node11/drsapp/somethingnew/Node24_86113191/Node24/drsapp/86113191
+26.8774s 0 DRSApp:SendData(): Send Data for: /Node11/drsapp/anythingnew/Node11_86113188
+26.8774s 0 DRSApp:SendData(): Send Data for: /Node11/drsapp/somethingnew/Node24_86113191/Node24/drsapp/86113191
+26.8774s 0 DRSApp:SendInterest(): Send Interest /Node24/drsapp/86113191
+26.8786s 5 DRSApp:OnData(): Received Data for: /Node24/drsapp/86113191
+26.913s 7 DRSApp:OnData(): Received Data for: /Node11/drsapp/anythingnew/Node11_86113188
+26.913s 7 DRSApp:SendInterest(): Send Interest /Node11/drsapp/anythingnew/Node11_86113192
+26.913s 7 DRSApp:SendData(): Send Data for: /Node24/drsapp/anythingnew/Node24_86113191
+26.913s 7 DRSApp:SendInterest(): Send Interest /Node24/drsapp/86113191
+26.913s 7 DRSApp:OnData(): Received Data for: /Node24/drsapp/86113191
+26.9139s 7 DRSApp:OnData(): Received Data for: /Node11/drsapp/somethingnew/Node24_86113191/Node24/drsapp/86113191
+26.9139s 7 DRSApp:SendInterest(): Send Interest /Node11/drsapp/anythingnew/Node11_86113192
+26.9254s 5 DRSApp:OnData(): Received Data for: /Node24/drsapp/anythingnew/Node24_86113191
+26.9254s 5 DRSApp:SendInterest(): Send Interest /Node24/drsapp/anythingnew/Node24_86113193
+26.9254s 5 DRSApp:SendInterest(): Send Interest /Node24/drsapp/86113191
+26.9254s 5 DRSApp:OnData(): Received Data for: /Node24/drsapp/86113191
+26.9359s 7 DRSApp:OnInterest(): Received Interest: /Node24/drsapp/anythingnew/Node24_86113193
+26.9446s 0 DRSApp:OnInterest(): Received Interest: /Node11/drsapp/anythingnew/Node11_86113192
+26.9455s 0 DRSApp:OnInterest(): Received Interest: /Node11/drsapp/anythingnew/Node11_86113192
+26.9462s 0 DRSApp:OnData(): Received Data for: /Node24/drsapp/86113191
+27.1652s 7 DRSApp:GenServerPeriod(): MY LEVEL=3, MY SERVER=Node11
+27.9694s 5 DRSApp:GenMessage(): Gen Msg: I'm Node22 at 86113196
+27.9694s 5 DRSApp:SendInterest(): Send Interest /Node24/drsapp/somethingnew/Node22_86113196/Node22/drsapp/86113196
+27.9802s 7 DRSApp:OnInterest(): Received Interest: /Node24/drsapp/somethingnew/Node22_86113196/Node22/drsapp/86113196
+27.9802s 7 DRSApp:SendInterest(): Send Interest /Node11/drsapp/somethingnew/Node24_86113197/Node22/drsapp/86113196
+27.9802s 7 DRSApp:SendData(): Send Data for: /Node24/drsapp/anythingnew/Node24_86113193
+27.9802s 7 DRSApp:SendData(): Send Data for: /Node24/drsapp/somethingnew/Node22_86113196/Node22/drsapp/86113196
+27.9802s 7 DRSApp:SendInterest(): Send Interest /Node22/drsapp/86113196
+27.991s 5 DRSApp:OnData(): Received Data for: /Node24/drsapp/somethingnew/Node22_86113196/Node22/drsapp/86113196
+27.991s 5 DRSApp:SendInterest(): Send Interest /Node24/drsapp/anythingnew/Node24_86113193
+27.9914s 5 DRSApp:OnInterest(): Received Interest: /Node22/drsapp/86113196
+27.9914s 5 DRSApp:SendData(): Send Data for: /Node22/drsapp/86113196
+28.0021s 7 DRSApp:OnData(): Received Data for: /Node22/drsapp/86113196
+28.0124s 0 DRSApp:OnInterest(): Received Interest: /Node11/drsapp/somethingnew/Node24_86113197/Node22/drsapp/86113196
+28.0124s 0 DRSApp:SendData(): Send Data for: /Node11/drsapp/anythingnew/Node11_86113192
+28.0124s 0 DRSApp:SendData(): Send Data for: /Node11/drsapp/somethingnew/Node24_86113197/Node22/drsapp/86113196
+28.0124s 0 DRSApp:SendInterest(): Send Interest /Node22/drsapp/86113196
+28.0134s 5 DRSApp:OnData(): Received Data for: /Node24/drsapp/anythingnew/Node24_86113193
+28.0134s 5 DRSApp:SendInterest(): Send Interest /Node24/drsapp/anythingnew/Node24_86113197
+28.0134s 5 DRSApp:SendInterest(): Send Interest /Node22/drsapp/86113196
+28.0134s 5 DRSApp:OnData(): Received Data for: /Node22/drsapp/86113196
+28.0239s 7 DRSApp:OnInterest(): Received Interest: /Node24/drsapp/anythingnew/Node24_86113197
+28.045s 7 DRSApp:OnData(): Received Data for: /Node11/drsapp/somethingnew/Node24_86113197/Node22/drsapp/86113196
+28.045s 7 DRSApp:SendInterest(): Send Interest /Node11/drsapp/anythingnew/Node11_86113192
+28.0976s 0 DRSApp:OnData(): Received Data for: /Node22/drsapp/86113196
+28.1121s 7 DRSApp:OnData(): Received Data for: /Node11/drsapp/anythingnew/Node11_86113192
+28.1121s 7 DRSApp:SendInterest(): Send Interest /Node11/drsapp/anythingnew/Node11_86113200
+28.1121s 7 DRSApp:SendData(): Send Data for: /Node24/drsapp/anythingnew/Node24_86113197
+28.1121s 7 DRSApp:SendInterest(): Send Interest /Node22/drsapp/86113196
+28.1121s 7 DRSApp:OnData(): Received Data for: /Node22/drsapp/86113196
+28.1245s 5 DRSApp:OnData(): Received Data for: /Node24/drsapp/anythingnew/Node24_86113197
+28.1245s 5 DRSApp:SendInterest(): Send Interest /Node24/drsapp/anythingnew/Node24_86113202
+28.1245s 5 DRSApp:SendInterest(): Send Interest /Node22/drsapp/86113196
+28.1245s 5 DRSApp:OnData(): Received Data for: /Node22/drsapp/86113196
+28.135s 7 DRSApp:OnInterest(): Received Interest: /Node24/drsapp/anythingnew/Node24_86113202
+28.1437s 0 DRSApp:OnInterest(): Received Interest: /Node11/drsapp/anythingnew/Node11_86113200
+28.4035s 0 DRSApp:GenServerPeriod(): MY LEVEL=6, MY SERVER=
+28.5442s 0 DRSApp:GenMessage(): Gen Msg: I'm Node11 at 86113203
+28.5442s 0 DRSApp:SendData(): Send Data for: /Node11/drsapp/anythingnew/Node11_86113200
+28.5798s 7 DRSApp:OnData(): Received Data for: /Node11/drsapp/anythingnew/Node11_86113200
+28.5798s 7 DRSApp:SendInterest(): Send Interest /Node11/drsapp/anythingnew/Node11_86113203
+28.5798s 7 DRSApp:SendData(): Send Data for: /Node24/drsapp/anythingnew/Node24_86113202
+28.5798s 7 DRSApp:SendInterest(): Send Interest /Node11/drsapp/86113203
+28.5921s 5 DRSApp:OnData(): Received Data for: /Node24/drsapp/anythingnew/Node24_86113202
+28.5921s 5 DRSApp:SendInterest(): Send Interest /Node24/drsapp/anythingnew/Node24_86113203
+28.5921s 5 DRSApp:SendInterest(): Send Interest /Node11/drsapp/86113203
+28.6027s 7 DRSApp:OnInterest(): Received Interest: /Node24/drsapp/anythingnew/Node24_86113203
+28.6114s 0 DRSApp:OnInterest(): Received Interest: /Node11/drsapp/anythingnew/Node11_86113203
+28.6117s 0 DRSApp:OnInterest(): Received Interest: /Node11/drsapp/86113203
+28.6117s 0 DRSApp:SendData(): Send Data for: /Node11/drsapp/86113203
+28.6435s 7 DRSApp:OnData(): Received Data for: /Node11/drsapp/86113203
+28.6541s 5 DRSApp:OnData(): Received Data for: /Node11/drsapp/86113203
+28.8452s 7 DRSApp:GenMessage(): Gen Msg: I'm Node24 at 86113205
+28.8452s 7 DRSApp:SendInterest(): Send Interest /Node11/drsapp/somethingnew/Node24_86113205/Node24/drsapp/86113205
+28.8452s 7 DRSApp:SendData(): Send Data for: /Node24/drsapp/anythingnew/Node24_86113203
+28.8571s 5 DRSApp:OnData(): Received Data for: /Node24/drsapp/anythingnew/Node24_86113203
+28.8571s 5 DRSApp:SendInterest(): Send Interest /Node24/drsapp/anythingnew/Node24_86113205
+28.8571s 5 DRSApp:SendInterest(): Send Interest /Node24/drsapp/86113205
+28.8676s 7 DRSApp:OnInterest(): Received Interest: /Node24/drsapp/anythingnew/Node24_86113205
+28.868s 7 DRSApp:OnInterest(): Received Interest: /Node24/drsapp/86113205
+28.868s 7 DRSApp:SendData(): Send Data for: /Node24/drsapp/86113205
+28.8774s 0 DRSApp:OnInterest(): Received Interest: /Node11/drsapp/somethingnew/Node24_86113205/Node24/drsapp/86113205
+28.8774s 0 DRSApp:SendData(): Send Data for: /Node11/drsapp/anythingnew/Node11_86113203
+28.8774s 0 DRSApp:SendData(): Send Data for: /Node11/drsapp/somethingnew/Node24_86113205/Node24/drsapp/86113205
+28.8774s 0 DRSApp:SendInterest(): Send Interest /Node24/drsapp/86113205
+28.8786s 5 DRSApp:OnData(): Received Data for: /Node24/drsapp/86113205
+28.913s 7 DRSApp:OnData(): Received Data for: /Node11/drsapp/anythingnew/Node11_86113203
+28.913s 7 DRSApp:SendInterest(): Send Interest /Node11/drsapp/anythingnew/Node11_86113207
+28.913s 7 DRSApp:SendData(): Send Data for: /Node24/drsapp/anythingnew/Node24_86113205
+28.913s 7 DRSApp:SendInterest(): Send Interest /Node24/drsapp/86113205
+28.913s 7 DRSApp:OnData(): Received Data for: /Node24/drsapp/86113205
+28.9139s 7 DRSApp:OnData(): Received Data for: /Node11/drsapp/somethingnew/Node24_86113205/Node24/drsapp/86113205
+28.9139s 7 DRSApp:SendInterest(): Send Interest /Node11/drsapp/anythingnew/Node11_86113207
+28.9254s 5 DRSApp:OnData(): Received Data for: /Node24/drsapp/anythingnew/Node24_86113205
+28.9254s 5 DRSApp:SendInterest(): Send Interest /Node24/drsapp/anythingnew/Node24_86113207
+28.9254s 5 DRSApp:SendInterest(): Send Interest /Node24/drsapp/86113205
+28.9254s 5 DRSApp:OnData(): Received Data for: /Node24/drsapp/86113205
+28.9359s 7 DRSApp:OnInterest(): Received Interest: /Node24/drsapp/anythingnew/Node24_86113207
+28.9446s 0 DRSApp:OnInterest(): Received Interest: /Node11/drsapp/anythingnew/Node11_86113207
+28.9455s 0 DRSApp:OnInterest(): Received Interest: /Node11/drsapp/anythingnew/Node11_86113207
+28.9462s 0 DRSApp:OnData(): Received Data for: /Node24/drsapp/86113205
+29.764s 5 DRSApp:GenServerPeriod(): MY LEVEL=2, MY SERVER=Node24
+29.9694s 5 DRSApp:GenMessage(): Gen Msg: I'm Node22 at 86113211
+29.9694s 5 DRSApp:SendInterest(): Send Interest /Node24/drsapp/somethingnew/Node22_86113211/Node22/drsapp/86113211
+29.9802s 7 DRSApp:OnInterest(): Received Interest: /Node24/drsapp/somethingnew/Node22_86113211/Node22/drsapp/86113211
+29.9802s 7 DRSApp:SendInterest(): Send Interest /Node11/drsapp/somethingnew/Node24_86113211/Node22/drsapp/86113211
+29.9802s 7 DRSApp:SendData(): Send Data for: /Node24/drsapp/anythingnew/Node24_86113207
+29.9802s 7 DRSApp:SendData(): Send Data for: /Node24/drsapp/somethingnew/Node22_86113211/Node22/drsapp/86113211
+29.9802s 7 DRSApp:SendInterest(): Send Interest /Node22/drsapp/86113211
+29.991s 5 DRSApp:OnData(): Received Data for: /Node24/drsapp/somethingnew/Node22_86113211/Node22/drsapp/86113211
+29.991s 5 DRSApp:SendInterest(): Send Interest /Node24/drsapp/anythingnew/Node24_86113207
+29.9914s 5 DRSApp:OnInterest(): Received Interest: /Node22/drsapp/86113211
+29.9914s 5 DRSApp:SendData(): Send Data for: /Node22/drsapp/86113211
+30.0021s 7 DRSApp:OnData(): Received Data for: /Node22/drsapp/86113211
+30.0124s 0 DRSApp:OnInterest(): Received Interest: /Node11/drsapp/somethingnew/Node24_86113211/Node22/drsapp/86113211
+30.0124s 0 DRSApp:SendData(): Send Data for: /Node11/drsapp/anythingnew/Node11_86113207
+30.0124s 0 DRSApp:SendData(): Send Data for: /Node11/drsapp/somethingnew/Node24_86113211/Node22/drsapp/86113211
+30.0124s 0 DRSApp:SendInterest(): Send Interest /Node22/drsapp/86113211
+30.0134s 5 DRSApp:OnData(): Received Data for: /Node24/drsapp/anythingnew/Node24_86113207
+30.0134s 5 DRSApp:SendInterest(): Send Interest /Node24/drsapp/anythingnew/Node24_86113211
+30.0134s 5 DRSApp:SendInterest(): Send Interest /Node22/drsapp/86113211
+30.0134s 5 DRSApp:OnData(): Received Data for: /Node22/drsapp/86113211
+30.0239s 7 DRSApp:OnInterest(): Received Interest: /Node24/drsapp/anythingnew/Node24_86113211
+30.045s 7 DRSApp:OnData(): Received Data for: /Node11/drsapp/somethingnew/Node24_86113211/Node22/drsapp/86113211
+30.045s 7 DRSApp:SendInterest(): Send Interest /Node11/drsapp/anythingnew/Node11_86113207
+30.0976s 0 DRSApp:OnData(): Received Data for: /Node22/drsapp/86113211
+30.1121s 7 DRSApp:OnData(): Received Data for: /Node11/drsapp/anythingnew/Node11_86113207
+30.1121s 7 DRSApp:SendInterest(): Send Interest /Node11/drsapp/anythingnew/Node11_86113214
+30.1121s 7 DRSApp:SendData(): Send Data for: /Node24/drsapp/anythingnew/Node24_86113211
+30.1121s 7 DRSApp:SendInterest(): Send Interest /Node22/drsapp/86113211
+30.1121s 7 DRSApp:OnData(): Received Data for: /Node22/drsapp/86113211
+30.1245s 5 DRSApp:OnData(): Received Data for: /Node24/drsapp/anythingnew/Node24_86113211
+30.1245s 5 DRSApp:SendInterest(): Send Interest /Node24/drsapp/anythingnew/Node24_86113216
+30.1245s 5 DRSApp:SendInterest(): Send Interest /Node22/drsapp/86113211
+30.1245s 5 DRSApp:OnData(): Received Data for: /Node22/drsapp/86113211
+30.135s 7 DRSApp:OnInterest(): Received Interest: /Node24/drsapp/anythingnew/Node24_86113216
+30.1437s 0 DRSApp:OnInterest(): Received Interest: /Node11/drsapp/anythingnew/Node11_86113214
+30.505s 7 DRSApp:GenServerPeriod(): MY LEVEL=3, MY SERVER=Node11
+30.5442s 0 DRSApp:GenMessage(): Gen Msg: I'm Node11 at 86113218
+30.5442s 0 DRSApp:SendData(): Send Data for: /Node11/drsapp/anythingnew/Node11_86113214
+30.5798s 7 DRSApp:OnData(): Received Data for: /Node11/drsapp/anythingnew/Node11_86113214
+30.5798s 7 DRSApp:SendInterest(): Send Interest /Node11/drsapp/anythingnew/Node11_86113218
+30.5798s 7 DRSApp:SendData(): Send Data for: /Node24/drsapp/anythingnew/Node24_86113216
+30.5798s 7 DRSApp:SendInterest(): Send Interest /Node11/drsapp/86113218
+30.5921s 5 DRSApp:OnData(): Received Data for: /Node24/drsapp/anythingnew/Node24_86113216
+30.5921s 5 DRSApp:SendInterest(): Send Interest /Node24/drsapp/anythingnew/Node24_86113218
+30.5921s 5 DRSApp:SendInterest(): Send Interest /Node11/drsapp/86113218
+30.6027s 7 DRSApp:OnInterest(): Received Interest: /Node24/drsapp/anythingnew/Node24_86113218
+30.6114s 0 DRSApp:OnInterest(): Received Interest: /Node11/drsapp/anythingnew/Node11_86113218
+30.6117s 0 DRSApp:OnInterest(): Received Interest: /Node11/drsapp/86113218
+30.6117s 0 DRSApp:SendData(): Send Data for: /Node11/drsapp/86113218
+30.6435s 7 DRSApp:OnData(): Received Data for: /Node11/drsapp/86113218
+30.6541s 5 DRSApp:OnData(): Received Data for: /Node11/drsapp/86113218
+30.8452s 7 DRSApp:GenMessage(): Gen Msg: I'm Node24 at 86113220
+30.8452s 7 DRSApp:SendInterest(): Send Interest /Node11/drsapp/somethingnew/Node24_86113220/Node24/drsapp/86113220
+30.8452s 7 DRSApp:SendData(): Send Data for: /Node24/drsapp/anythingnew/Node24_86113218
+30.8571s 5 DRSApp:OnData(): Received Data for: /Node24/drsapp/anythingnew/Node24_86113218
+30.8571s 5 DRSApp:SendInterest(): Send Interest /Node24/drsapp/anythingnew/Node24_86113220
+30.8571s 5 DRSApp:SendInterest(): Send Interest /Node24/drsapp/86113220
+30.8676s 7 DRSApp:OnInterest(): Received Interest: /Node24/drsapp/anythingnew/Node24_86113220
+30.868s 7 DRSApp:OnInterest(): Received Interest: /Node24/drsapp/86113220
+30.868s 7 DRSApp:SendData(): Send Data for: /Node24/drsapp/86113220
+30.8774s 0 DRSApp:OnInterest(): Received Interest: /Node11/drsapp/somethingnew/Node24_86113220/Node24/drsapp/86113220
+30.8774s 0 DRSApp:SendData(): Send Data for: /Node11/drsapp/anythingnew/Node11_86113218
+30.8774s 0 DRSApp:SendData(): Send Data for: /Node11/drsapp/somethingnew/Node24_86113220/Node24/drsapp/86113220
+30.8774s 0 DRSApp:SendInterest(): Send Interest /Node24/drsapp/86113220
+30.8786s 5 DRSApp:OnData(): Received Data for: /Node24/drsapp/86113220
+30.913s 7 DRSApp:OnData(): Received Data for: /Node11/drsapp/anythingnew/Node11_86113218
+30.913s 7 DRSApp:SendInterest(): Send Interest /Node11/drsapp/anythingnew/Node11_86113221
+30.913s 7 DRSApp:SendData(): Send Data for: /Node24/drsapp/anythingnew/Node24_86113220
+30.913s 7 DRSApp:SendInterest(): Send Interest /Node24/drsapp/86113220
+30.913s 7 DRSApp:OnData(): Received Data for: /Node24/drsapp/86113220
+30.9139s 7 DRSApp:OnData(): Received Data for: /Node11/drsapp/somethingnew/Node24_86113220/Node24/drsapp/86113220
+30.9139s 7 DRSApp:SendInterest(): Send Interest /Node11/drsapp/anythingnew/Node11_86113221
+30.9254s 5 DRSApp:OnData(): Received Data for: /Node24/drsapp/anythingnew/Node24_86113220
+30.9254s 5 DRSApp:SendInterest(): Send Interest /Node24/drsapp/anythingnew/Node24_86113222
+30.9254s 5 DRSApp:SendInterest(): Send Interest /Node24/drsapp/86113220
+30.9254s 5 DRSApp:OnData(): Received Data for: /Node24/drsapp/86113220
+30.9359s 7 DRSApp:OnInterest(): Received Interest: /Node24/drsapp/anythingnew/Node24_86113222
+30.9446s 0 DRSApp:OnInterest(): Received Interest: /Node11/drsapp/anythingnew/Node11_86113221
+30.9455s 0 DRSApp:OnInterest(): Received Interest: /Node11/drsapp/anythingnew/Node11_86113221
+30.9462s 0 DRSApp:OnData(): Received Data for: /Node24/drsapp/86113220
+31.9694s 5 DRSApp:GenMessage(): Gen Msg: I'm Node22 at 86113226
+31.9694s 5 DRSApp:SendInterest(): Send Interest /Node24/drsapp/somethingnew/Node22_86113226/Node22/drsapp/86113226
+31.9802s 7 DRSApp:OnInterest(): Received Interest: /Node24/drsapp/somethingnew/Node22_86113226/Node22/drsapp/86113226
+31.9802s 7 DRSApp:SendInterest(): Send Interest /Node11/drsapp/somethingnew/Node24_86113226/Node22/drsapp/86113226
+31.9802s 7 DRSApp:SendData(): Send Data for: /Node24/drsapp/anythingnew/Node24_86113222
+31.9802s 7 DRSApp:SendData(): Send Data for: /Node24/drsapp/somethingnew/Node22_86113226/Node22/drsapp/86113226
+31.9802s 7 DRSApp:SendInterest(): Send Interest /Node22/drsapp/86113226
+31.991s 5 DRSApp:OnData(): Received Data for: /Node24/drsapp/somethingnew/Node22_86113226/Node22/drsapp/86113226
+31.991s 5 DRSApp:SendInterest(): Send Interest /Node24/drsapp/anythingnew/Node24_86113222
+31.9914s 5 DRSApp:OnInterest(): Received Interest: /Node22/drsapp/86113226
+31.9914s 5 DRSApp:SendData(): Send Data for: /Node22/drsapp/86113226
+32.0021s 7 DRSApp:OnData(): Received Data for: /Node22/drsapp/86113226
+32.0124s 0 DRSApp:OnInterest(): Received Interest: /Node11/drsapp/somethingnew/Node24_86113226/Node22/drsapp/86113226
+32.0124s 0 DRSApp:SendData(): Send Data for: /Node11/drsapp/anythingnew/Node11_86113221
+32.0124s 0 DRSApp:SendData(): Send Data for: /Node11/drsapp/somethingnew/Node24_86113226/Node22/drsapp/86113226
+32.0124s 0 DRSApp:SendInterest(): Send Interest /Node22/drsapp/86113226
+32.0134s 5 DRSApp:OnData(): Received Data for: /Node24/drsapp/anythingnew/Node24_86113222
+32.0134s 5 DRSApp:SendInterest(): Send Interest /Node24/drsapp/anythingnew/Node24_86113226
+32.0134s 5 DRSApp:SendInterest(): Send Interest /Node22/drsapp/86113226
+32.0134s 5 DRSApp:OnData(): Received Data for: /Node22/drsapp/86113226
+32.0239s 7 DRSApp:OnInterest(): Received Interest: /Node24/drsapp/anythingnew/Node24_86113226
+32.045s 7 DRSApp:OnData(): Received Data for: /Node11/drsapp/somethingnew/Node24_86113226/Node22/drsapp/86113226
+32.045s 7 DRSApp:SendInterest(): Send Interest /Node11/drsapp/anythingnew/Node11_86113221
+32.0976s 0 DRSApp:OnData(): Received Data for: /Node22/drsapp/86113226
+32.1121s 7 DRSApp:OnData(): Received Data for: /Node11/drsapp/anythingnew/Node11_86113221
+32.1121s 7 DRSApp:SendInterest(): Send Interest /Node11/drsapp/anythingnew/Node11_86113229
+32.1121s 7 DRSApp:SendData(): Send Data for: /Node24/drsapp/anythingnew/Node24_86113226
+32.1121s 7 DRSApp:SendInterest(): Send Interest /Node22/drsapp/86113226
+32.1121s 7 DRSApp:OnData(): Received Data for: /Node22/drsapp/86113226
+32.1245s 5 DRSApp:OnData(): Received Data for: /Node24/drsapp/anythingnew/Node24_86113226
+32.1245s 5 DRSApp:SendInterest(): Send Interest /Node24/drsapp/anythingnew/Node24_86113231
+32.1245s 5 DRSApp:SendInterest(): Send Interest /Node22/drsapp/86113226
+32.1245s 5 DRSApp:OnData(): Received Data for: /Node22/drsapp/86113226
+32.135s 7 DRSApp:OnInterest(): Received Interest: /Node24/drsapp/anythingnew/Node24_86113231
+32.1437s 0 DRSApp:OnInterest(): Received Interest: /Node11/drsapp/anythingnew/Node11_86113229
+32.5442s 0 DRSApp:GenMessage(): Gen Msg: I'm Node11 at 86113232
+32.5442s 0 DRSApp:SendData(): Send Data for: /Node11/drsapp/anythingnew/Node11_86113229
+32.5798s 7 DRSApp:OnData(): Received Data for: /Node11/drsapp/anythingnew/Node11_86113229
+32.5798s 7 DRSApp:SendInterest(): Send Interest /Node11/drsapp/anythingnew/Node11_86113232
+32.5798s 7 DRSApp:SendData(): Send Data for: /Node24/drsapp/anythingnew/Node24_86113231
+32.5798s 7 DRSApp:SendInterest(): Send Interest /Node11/drsapp/86113232
+32.5921s 5 DRSApp:OnData(): Received Data for: /Node24/drsapp/anythingnew/Node24_86113231
+32.5921s 5 DRSApp:SendInterest(): Send Interest /Node24/drsapp/anythingnew/Node24_86113233
+32.5921s 5 DRSApp:SendInterest(): Send Interest /Node11/drsapp/86113232
+32.6027s 7 DRSApp:OnInterest(): Received Interest: /Node24/drsapp/anythingnew/Node24_86113233
+32.6114s 0 DRSApp:OnInterest(): Received Interest: /Node11/drsapp/anythingnew/Node11_86113232
+32.6117s 0 DRSApp:OnInterest(): Received Interest: /Node11/drsapp/86113232
+32.6117s 0 DRSApp:SendData(): Send Data for: /Node11/drsapp/86113232
+32.6435s 7 DRSApp:OnData(): Received Data for: /Node11/drsapp/86113232
+32.6541s 5 DRSApp:OnData(): Received Data for: /Node11/drsapp/86113232
+32.8452s 7 DRSApp:GenMessage(): Gen Msg: I'm Node24 at 86113234
+32.8452s 7 DRSApp:SendInterest(): Send Interest /Node11/drsapp/somethingnew/Node24_86113234/Node24/drsapp/86113234
+32.8452s 7 DRSApp:SendData(): Send Data for: /Node24/drsapp/anythingnew/Node24_86113233
+32.8571s 5 DRSApp:OnData(): Received Data for: /Node24/drsapp/anythingnew/Node24_86113233
+32.8571s 5 DRSApp:SendInterest(): Send Interest /Node24/drsapp/anythingnew/Node24_86113234
+32.8571s 5 DRSApp:SendInterest(): Send Interest /Node24/drsapp/86113234
+32.8676s 7 DRSApp:OnInterest(): Received Interest: /Node24/drsapp/anythingnew/Node24_86113234
+32.868s 7 DRSApp:OnInterest(): Received Interest: /Node24/drsapp/86113234
+32.868s 7 DRSApp:SendData(): Send Data for: /Node24/drsapp/86113234
+32.8774s 0 DRSApp:OnInterest(): Received Interest: /Node11/drsapp/somethingnew/Node24_86113234/Node24/drsapp/86113234
+32.8774s 0 DRSApp:SendData(): Send Data for: /Node11/drsapp/anythingnew/Node11_86113232
+32.8774s 0 DRSApp:SendData(): Send Data for: /Node11/drsapp/somethingnew/Node24_86113234/Node24/drsapp/86113234
+32.8774s 0 DRSApp:SendInterest(): Send Interest /Node24/drsapp/86113234
+32.8786s 5 DRSApp:OnData(): Received Data for: /Node24/drsapp/86113234
+32.913s 7 DRSApp:OnData(): Received Data for: /Node11/drsapp/anythingnew/Node11_86113232
+32.913s 7 DRSApp:SendInterest(): Send Interest /Node11/drsapp/anythingnew/Node11_86113236
+32.913s 7 DRSApp:SendData(): Send Data for: /Node24/drsapp/anythingnew/Node24_86113234
+32.913s 7 DRSApp:SendInterest(): Send Interest /Node24/drsapp/86113234
+32.913s 7 DRSApp:OnData(): Received Data for: /Node24/drsapp/86113234
+32.9139s 7 DRSApp:OnData(): Received Data for: /Node11/drsapp/somethingnew/Node24_86113234/Node24/drsapp/86113234
+32.9139s 7 DRSApp:SendInterest(): Send Interest /Node11/drsapp/anythingnew/Node11_86113236
+32.9254s 5 DRSApp:OnData(): Received Data for: /Node24/drsapp/anythingnew/Node24_86113234
+32.9254s 5 DRSApp:SendInterest(): Send Interest /Node24/drsapp/anythingnew/Node24_86113237
+32.9254s 5 DRSApp:SendInterest(): Send Interest /Node24/drsapp/86113234
+32.9254s 5 DRSApp:OnData(): Received Data for: /Node24/drsapp/86113234
+32.9359s 7 DRSApp:OnInterest(): Received Interest: /Node24/drsapp/anythingnew/Node24_86113237
+32.9446s 0 DRSApp:OnInterest(): Received Interest: /Node11/drsapp/anythingnew/Node11_86113236
+32.9455s 0 DRSApp:OnInterest(): Received Interest: /Node11/drsapp/anythingnew/Node11_86113236
+32.9462s 0 DRSApp:OnData(): Received Data for: /Node24/drsapp/86113234
+33.0427s 0 DRSApp:GenServerPeriod(): MY LEVEL=6, MY SERVER=
+33.9694s 5 DRSApp:GenMessage(): Gen Msg: I'm Node22 at 86113240
+33.9694s 5 DRSApp:SendInterest(): Send Interest /Node24/drsapp/somethingnew/Node22_86113240/Node22/drsapp/86113240
+33.9802s 7 DRSApp:OnInterest(): Received Interest: /Node24/drsapp/somethingnew/Node22_86113240/Node22/drsapp/86113240
+33.9802s 7 DRSApp:SendInterest(): Send Interest /Node11/drsapp/somethingnew/Node24_86113241/Node22/drsapp/86113240
+33.9802s 7 DRSApp:SendData(): Send Data for: /Node24/drsapp/anythingnew/Node24_86113237
+33.9802s 7 DRSApp:SendData(): Send Data for: /Node24/drsapp/somethingnew/Node22_86113240/Node22/drsapp/86113240
+33.9802s 7 DRSApp:SendInterest(): Send Interest /Node22/drsapp/86113240
+33.991s 5 DRSApp:OnData(): Received Data for: /Node24/drsapp/somethingnew/Node22_86113240/Node22/drsapp/86113240
+33.991s 5 DRSApp:SendInterest(): Send Interest /Node24/drsapp/anythingnew/Node24_86113237
+33.9914s 5 DRSApp:OnInterest(): Received Interest: /Node22/drsapp/86113240
+33.9914s 5 DRSApp:SendData(): Send Data for: /Node22/drsapp/86113240
+34.0021s 7 DRSApp:OnData(): Received Data for: /Node22/drsapp/86113240
+34.0124s 0 DRSApp:OnInterest(): Received Interest: /Node11/drsapp/somethingnew/Node24_86113241/Node22/drsapp/86113240
+34.0124s 0 DRSApp:SendData(): Send Data for: /Node11/drsapp/anythingnew/Node11_86113236
+34.0124s 0 DRSApp:SendData(): Send Data for: /Node11/drsapp/somethingnew/Node24_86113241/Node22/drsapp/86113240
+34.0124s 0 DRSApp:SendInterest(): Send Interest /Node22/drsapp/86113240
+34.0134s 5 DRSApp:OnData(): Received Data for: /Node24/drsapp/anythingnew/Node24_86113237
+34.0134s 5 DRSApp:SendInterest(): Send Interest /Node24/drsapp/anythingnew/Node24_86113241
+34.0134s 5 DRSApp:SendInterest(): Send Interest /Node22/drsapp/86113240
+34.0134s 5 DRSApp:OnData(): Received Data for: /Node22/drsapp/86113240
+34.0239s 7 DRSApp:OnInterest(): Received Interest: /Node24/drsapp/anythingnew/Node24_86113241
+34.045s 7 DRSApp:OnData(): Received Data for: /Node11/drsapp/somethingnew/Node24_86113241/Node22/drsapp/86113240
+34.045s 7 DRSApp:SendInterest(): Send Interest /Node11/drsapp/anythingnew/Node11_86113236
+34.0976s 0 DRSApp:OnData(): Received Data for: /Node22/drsapp/86113240
+34.1121s 7 DRSApp:OnData(): Received Data for: /Node11/drsapp/anythingnew/Node11_86113236
+34.1121s 7 DRSApp:SendInterest(): Send Interest /Node11/drsapp/anythingnew/Node11_86113244
+34.1121s 7 DRSApp:SendData(): Send Data for: /Node24/drsapp/anythingnew/Node24_86113241
+34.1121s 7 DRSApp:SendInterest(): Send Interest /Node22/drsapp/86113240
+34.1121s 7 DRSApp:OnData(): Received Data for: /Node22/drsapp/86113240
+34.1245s 5 DRSApp:OnData(): Received Data for: /Node24/drsapp/anythingnew/Node24_86113241
+34.1245s 5 DRSApp:SendInterest(): Send Interest /Node24/drsapp/anythingnew/Node24_86113246
+34.1245s 5 DRSApp:SendInterest(): Send Interest /Node22/drsapp/86113240
+34.1245s 5 DRSApp:OnData(): Received Data for: /Node22/drsapp/86113240
+34.135s 7 DRSApp:OnInterest(): Received Interest: /Node24/drsapp/anythingnew/Node24_86113246
+34.1437s 0 DRSApp:OnInterest(): Received Interest: /Node11/drsapp/anythingnew/Node11_86113244
+34.4346s 5 DRSApp:GenServerPeriod(): MY LEVEL=2, MY SERVER=Node24
+34.5442s 0 DRSApp:GenMessage(): Gen Msg: I'm Node11 at 86113247
+34.5442s 0 DRSApp:SendData(): Send Data for: /Node11/drsapp/anythingnew/Node11_86113244
+34.5798s 7 DRSApp:OnData(): Received Data for: /Node11/drsapp/anythingnew/Node11_86113244
+34.5798s 7 DRSApp:SendInterest(): Send Interest /Node11/drsapp/anythingnew/Node11_86113247
+34.5798s 7 DRSApp:SendData(): Send Data for: /Node24/drsapp/anythingnew/Node24_86113246
+34.5798s 7 DRSApp:SendInterest(): Send Interest /Node11/drsapp/86113247
+34.5921s 5 DRSApp:OnData(): Received Data for: /Node24/drsapp/anythingnew/Node24_86113246
+34.5921s 5 DRSApp:SendInterest(): Send Interest /Node24/drsapp/anythingnew/Node24_86113247
+34.5921s 5 DRSApp:SendInterest(): Send Interest /Node11/drsapp/86113247
+34.6027s 7 DRSApp:OnInterest(): Received Interest: /Node24/drsapp/anythingnew/Node24_86113247
+34.6114s 0 DRSApp:OnInterest(): Received Interest: /Node11/drsapp/anythingnew/Node11_86113247
+34.6117s 0 DRSApp:OnInterest(): Received Interest: /Node11/drsapp/86113247
+34.6117s 0 DRSApp:SendData(): Send Data for: /Node11/drsapp/86113247
+34.6435s 7 DRSApp:OnData(): Received Data for: /Node11/drsapp/86113247
+34.6541s 5 DRSApp:OnData(): Received Data for: /Node11/drsapp/86113247
+34.8452s 7 DRSApp:GenMessage(): Gen Msg: I'm Node24 at 86113249
+34.8452s 7 DRSApp:SendInterest(): Send Interest /Node11/drsapp/somethingnew/Node24_86113249/Node24/drsapp/86113249
+34.8452s 7 DRSApp:SendData(): Send Data for: /Node24/drsapp/anythingnew/Node24_86113247
+34.8571s 5 DRSApp:OnData(): Received Data for: /Node24/drsapp/anythingnew/Node24_86113247
+34.8571s 5 DRSApp:SendInterest(): Send Interest /Node24/drsapp/anythingnew/Node24_86113249
+34.8571s 5 DRSApp:SendInterest(): Send Interest /Node24/drsapp/86113249
+34.8676s 7 DRSApp:OnInterest(): Received Interest: /Node24/drsapp/anythingnew/Node24_86113249
+34.868s 7 DRSApp:OnInterest(): Received Interest: /Node24/drsapp/86113249
+34.868s 7 DRSApp:SendData(): Send Data for: /Node24/drsapp/86113249
+34.8774s 0 DRSApp:OnInterest(): Received Interest: /Node11/drsapp/somethingnew/Node24_86113249/Node24/drsapp/86113249
+34.8774s 0 DRSApp:SendData(): Send Data for: /Node11/drsapp/anythingnew/Node11_86113247
+34.8774s 0 DRSApp:SendData(): Send Data for: /Node11/drsapp/somethingnew/Node24_86113249/Node24/drsapp/86113249
+34.8774s 0 DRSApp:SendInterest(): Send Interest /Node24/drsapp/86113249
+34.8786s 5 DRSApp:OnData(): Received Data for: /Node24/drsapp/86113249
+34.913s 7 DRSApp:OnData(): Received Data for: /Node11/drsapp/anythingnew/Node11_86113247
+34.913s 7 DRSApp:SendInterest(): Send Interest /Node11/drsapp/anythingnew/Node11_86113250
+34.913s 7 DRSApp:SendData(): Send Data for: /Node24/drsapp/anythingnew/Node24_86113249
+34.913s 7 DRSApp:SendInterest(): Send Interest /Node24/drsapp/86113249
+34.913s 7 DRSApp:OnData(): Received Data for: /Node24/drsapp/86113249
+34.9139s 7 DRSApp:OnData(): Received Data for: /Node11/drsapp/somethingnew/Node24_86113249/Node24/drsapp/86113249
+34.9139s 7 DRSApp:SendInterest(): Send Interest /Node11/drsapp/anythingnew/Node11_86113250
+34.9254s 5 DRSApp:OnData(): Received Data for: /Node24/drsapp/anythingnew/Node24_86113249
+34.9254s 5 DRSApp:SendInterest(): Send Interest /Node24/drsapp/anythingnew/Node24_86113251
+34.9254s 5 DRSApp:SendInterest(): Send Interest /Node24/drsapp/86113249
+34.9254s 5 DRSApp:OnData(): Received Data for: /Node24/drsapp/86113249
+34.9359s 7 DRSApp:OnInterest(): Received Interest: /Node24/drsapp/anythingnew/Node24_86113251
+34.9446s 0 DRSApp:OnInterest(): Received Interest: /Node11/drsapp/anythingnew/Node11_86113250
+34.9455s 0 DRSApp:OnInterest(): Received Interest: /Node11/drsapp/anythingnew/Node11_86113250
+34.9462s 0 DRSApp:OnData(): Received Data for: /Node24/drsapp/86113249
+35.095s 7 DRSApp:GenServerPeriod(): MY LEVEL=3, MY SERVER=Node11
+35.6712s 0 DRSApp:GenServerPeriod(): MY LEVEL=6, MY SERVER=
+35.9694s 5 DRSApp:GenMessage(): Gen Msg: I'm Node22 at 86113255
+35.9694s 5 DRSApp:SendInterest(): Send Interest /Node24/drsapp/somethingnew/Node22_86113255/Node22/drsapp/86113255
+35.9802s 7 DRSApp:OnInterest(): Received Interest: /Node24/drsapp/somethingnew/Node22_86113255/Node22/drsapp/86113255
+35.9802s 7 DRSApp:SendInterest(): Send Interest /Node11/drsapp/somethingnew/Node24_86113255/Node22/drsapp/86113255
+35.9802s 7 DRSApp:SendData(): Send Data for: /Node24/drsapp/anythingnew/Node24_86113251
+35.9802s 7 DRSApp:SendData(): Send Data for: /Node24/drsapp/somethingnew/Node22_86113255/Node22/drsapp/86113255
+35.9802s 7 DRSApp:SendInterest(): Send Interest /Node22/drsapp/86113255
+35.991s 5 DRSApp:OnData(): Received Data for: /Node24/drsapp/somethingnew/Node22_86113255/Node22/drsapp/86113255
+35.991s 5 DRSApp:SendInterest(): Send Interest /Node24/drsapp/anythingnew/Node24_86113251
+35.9914s 5 DRSApp:OnInterest(): Received Interest: /Node22/drsapp/86113255
+35.9914s 5 DRSApp:SendData(): Send Data for: /Node22/drsapp/86113255
+36.0021s 7 DRSApp:OnData(): Received Data for: /Node22/drsapp/86113255
+36.0124s 0 DRSApp:OnInterest(): Received Interest: /Node11/drsapp/somethingnew/Node24_86113255/Node22/drsapp/86113255
+36.0124s 0 DRSApp:SendData(): Send Data for: /Node11/drsapp/anythingnew/Node11_86113250
+36.0124s 0 DRSApp:SendData(): Send Data for: /Node11/drsapp/somethingnew/Node24_86113255/Node22/drsapp/86113255
+36.0124s 0 DRSApp:SendInterest(): Send Interest /Node22/drsapp/86113255
+36.0134s 5 DRSApp:OnData(): Received Data for: /Node24/drsapp/anythingnew/Node24_86113251
+36.0134s 5 DRSApp:SendInterest(): Send Interest /Node24/drsapp/anythingnew/Node24_86113255
+36.0134s 5 DRSApp:SendInterest(): Send Interest /Node22/drsapp/86113255
+36.0134s 5 DRSApp:OnData(): Received Data for: /Node22/drsapp/86113255
+36.0239s 7 DRSApp:OnInterest(): Received Interest: /Node24/drsapp/anythingnew/Node24_86113255
+36.045s 7 DRSApp:OnData(): Received Data for: /Node11/drsapp/somethingnew/Node24_86113255/Node22/drsapp/86113255
+36.045s 7 DRSApp:SendInterest(): Send Interest /Node11/drsapp/anythingnew/Node11_86113250
+36.0976s 0 DRSApp:OnData(): Received Data for: /Node22/drsapp/86113255
+36.1121s 7 DRSApp:OnData(): Received Data for: /Node11/drsapp/anythingnew/Node11_86113250
+36.1121s 7 DRSApp:SendInterest(): Send Interest /Node11/drsapp/anythingnew/Node11_86113258
+36.1121s 7 DRSApp:SendData(): Send Data for: /Node24/drsapp/anythingnew/Node24_86113255
+36.1121s 7 DRSApp:SendInterest(): Send Interest /Node22/drsapp/86113255
+36.1121s 7 DRSApp:OnData(): Received Data for: /Node22/drsapp/86113255
+36.1245s 5 DRSApp:OnData(): Received Data for: /Node24/drsapp/anythingnew/Node24_86113255
+36.1245s 5 DRSApp:SendInterest(): Send Interest /Node24/drsapp/anythingnew/Node24_86113260
+36.1245s 5 DRSApp:SendInterest(): Send Interest /Node22/drsapp/86113255
+36.1245s 5 DRSApp:OnData(): Received Data for: /Node22/drsapp/86113255
+36.135s 7 DRSApp:OnInterest(): Received Interest: /Node24/drsapp/anythingnew/Node24_86113260
+36.1437s 0 DRSApp:OnInterest(): Received Interest: /Node11/drsapp/anythingnew/Node11_86113258
+36.5442s 0 DRSApp:GenMessage(): Gen Msg: I'm Node11 at 86113262
+36.5442s 0 DRSApp:SendData(): Send Data for: /Node11/drsapp/anythingnew/Node11_86113258
+36.5798s 7 DRSApp:OnData(): Received Data for: /Node11/drsapp/anythingnew/Node11_86113258
+36.5798s 7 DRSApp:SendInterest(): Send Interest /Node11/drsapp/anythingnew/Node11_86113262
+36.5798s 7 DRSApp:SendData(): Send Data for: /Node24/drsapp/anythingnew/Node24_86113260
+36.5798s 7 DRSApp:SendInterest(): Send Interest /Node11/drsapp/86113262
+36.5921s 5 DRSApp:OnData(): Received Data for: /Node24/drsapp/anythingnew/Node24_86113260
+36.5921s 5 DRSApp:SendInterest(): Send Interest /Node24/drsapp/anythingnew/Node24_86113262
+36.5921s 5 DRSApp:SendInterest(): Send Interest /Node11/drsapp/86113262
+36.6027s 7 DRSApp:OnInterest(): Received Interest: /Node24/drsapp/anythingnew/Node24_86113262
+36.6114s 0 DRSApp:OnInterest(): Received Interest: /Node11/drsapp/anythingnew/Node11_86113262
+36.6117s 0 DRSApp:OnInterest(): Received Interest: /Node11/drsapp/86113262
+36.6117s 0 DRSApp:SendData(): Send Data for: /Node11/drsapp/86113262
+36.6435s 7 DRSApp:OnData(): Received Data for: /Node11/drsapp/86113262
+36.6541s 5 DRSApp:OnData(): Received Data for: /Node11/drsapp/86113262
+36.8452s 7 DRSApp:GenMessage(): Gen Msg: I'm Node24 at 86113264
+36.8452s 7 DRSApp:SendInterest(): Send Interest /Node11/drsapp/somethingnew/Node24_86113264/Node24/drsapp/86113264
+36.8452s 7 DRSApp:SendData(): Send Data for: /Node24/drsapp/anythingnew/Node24_86113262
+36.8571s 5 DRSApp:OnData(): Received Data for: /Node24/drsapp/anythingnew/Node24_86113262
+36.8571s 5 DRSApp:SendInterest(): Send Interest /Node24/drsapp/anythingnew/Node24_86113264
+36.8571s 5 DRSApp:SendInterest(): Send Interest /Node24/drsapp/86113264
+36.8676s 7 DRSApp:OnInterest(): Received Interest: /Node24/drsapp/anythingnew/Node24_86113264
+36.868s 7 DRSApp:OnInterest(): Received Interest: /Node24/drsapp/86113264
+36.868s 7 DRSApp:SendData(): Send Data for: /Node24/drsapp/86113264
+36.8774s 0 DRSApp:OnInterest(): Received Interest: /Node11/drsapp/somethingnew/Node24_86113264/Node24/drsapp/86113264
+36.8774s 0 DRSApp:SendData(): Send Data for: /Node11/drsapp/anythingnew/Node11_86113262
+36.8774s 0 DRSApp:SendData(): Send Data for: /Node11/drsapp/somethingnew/Node24_86113264/Node24/drsapp/86113264
+36.8774s 0 DRSApp:SendInterest(): Send Interest /Node24/drsapp/86113264
+36.8786s 5 DRSApp:OnData(): Received Data for: /Node24/drsapp/86113264
+36.913s 7 DRSApp:OnData(): Received Data for: /Node11/drsapp/anythingnew/Node11_86113262
+36.913s 7 DRSApp:SendInterest(): Send Interest /Node11/drsapp/anythingnew/Node11_86113265
+36.913s 7 DRSApp:SendData(): Send Data for: /Node24/drsapp/anythingnew/Node24_86113264
+36.913s 7 DRSApp:SendInterest(): Send Interest /Node24/drsapp/86113264
+36.913s 7 DRSApp:OnData(): Received Data for: /Node24/drsapp/86113264
+36.9139s 7 DRSApp:OnData(): Received Data for: /Node11/drsapp/somethingnew/Node24_86113264/Node24/drsapp/86113264
+36.9139s 7 DRSApp:SendInterest(): Send Interest /Node11/drsapp/anythingnew/Node11_86113265
+36.9254s 5 DRSApp:OnData(): Received Data for: /Node24/drsapp/anythingnew/Node24_86113264
+36.9254s 5 DRSApp:SendInterest(): Send Interest /Node24/drsapp/anythingnew/Node24_86113266
+36.9254s 5 DRSApp:SendInterest(): Send Interest /Node24/drsapp/86113264
+36.9254s 5 DRSApp:OnData(): Received Data for: /Node24/drsapp/86113264
+36.9359s 7 DRSApp:OnInterest(): Received Interest: /Node24/drsapp/anythingnew/Node24_86113266
+36.9446s 0 DRSApp:OnInterest(): Received Interest: /Node11/drsapp/anythingnew/Node11_86113265
+36.9455s 0 DRSApp:OnInterest(): Received Interest: /Node11/drsapp/anythingnew/Node11_86113265
+36.9462s 0 DRSApp:OnData(): Received Data for: /Node24/drsapp/86113264
+37.9694s 5 DRSApp:GenMessage(): Gen Msg: I'm Node22 at 86113270
+37.9694s 5 DRSApp:SendInterest(): Send Interest /Node24/drsapp/somethingnew/Node22_86113270/Node22/drsapp/86113270
+37.9802s 7 DRSApp:OnInterest(): Received Interest: /Node24/drsapp/somethingnew/Node22_86113270/Node22/drsapp/86113270
+37.9802s 7 DRSApp:SendInterest(): Send Interest /Node11/drsapp/somethingnew/Node24_86113270/Node22/drsapp/86113270
+37.9802s 7 DRSApp:SendData(): Send Data for: /Node24/drsapp/anythingnew/Node24_86113266
+37.9802s 7 DRSApp:SendData(): Send Data for: /Node24/drsapp/somethingnew/Node22_86113270/Node22/drsapp/86113270
+37.9802s 7 DRSApp:SendInterest(): Send Interest /Node22/drsapp/86113270
+37.991s 5 DRSApp:OnData(): Received Data for: /Node24/drsapp/somethingnew/Node22_86113270/Node22/drsapp/86113270
+37.991s 5 DRSApp:SendInterest(): Send Interest /Node24/drsapp/anythingnew/Node24_86113266
+37.9914s 5 DRSApp:OnInterest(): Received Interest: /Node22/drsapp/86113270
+37.9914s 5 DRSApp:SendData(): Send Data for: /Node22/drsapp/86113270
+38.0021s 7 DRSApp:OnData(): Received Data for: /Node22/drsapp/86113270
+38.0124s 0 DRSApp:OnInterest(): Received Interest: /Node11/drsapp/somethingnew/Node24_86113270/Node22/drsapp/86113270
+38.0124s 0 DRSApp:SendData(): Send Data for: /Node11/drsapp/anythingnew/Node11_86113265
+38.0124s 0 DRSApp:SendData(): Send Data for: /Node11/drsapp/somethingnew/Node24_86113270/Node22/drsapp/86113270
+38.0124s 0 DRSApp:SendInterest(): Send Interest /Node22/drsapp/86113270
+38.0134s 5 DRSApp:OnData(): Received Data for: /Node24/drsapp/anythingnew/Node24_86113266
+38.0134s 5 DRSApp:SendInterest(): Send Interest /Node24/drsapp/anythingnew/Node24_86113270
+38.0134s 5 DRSApp:SendInterest(): Send Interest /Node22/drsapp/86113270
+38.0134s 5 DRSApp:OnData(): Received Data for: /Node22/drsapp/86113270
+38.0239s 7 DRSApp:OnInterest(): Received Interest: /Node24/drsapp/anythingnew/Node24_86113270
+38.045s 7 DRSApp:OnData(): Received Data for: /Node11/drsapp/somethingnew/Node24_86113270/Node22/drsapp/86113270
+38.045s 7 DRSApp:SendInterest(): Send Interest /Node11/drsapp/anythingnew/Node11_86113265
+38.0976s 0 DRSApp:OnData(): Received Data for: /Node22/drsapp/86113270
+38.1121s 7 DRSApp:OnData(): Received Data for: /Node11/drsapp/anythingnew/Node11_86113265
+38.1121s 7 DRSApp:SendInterest(): Send Interest /Node11/drsapp/anythingnew/Node11_86113273
+38.1121s 7 DRSApp:SendData(): Send Data for: /Node24/drsapp/anythingnew/Node24_86113270
+38.1121s 7 DRSApp:SendInterest(): Send Interest /Node22/drsapp/86113270
+38.1121s 7 DRSApp:OnData(): Received Data for: /Node22/drsapp/86113270
+38.1245s 5 DRSApp:OnData(): Received Data for: /Node24/drsapp/anythingnew/Node24_86113270
+38.1245s 5 DRSApp:SendInterest(): Send Interest /Node24/drsapp/anythingnew/Node24_86113275
+38.1245s 5 DRSApp:SendInterest(): Send Interest /Node22/drsapp/86113270
+38.1245s 5 DRSApp:OnData(): Received Data for: /Node22/drsapp/86113270
+38.135s 7 DRSApp:OnInterest(): Received Interest: /Node24/drsapp/anythingnew/Node24_86113275
+38.1437s 0 DRSApp:OnInterest(): Received Interest: /Node11/drsapp/anythingnew/Node11_86113273
+38.2277s 5 DRSApp:GenServerPeriod(): MY LEVEL=2, MY SERVER=Node24
+38.5442s 0 DRSApp:GenMessage(): Gen Msg: I'm Node11 at 86113276
+38.5442s 0 DRSApp:SendData(): Send Data for: /Node11/drsapp/anythingnew/Node11_86113273
+38.5798s 7 DRSApp:OnData(): Received Data for: /Node11/drsapp/anythingnew/Node11_86113273
+38.5798s 7 DRSApp:SendInterest(): Send Interest /Node11/drsapp/anythingnew/Node11_86113276
+38.5798s 7 DRSApp:SendData(): Send Data for: /Node24/drsapp/anythingnew/Node24_86113275
+38.5798s 7 DRSApp:SendInterest(): Send Interest /Node11/drsapp/86113276
+38.5921s 5 DRSApp:OnData(): Received Data for: /Node24/drsapp/anythingnew/Node24_86113275
+38.5921s 5 DRSApp:SendInterest(): Send Interest /Node24/drsapp/anythingnew/Node24_86113277
+38.5921s 5 DRSApp:SendInterest(): Send Interest /Node11/drsapp/86113276
+38.6027s 7 DRSApp:OnInterest(): Received Interest: /Node24/drsapp/anythingnew/Node24_86113277
+38.6114s 0 DRSApp:OnInterest(): Received Interest: /Node11/drsapp/anythingnew/Node11_86113276
+38.6117s 0 DRSApp:OnInterest(): Received Interest: /Node11/drsapp/86113276
+38.6117s 0 DRSApp:SendData(): Send Data for: /Node11/drsapp/86113276
+38.6435s 7 DRSApp:OnData(): Received Data for: /Node11/drsapp/86113276
+38.6541s 5 DRSApp:OnData(): Received Data for: /Node11/drsapp/86113276
+38.8452s 7 DRSApp:GenMessage(): Gen Msg: I'm Node24 at 86113278
+38.8452s 7 DRSApp:SendInterest(): Send Interest /Node11/drsapp/somethingnew/Node24_86113278/Node24/drsapp/86113278
+38.8452s 7 DRSApp:SendData(): Send Data for: /Node24/drsapp/anythingnew/Node24_86113277
+38.8571s 5 DRSApp:OnData(): Received Data for: /Node24/drsapp/anythingnew/Node24_86113277
+38.8571s 5 DRSApp:SendInterest(): Send Interest /Node24/drsapp/anythingnew/Node24_86113278
+38.8571s 5 DRSApp:SendInterest(): Send Interest /Node24/drsapp/86113278
+38.8676s 7 DRSApp:OnInterest(): Received Interest: /Node24/drsapp/anythingnew/Node24_86113278
+38.868s 7 DRSApp:OnInterest(): Received Interest: /Node24/drsapp/86113278
+38.868s 7 DRSApp:SendData(): Send Data for: /Node24/drsapp/86113278
+38.8774s 0 DRSApp:OnInterest(): Received Interest: /Node11/drsapp/somethingnew/Node24_86113278/Node24/drsapp/86113278
+38.8774s 0 DRSApp:SendData(): Send Data for: /Node11/drsapp/anythingnew/Node11_86113276
+38.8774s 0 DRSApp:SendData(): Send Data for: /Node11/drsapp/somethingnew/Node24_86113278/Node24/drsapp/86113278
+38.8774s 0 DRSApp:SendInterest(): Send Interest /Node24/drsapp/86113278
+38.8786s 5 DRSApp:OnData(): Received Data for: /Node24/drsapp/86113278
+38.913s 7 DRSApp:OnData(): Received Data for: /Node11/drsapp/anythingnew/Node11_86113276
+38.913s 7 DRSApp:SendInterest(): Send Interest /Node11/drsapp/anythingnew/Node11_86113280
+38.913s 7 DRSApp:SendData(): Send Data for: /Node24/drsapp/anythingnew/Node24_86113278
+38.913s 7 DRSApp:SendInterest(): Send Interest /Node24/drsapp/86113278
+38.913s 7 DRSApp:OnData(): Received Data for: /Node24/drsapp/86113278
+38.9139s 7 DRSApp:OnData(): Received Data for: /Node11/drsapp/somethingnew/Node24_86113278/Node24/drsapp/86113278
+38.9139s 7 DRSApp:SendInterest(): Send Interest /Node11/drsapp/anythingnew/Node11_86113280
+38.9254s 5 DRSApp:OnData(): Received Data for: /Node24/drsapp/anythingnew/Node24_86113278
+38.9254s 5 DRSApp:SendInterest(): Send Interest /Node24/drsapp/anythingnew/Node24_86113281
+38.9254s 5 DRSApp:SendInterest(): Send Interest /Node24/drsapp/86113278
+38.9254s 5 DRSApp:OnData(): Received Data for: /Node24/drsapp/86113278
+38.9359s 7 DRSApp:OnInterest(): Received Interest: /Node24/drsapp/anythingnew/Node24_86113281
+38.9446s 0 DRSApp:OnInterest(): Received Interest: /Node11/drsapp/anythingnew/Node11_86113280
+38.9455s 0 DRSApp:OnInterest(): Received Interest: /Node11/drsapp/anythingnew/Node11_86113280
+38.9462s 0 DRSApp:OnData(): Received Data for: /Node24/drsapp/86113278
+39.1472s 7 DRSApp:GenServerPeriod(): MY LEVEL=3, MY SERVER=Node11
+39.6101s 0 DRSApp:GenServerPeriod(): MY LEVEL=6, MY SERVER=
+39.9694s 5 DRSApp:GenMessage(): Gen Msg: I'm Node22 at 86113284
+39.9694s 5 DRSApp:SendInterest(): Send Interest /Node24/drsapp/somethingnew/Node22_86113284/Node22/drsapp/86113284
+39.9802s 7 DRSApp:OnInterest(): Received Interest: /Node24/drsapp/somethingnew/Node22_86113284/Node22/drsapp/86113284
+39.9802s 7 DRSApp:SendInterest(): Send Interest /Node11/drsapp/somethingnew/Node24_86113285/Node22/drsapp/86113284
+39.9802s 7 DRSApp:SendData(): Send Data for: /Node24/drsapp/anythingnew/Node24_86113281
+39.9802s 7 DRSApp:SendData(): Send Data for: /Node24/drsapp/somethingnew/Node22_86113284/Node22/drsapp/86113284
+39.9802s 7 DRSApp:SendInterest(): Send Interest /Node22/drsapp/86113284
+39.991s 5 DRSApp:OnData(): Received Data for: /Node24/drsapp/somethingnew/Node22_86113284/Node22/drsapp/86113284
+39.991s 5 DRSApp:SendInterest(): Send Interest /Node24/drsapp/anythingnew/Node24_86113281
+39.9914s 5 DRSApp:OnInterest(): Received Interest: /Node22/drsapp/86113284
+39.9914s 5 DRSApp:SendData(): Send Data for: /Node22/drsapp/86113284
+40.0021s 7 DRSApp:OnData(): Received Data for: /Node22/drsapp/86113284
+40.0124s 0 DRSApp:OnInterest(): Received Interest: /Node11/drsapp/somethingnew/Node24_86113285/Node22/drsapp/86113284
+40.0124s 0 DRSApp:SendData(): Send Data for: /Node11/drsapp/anythingnew/Node11_86113280
+40.0124s 0 DRSApp:SendData(): Send Data for: /Node11/drsapp/somethingnew/Node24_86113285/Node22/drsapp/86113284
+40.0124s 0 DRSApp:SendInterest(): Send Interest /Node22/drsapp/86113284
+40.0134s 5 DRSApp:OnData(): Received Data for: /Node24/drsapp/anythingnew/Node24_86113281
+40.0134s 5 DRSApp:SendInterest(): Send Interest /Node24/drsapp/anythingnew/Node24_86113285
+40.0134s 5 DRSApp:SendInterest(): Send Interest /Node22/drsapp/86113284
+40.0134s 5 DRSApp:OnData(): Received Data for: /Node22/drsapp/86113284
+40.0239s 7 DRSApp:OnInterest(): Received Interest: /Node24/drsapp/anythingnew/Node24_86113285
+40.045s 7 DRSApp:OnData(): Received Data for: /Node11/drsapp/somethingnew/Node24_86113285/Node22/drsapp/86113284
+40.045s 7 DRSApp:SendInterest(): Send Interest /Node11/drsapp/anythingnew/Node11_86113280
+40.0976s 0 DRSApp:OnData(): Received Data for: /Node22/drsapp/86113284
+40.1121s 7 DRSApp:OnData(): Received Data for: /Node11/drsapp/anythingnew/Node11_86113280
+40.1121s 7 DRSApp:SendInterest(): Send Interest /Node11/drsapp/anythingnew/Node11_86113288
+40.1121s 7 DRSApp:SendData(): Send Data for: /Node24/drsapp/anythingnew/Node24_86113285
+40.1121s 7 DRSApp:SendInterest(): Send Interest /Node22/drsapp/86113284
+40.1121s 7 DRSApp:OnData(): Received Data for: /Node22/drsapp/86113284
+40.1245s 5 DRSApp:OnData(): Received Data for: /Node24/drsapp/anythingnew/Node24_86113285
+40.1245s 5 DRSApp:SendInterest(): Send Interest /Node24/drsapp/anythingnew/Node24_86113290
+40.1245s 5 DRSApp:SendInterest(): Send Interest /Node22/drsapp/86113284
+40.1245s 5 DRSApp:OnData(): Received Data for: /Node22/drsapp/86113284
+40.135s 7 DRSApp:OnInterest(): Received Interest: /Node24/drsapp/anythingnew/Node24_86113290
+40.1437s 0 DRSApp:OnInterest(): Received Interest: /Node11/drsapp/anythingnew/Node11_86113288
+40.5442s 0 DRSApp:GenMessage(): Gen Msg: I'm Node11 at 86113291
+40.5442s 0 DRSApp:SendData(): Send Data for: /Node11/drsapp/anythingnew/Node11_86113288
+40.5798s 7 DRSApp:OnData(): Received Data for: /Node11/drsapp/anythingnew/Node11_86113288
+40.5798s 7 DRSApp:SendInterest(): Send Interest /Node11/drsapp/anythingnew/Node11_86113291
+40.5798s 7 DRSApp:SendData(): Send Data for: /Node24/drsapp/anythingnew/Node24_86113290
+40.5798s 7 DRSApp:SendInterest(): Send Interest /Node11/drsapp/86113291
+40.5921s 5 DRSApp:OnData(): Received Data for: /Node24/drsapp/anythingnew/Node24_86113290
+40.5921s 5 DRSApp:SendInterest(): Send Interest /Node24/drsapp/anythingnew/Node24_86113291
+40.5921s 5 DRSApp:SendInterest(): Send Interest /Node11/drsapp/86113291
+40.6027s 7 DRSApp:OnInterest(): Received Interest: /Node24/drsapp/anythingnew/Node24_86113291
+40.6114s 0 DRSApp:OnInterest(): Received Interest: /Node11/drsapp/anythingnew/Node11_86113291
+40.6117s 0 DRSApp:OnInterest(): Received Interest: /Node11/drsapp/86113291
+40.6117s 0 DRSApp:SendData(): Send Data for: /Node11/drsapp/86113291
+40.6435s 7 DRSApp:OnData(): Received Data for: /Node11/drsapp/86113291
+40.6541s 5 DRSApp:OnData(): Received Data for: /Node11/drsapp/86113291
+40.8452s 7 DRSApp:GenMessage(): Gen Msg: I'm Node24 at 86113293
+40.8452s 7 DRSApp:SendInterest(): Send Interest /Node11/drsapp/somethingnew/Node24_86113293/Node24/drsapp/86113293
+40.8452s 7 DRSApp:SendData(): Send Data for: /Node24/drsapp/anythingnew/Node24_86113291
+40.8571s 5 DRSApp:OnData(): Received Data for: /Node24/drsapp/anythingnew/Node24_86113291
+40.8571s 5 DRSApp:SendInterest(): Send Interest /Node24/drsapp/anythingnew/Node24_86113293
+40.8571s 5 DRSApp:SendInterest(): Send Interest /Node24/drsapp/86113293
+40.8676s 7 DRSApp:OnInterest(): Received Interest: /Node24/drsapp/anythingnew/Node24_86113293
+40.868s 7 DRSApp:OnInterest(): Received Interest: /Node24/drsapp/86113293
+40.868s 7 DRSApp:SendData(): Send Data for: /Node24/drsapp/86113293
+40.8774s 0 DRSApp:OnInterest(): Received Interest: /Node11/drsapp/somethingnew/Node24_86113293/Node24/drsapp/86113293
+40.8774s 0 DRSApp:SendData(): Send Data for: /Node11/drsapp/anythingnew/Node11_86113291
+40.8774s 0 DRSApp:SendData(): Send Data for: /Node11/drsapp/somethingnew/Node24_86113293/Node24/drsapp/86113293
+40.8774s 0 DRSApp:SendInterest(): Send Interest /Node24/drsapp/86113293
+40.8786s 5 DRSApp:OnData(): Received Data for: /Node24/drsapp/86113293
+40.913s 7 DRSApp:OnData(): Received Data for: /Node11/drsapp/anythingnew/Node11_86113291
+40.913s 7 DRSApp:SendInterest(): Send Interest /Node11/drsapp/anythingnew/Node11_86113294
+40.913s 7 DRSApp:SendData(): Send Data for: /Node24/drsapp/anythingnew/Node24_86113293
+40.913s 7 DRSApp:SendInterest(): Send Interest /Node24/drsapp/86113293
+40.913s 7 DRSApp:OnData(): Received Data for: /Node24/drsapp/86113293
+40.9139s 7 DRSApp:OnData(): Received Data for: /Node11/drsapp/somethingnew/Node24_86113293/Node24/drsapp/86113293
+40.9139s 7 DRSApp:SendInterest(): Send Interest /Node11/drsapp/anythingnew/Node11_86113294
+40.9254s 5 DRSApp:OnData(): Received Data for: /Node24/drsapp/anythingnew/Node24_86113293
+40.9254s 5 DRSApp:SendInterest(): Send Interest /Node24/drsapp/anythingnew/Node24_86113295
+40.9254s 5 DRSApp:SendInterest(): Send Interest /Node24/drsapp/86113293
+40.9254s 5 DRSApp:OnData(): Received Data for: /Node24/drsapp/86113293
+40.9359s 7 DRSApp:OnInterest(): Received Interest: /Node24/drsapp/anythingnew/Node24_86113295
+40.9446s 0 DRSApp:OnInterest(): Received Interest: /Node11/drsapp/anythingnew/Node11_86113294
+40.9455s 0 DRSApp:OnInterest(): Received Interest: /Node11/drsapp/anythingnew/Node11_86113294
+40.9462s 0 DRSApp:OnData(): Received Data for: /Node24/drsapp/86113293
+41.2342s 5 DRSApp:GenServerPeriod(): MY LEVEL=2, MY SERVER=Node24
+41.9694s 5 DRSApp:GenMessage(): Gen Msg: I'm Node22 at 86113299
+41.9694s 5 DRSApp:SendInterest(): Send Interest /Node24/drsapp/somethingnew/Node22_86113299/Node22/drsapp/86113299
+41.9802s 7 DRSApp:OnInterest(): Received Interest: /Node24/drsapp/somethingnew/Node22_86113299/Node22/drsapp/86113299
+41.9802s 7 DRSApp:SendInterest(): Send Interest /Node11/drsapp/somethingnew/Node24_86113299/Node22/drsapp/86113299
+41.9802s 7 DRSApp:SendData(): Send Data for: /Node24/drsapp/anythingnew/Node24_86113295
+41.9802s 7 DRSApp:SendData(): Send Data for: /Node24/drsapp/somethingnew/Node22_86113299/Node22/drsapp/86113299
+41.9802s 7 DRSApp:SendInterest(): Send Interest /Node22/drsapp/86113299
+41.991s 5 DRSApp:OnData(): Received Data for: /Node24/drsapp/somethingnew/Node22_86113299/Node22/drsapp/86113299
+41.991s 5 DRSApp:SendInterest(): Send Interest /Node24/drsapp/anythingnew/Node24_86113295
+41.9914s 5 DRSApp:OnInterest(): Received Interest: /Node22/drsapp/86113299
+41.9914s 5 DRSApp:SendData(): Send Data for: /Node22/drsapp/86113299
+42.0021s 7 DRSApp:OnData(): Received Data for: /Node22/drsapp/86113299
+42.0124s 0 DRSApp:OnInterest(): Received Interest: /Node11/drsapp/somethingnew/Node24_86113299/Node22/drsapp/86113299
+42.0124s 0 DRSApp:SendData(): Send Data for: /Node11/drsapp/anythingnew/Node11_86113294
+42.0124s 0 DRSApp:SendData(): Send Data for: /Node11/drsapp/somethingnew/Node24_86113299/Node22/drsapp/86113299
+42.0124s 0 DRSApp:SendInterest(): Send Interest /Node22/drsapp/86113299
+42.0134s 5 DRSApp:OnData(): Received Data for: /Node24/drsapp/anythingnew/Node24_86113295
+42.0134s 5 DRSApp:SendInterest(): Send Interest /Node24/drsapp/anythingnew/Node24_86113299
+42.0134s 5 DRSApp:SendInterest(): Send Interest /Node22/drsapp/86113299
+42.0134s 5 DRSApp:OnData(): Received Data for: /Node22/drsapp/86113299
+42.0239s 7 DRSApp:OnInterest(): Received Interest: /Node24/drsapp/anythingnew/Node24_86113299
+42.045s 7 DRSApp:OnData(): Received Data for: /Node11/drsapp/somethingnew/Node24_86113299/Node22/drsapp/86113299
+42.045s 7 DRSApp:SendInterest(): Send Interest /Node11/drsapp/anythingnew/Node11_86113294
+42.0976s 0 DRSApp:OnData(): Received Data for: /Node22/drsapp/86113299
+42.1121s 7 DRSApp:OnData(): Received Data for: /Node11/drsapp/anythingnew/Node11_86113294
+42.1121s 7 DRSApp:SendInterest(): Send Interest /Node11/drsapp/anythingnew/Node11_86113302
+42.1121s 7 DRSApp:SendData(): Send Data for: /Node24/drsapp/anythingnew/Node24_86113299
+42.1121s 7 DRSApp:SendInterest(): Send Interest /Node22/drsapp/86113299
+42.1121s 7 DRSApp:OnData(): Received Data for: /Node22/drsapp/86113299
+42.1245s 5 DRSApp:OnData(): Received Data for: /Node24/drsapp/anythingnew/Node24_86113299
+42.1245s 5 DRSApp:SendInterest(): Send Interest /Node24/drsapp/anythingnew/Node24_86113304
+42.1245s 5 DRSApp:SendInterest(): Send Interest /Node22/drsapp/86113299
+42.1245s 5 DRSApp:OnData(): Received Data for: /Node22/drsapp/86113299
+42.1302s 7 DRSApp:GenServerPeriod(): MY LEVEL=3, MY SERVER=Node11
+42.135s 7 DRSApp:OnInterest(): Received Interest: /Node24/drsapp/anythingnew/Node24_86113304
+42.1437s 0 DRSApp:OnInterest(): Received Interest: /Node11/drsapp/anythingnew/Node11_86113302
+42.3151s 0 DRSApp:GenServerPeriod(): MY LEVEL=6, MY SERVER=
+42.5442s 0 DRSApp:GenMessage(): Gen Msg: I'm Node11 at 86113306
+42.5442s 0 DRSApp:SendData(): Send Data for: /Node11/drsapp/anythingnew/Node11_86113302
+42.5798s 7 DRSApp:OnData(): Received Data for: /Node11/drsapp/anythingnew/Node11_86113302
+42.5798s 7 DRSApp:SendInterest(): Send Interest /Node11/drsapp/anythingnew/Node11_86113306
+42.5798s 7 DRSApp:SendData(): Send Data for: /Node24/drsapp/anythingnew/Node24_86113304
+42.5798s 7 DRSApp:SendInterest(): Send Interest /Node11/drsapp/86113306
+42.5921s 5 DRSApp:OnData(): Received Data for: /Node24/drsapp/anythingnew/Node24_86113304
+42.5921s 5 DRSApp:SendInterest(): Send Interest /Node24/drsapp/anythingnew/Node24_86113306
+42.5921s 5 DRSApp:SendInterest(): Send Interest /Node11/drsapp/86113306
+42.6027s 7 DRSApp:OnInterest(): Received Interest: /Node24/drsapp/anythingnew/Node24_86113306
+42.6114s 0 DRSApp:OnInterest(): Received Interest: /Node11/drsapp/anythingnew/Node11_86113306
+42.6117s 0 DRSApp:OnInterest(): Received Interest: /Node11/drsapp/86113306
+42.6117s 0 DRSApp:SendData(): Send Data for: /Node11/drsapp/86113306
+42.6435s 7 DRSApp:OnData(): Received Data for: /Node11/drsapp/86113306
+42.6541s 5 DRSApp:OnData(): Received Data for: /Node11/drsapp/86113306
+42.8452s 7 DRSApp:GenMessage(): Gen Msg: I'm Node24 at 86113308
+42.8452s 7 DRSApp:SendInterest(): Send Interest /Node11/drsapp/somethingnew/Node24_86113308/Node24/drsapp/86113308
+42.8452s 7 DRSApp:SendData(): Send Data for: /Node24/drsapp/anythingnew/Node24_86113306
+42.8571s 5 DRSApp:OnData(): Received Data for: /Node24/drsapp/anythingnew/Node24_86113306
+42.8571s 5 DRSApp:SendInterest(): Send Interest /Node24/drsapp/anythingnew/Node24_86113308
+42.8571s 5 DRSApp:SendInterest(): Send Interest /Node24/drsapp/86113308
+42.8676s 7 DRSApp:OnInterest(): Received Interest: /Node24/drsapp/anythingnew/Node24_86113308
+42.868s 7 DRSApp:OnInterest(): Received Interest: /Node24/drsapp/86113308
+42.868s 7 DRSApp:SendData(): Send Data for: /Node24/drsapp/86113308
+42.8774s 0 DRSApp:OnInterest(): Received Interest: /Node11/drsapp/somethingnew/Node24_86113308/Node24/drsapp/86113308
+42.8774s 0 DRSApp:SendData(): Send Data for: /Node11/drsapp/anythingnew/Node11_86113306
+42.8774s 0 DRSApp:SendData(): Send Data for: /Node11/drsapp/somethingnew/Node24_86113308/Node24/drsapp/86113308
+42.8774s 0 DRSApp:SendInterest(): Send Interest /Node24/drsapp/86113308
+42.8786s 5 DRSApp:OnData(): Received Data for: /Node24/drsapp/86113308
+42.913s 7 DRSApp:OnData(): Received Data for: /Node11/drsapp/anythingnew/Node11_86113306
+42.913s 7 DRSApp:SendInterest(): Send Interest /Node11/drsapp/anythingnew/Node11_86113309
+42.913s 7 DRSApp:SendData(): Send Data for: /Node24/drsapp/anythingnew/Node24_86113308
+42.913s 7 DRSApp:SendInterest(): Send Interest /Node24/drsapp/86113308
+42.913s 7 DRSApp:OnData(): Received Data for: /Node24/drsapp/86113308
+42.9139s 7 DRSApp:OnData(): Received Data for: /Node11/drsapp/somethingnew/Node24_86113308/Node24/drsapp/86113308
+42.9139s 7 DRSApp:SendInterest(): Send Interest /Node11/drsapp/anythingnew/Node11_86113309
+42.9254s 5 DRSApp:OnData(): Received Data for: /Node24/drsapp/anythingnew/Node24_86113308
+42.9254s 5 DRSApp:SendInterest(): Send Interest /Node24/drsapp/anythingnew/Node24_86113310
+42.9254s 5 DRSApp:SendInterest(): Send Interest /Node24/drsapp/86113308
+42.9254s 5 DRSApp:OnData(): Received Data for: /Node24/drsapp/86113308
+42.9359s 7 DRSApp:OnInterest(): Received Interest: /Node24/drsapp/anythingnew/Node24_86113310
+42.9446s 0 DRSApp:OnInterest(): Received Interest: /Node11/drsapp/anythingnew/Node11_86113309
+42.9455s 0 DRSApp:OnInterest(): Received Interest: /Node11/drsapp/anythingnew/Node11_86113309
+42.9462s 0 DRSApp:OnData(): Received Data for: /Node24/drsapp/86113308
+43.9694s 5 DRSApp:GenMessage(): Gen Msg: I'm Node22 at 86113313
+43.9694s 5 DRSApp:SendInterest(): Send Interest /Node24/drsapp/somethingnew/Node22_86113313/Node22/drsapp/86113313
+43.9802s 7 DRSApp:OnInterest(): Received Interest: /Node24/drsapp/somethingnew/Node22_86113313/Node22/drsapp/86113313
+43.9802s 7 DRSApp:SendInterest(): Send Interest /Node11/drsapp/somethingnew/Node24_86113314/Node22/drsapp/86113313
+43.9802s 7 DRSApp:SendData(): Send Data for: /Node24/drsapp/anythingnew/Node24_86113310
+43.9802s 7 DRSApp:SendData(): Send Data for: /Node24/drsapp/somethingnew/Node22_86113313/Node22/drsapp/86113313
+43.9802s 7 DRSApp:SendInterest(): Send Interest /Node22/drsapp/86113313
+43.991s 5 DRSApp:OnData(): Received Data for: /Node24/drsapp/somethingnew/Node22_86113313/Node22/drsapp/86113313
+43.991s 5 DRSApp:SendInterest(): Send Interest /Node24/drsapp/anythingnew/Node24_86113310
+43.9914s 5 DRSApp:OnInterest(): Received Interest: /Node22/drsapp/86113313
+43.9914s 5 DRSApp:SendData(): Send Data for: /Node22/drsapp/86113313
+44.0021s 7 DRSApp:OnData(): Received Data for: /Node22/drsapp/86113313
+44.0124s 0 DRSApp:OnInterest(): Received Interest: /Node11/drsapp/somethingnew/Node24_86113314/Node22/drsapp/86113313
+44.0124s 0 DRSApp:SendData(): Send Data for: /Node11/drsapp/anythingnew/Node11_86113309
+44.0124s 0 DRSApp:SendData(): Send Data for: /Node11/drsapp/somethingnew/Node24_86113314/Node22/drsapp/86113313
+44.0124s 0 DRSApp:SendInterest(): Send Interest /Node22/drsapp/86113313
+44.0134s 5 DRSApp:OnData(): Received Data for: /Node24/drsapp/anythingnew/Node24_86113310
+44.0134s 5 DRSApp:SendInterest(): Send Interest /Node24/drsapp/anythingnew/Node24_86113314
+44.0134s 5 DRSApp:SendInterest(): Send Interest /Node22/drsapp/86113313
+44.0134s 5 DRSApp:OnData(): Received Data for: /Node22/drsapp/86113313
+44.0239s 7 DRSApp:OnInterest(): Received Interest: /Node24/drsapp/anythingnew/Node24_86113314
+44.045s 7 DRSApp:OnData(): Received Data for: /Node11/drsapp/somethingnew/Node24_86113314/Node22/drsapp/86113313
+44.045s 7 DRSApp:SendInterest(): Send Interest /Node11/drsapp/anythingnew/Node11_86113309
+44.0976s 0 DRSApp:OnData(): Received Data for: /Node22/drsapp/86113313
+44.1121s 7 DRSApp:OnData(): Received Data for: /Node11/drsapp/anythingnew/Node11_86113309
+44.1121s 7 DRSApp:SendInterest(): Send Interest /Node11/drsapp/anythingnew/Node11_86113317
+44.1121s 7 DRSApp:SendData(): Send Data for: /Node24/drsapp/anythingnew/Node24_86113314
+44.1121s 7 DRSApp:SendInterest(): Send Interest /Node22/drsapp/86113313
+44.1121s 7 DRSApp:OnData(): Received Data for: /Node22/drsapp/86113313
+44.1245s 5 DRSApp:OnData(): Received Data for: /Node24/drsapp/anythingnew/Node24_86113314
+44.1245s 5 DRSApp:SendInterest(): Send Interest /Node24/drsapp/anythingnew/Node24_86113319
+44.1245s 5 DRSApp:SendInterest(): Send Interest /Node22/drsapp/86113313
+44.1245s 5 DRSApp:OnData(): Received Data for: /Node22/drsapp/86113313
+44.135s 7 DRSApp:OnInterest(): Received Interest: /Node24/drsapp/anythingnew/Node24_86113319
+44.1437s 0 DRSApp:OnInterest(): Received Interest: /Node11/drsapp/anythingnew/Node11_86113317
+44.4558s 5 DRSApp:GenServerPeriod(): MY LEVEL=2, MY SERVER=Node24
+44.5442s 0 DRSApp:GenMessage(): Gen Msg: I'm Node11 at 86113320
+44.5442s 0 DRSApp:SendData(): Send Data for: /Node11/drsapp/anythingnew/Node11_86113317
+44.5798s 7 DRSApp:OnData(): Received Data for: /Node11/drsapp/anythingnew/Node11_86113317
+44.5798s 7 DRSApp:SendInterest(): Send Interest /Node11/drsapp/anythingnew/Node11_86113320
+44.5798s 7 DRSApp:SendData(): Send Data for: /Node24/drsapp/anythingnew/Node24_86113319
+44.5798s 7 DRSApp:SendInterest(): Send Interest /Node11/drsapp/86113320
+44.5921s 5 DRSApp:OnData(): Received Data for: /Node24/drsapp/anythingnew/Node24_86113319
+44.5921s 5 DRSApp:SendInterest(): Send Interest /Node24/drsapp/anythingnew/Node24_86113321
+44.5921s 5 DRSApp:SendInterest(): Send Interest /Node11/drsapp/86113320
+44.6027s 7 DRSApp:OnInterest(): Received Interest: /Node24/drsapp/anythingnew/Node24_86113321
+44.6114s 0 DRSApp:OnInterest(): Received Interest: /Node11/drsapp/anythingnew/Node11_86113320
+44.6117s 0 DRSApp:OnInterest(): Received Interest: /Node11/drsapp/86113320
+44.6117s 0 DRSApp:SendData(): Send Data for: /Node11/drsapp/86113320
+44.6435s 7 DRSApp:OnData(): Received Data for: /Node11/drsapp/86113320
+44.6541s 5 DRSApp:OnData(): Received Data for: /Node11/drsapp/86113320
+44.8452s 7 DRSApp:GenMessage(): Gen Msg: I'm Node24 at 86113322
+44.8452s 7 DRSApp:SendInterest(): Send Interest /Node11/drsapp/somethingnew/Node24_86113322/Node24/drsapp/86113322
+44.8452s 7 DRSApp:SendData(): Send Data for: /Node24/drsapp/anythingnew/Node24_86113321
+44.8571s 5 DRSApp:OnData(): Received Data for: /Node24/drsapp/anythingnew/Node24_86113321
+44.8571s 5 DRSApp:SendInterest(): Send Interest /Node24/drsapp/anythingnew/Node24_86113322
+44.8571s 5 DRSApp:SendInterest(): Send Interest /Node24/drsapp/86113322
+44.8676s 7 DRSApp:OnInterest(): Received Interest: /Node24/drsapp/anythingnew/Node24_86113322
+44.868s 7 DRSApp:OnInterest(): Received Interest: /Node24/drsapp/86113322
+44.868s 7 DRSApp:SendData(): Send Data for: /Node24/drsapp/86113322
+44.8774s 0 DRSApp:OnInterest(): Received Interest: /Node11/drsapp/somethingnew/Node24_86113322/Node24/drsapp/86113322
+44.8774s 0 DRSApp:SendData(): Send Data for: /Node11/drsapp/anythingnew/Node11_86113320
+44.8774s 0 DRSApp:SendData(): Send Data for: /Node11/drsapp/somethingnew/Node24_86113322/Node24/drsapp/86113322
+44.8774s 0 DRSApp:SendInterest(): Send Interest /Node24/drsapp/86113322
+44.8786s 5 DRSApp:OnData(): Received Data for: /Node24/drsapp/86113322
+44.913s 7 DRSApp:OnData(): Received Data for: /Node11/drsapp/anythingnew/Node11_86113320
+44.913s 7 DRSApp:SendInterest(): Send Interest /Node11/drsapp/anythingnew/Node11_86113324
+44.913s 7 DRSApp:SendData(): Send Data for: /Node24/drsapp/anythingnew/Node24_86113322
+44.913s 7 DRSApp:SendInterest(): Send Interest /Node24/drsapp/86113322
+44.913s 7 DRSApp:OnData(): Received Data for: /Node24/drsapp/86113322
+44.9139s 7 DRSApp:OnData(): Received Data for: /Node11/drsapp/somethingnew/Node24_86113322/Node24/drsapp/86113322
+44.9139s 7 DRSApp:SendInterest(): Send Interest /Node11/drsapp/anythingnew/Node11_86113324
+44.9254s 5 DRSApp:OnData(): Received Data for: /Node24/drsapp/anythingnew/Node24_86113322
+44.9254s 5 DRSApp:SendInterest(): Send Interest /Node24/drsapp/anythingnew/Node24_86113325
+44.9254s 5 DRSApp:SendInterest(): Send Interest /Node24/drsapp/86113322
+44.9254s 5 DRSApp:OnData(): Received Data for: /Node24/drsapp/86113322
+44.9359s 7 DRSApp:OnInterest(): Received Interest: /Node24/drsapp/anythingnew/Node24_86113325
+44.9446s 0 DRSApp:OnInterest(): Received Interest: /Node11/drsapp/anythingnew/Node11_86113324
+44.9455s 0 DRSApp:OnInterest(): Received Interest: /Node11/drsapp/anythingnew/Node11_86113324
+44.9462s 0 DRSApp:OnData(): Received Data for: /Node24/drsapp/86113322
+45.4177s 7 DRSApp:GenServerPeriod(): MY LEVEL=3, MY SERVER=Node11
+45.9694s 5 DRSApp:GenMessage(): Gen Msg: I'm Node22 at 86113328
+45.9694s 5 DRSApp:SendInterest(): Send Interest /Node24/drsapp/somethingnew/Node22_86113328/Node22/drsapp/86113328
+45.9802s 7 DRSApp:OnInterest(): Received Interest: /Node24/drsapp/somethingnew/Node22_86113328/Node22/drsapp/86113328
+45.9802s 7 DRSApp:SendInterest(): Send Interest /Node11/drsapp/somethingnew/Node24_86113329/Node22/drsapp/86113328
+45.9802s 7 DRSApp:SendData(): Send Data for: /Node24/drsapp/anythingnew/Node24_86113325
+45.9802s 7 DRSApp:SendData(): Send Data for: /Node24/drsapp/somethingnew/Node22_86113328/Node22/drsapp/86113328
+45.9802s 7 DRSApp:SendInterest(): Send Interest /Node22/drsapp/86113328
+45.991s 5 DRSApp:OnData(): Received Data for: /Node24/drsapp/somethingnew/Node22_86113328/Node22/drsapp/86113328
+45.991s 5 DRSApp:SendInterest(): Send Interest /Node24/drsapp/anythingnew/Node24_86113325
+45.9914s 5 DRSApp:OnInterest(): Received Interest: /Node22/drsapp/86113328
+45.9914s 5 DRSApp:SendData(): Send Data for: /Node22/drsapp/86113328
+46.0021s 7 DRSApp:OnData(): Received Data for: /Node22/drsapp/86113328
+46.0124s 0 DRSApp:OnInterest(): Received Interest: /Node11/drsapp/somethingnew/Node24_86113329/Node22/drsapp/86113328
+46.0124s 0 DRSApp:SendData(): Send Data for: /Node11/drsapp/anythingnew/Node11_86113324
+46.0124s 0 DRSApp:SendData(): Send Data for: /Node11/drsapp/somethingnew/Node24_86113329/Node22/drsapp/86113328
+46.0124s 0 DRSApp:SendInterest(): Send Interest /Node22/drsapp/86113328
+46.0134s 5 DRSApp:OnData(): Received Data for: /Node24/drsapp/anythingnew/Node24_86113325
+46.0134s 5 DRSApp:SendInterest(): Send Interest /Node24/drsapp/anythingnew/Node24_86113329
+46.0134s 5 DRSApp:SendInterest(): Send Interest /Node22/drsapp/86113328
+46.0134s 5 DRSApp:OnData(): Received Data for: /Node22/drsapp/86113328
+46.0239s 7 DRSApp:OnInterest(): Received Interest: /Node24/drsapp/anythingnew/Node24_86113329
+46.045s 7 DRSApp:OnData(): Received Data for: /Node11/drsapp/somethingnew/Node24_86113329/Node22/drsapp/86113328
+46.045s 7 DRSApp:SendInterest(): Send Interest /Node11/drsapp/anythingnew/Node11_86113324
+46.0976s 0 DRSApp:OnData(): Received Data for: /Node22/drsapp/86113328
+46.1121s 7 DRSApp:OnData(): Received Data for: /Node11/drsapp/anythingnew/Node11_86113324
+46.1121s 7 DRSApp:SendInterest(): Send Interest /Node11/drsapp/anythingnew/Node11_86113332
+46.1121s 7 DRSApp:SendData(): Send Data for: /Node24/drsapp/anythingnew/Node24_86113329
+46.1121s 7 DRSApp:SendInterest(): Send Interest /Node22/drsapp/86113328
+46.1121s 7 DRSApp:OnData(): Received Data for: /Node22/drsapp/86113328
+46.1245s 5 DRSApp:OnData(): Received Data for: /Node24/drsapp/anythingnew/Node24_86113329
+46.1245s 5 DRSApp:SendInterest(): Send Interest /Node24/drsapp/anythingnew/Node24_86113334
+46.1245s 5 DRSApp:SendInterest(): Send Interest /Node22/drsapp/86113328
+46.1245s 5 DRSApp:OnData(): Received Data for: /Node22/drsapp/86113328
+46.135s 7 DRSApp:OnInterest(): Received Interest: /Node24/drsapp/anythingnew/Node24_86113334
+46.1437s 0 DRSApp:OnInterest(): Received Interest: /Node11/drsapp/anythingnew/Node11_86113332
+46.473s 0 DRSApp:GenServerPeriod(): MY LEVEL=6, MY SERVER=
+46.5442s 0 DRSApp:GenMessage(): Gen Msg: I'm Node11 at 86113335
+46.5442s 0 DRSApp:SendData(): Send Data for: /Node11/drsapp/anythingnew/Node11_86113332
+46.5798s 7 DRSApp:OnData(): Received Data for: /Node11/drsapp/anythingnew/Node11_86113332
+46.5798s 7 DRSApp:SendInterest(): Send Interest /Node11/drsapp/anythingnew/Node11_86113335
+46.5798s 7 DRSApp:SendData(): Send Data for: /Node24/drsapp/anythingnew/Node24_86113334
+46.5798s 7 DRSApp:SendInterest(): Send Interest /Node11/drsapp/86113335
+46.5921s 5 DRSApp:OnData(): Received Data for: /Node24/drsapp/anythingnew/Node24_86113334
+46.5921s 5 DRSApp:SendInterest(): Send Interest /Node24/drsapp/anythingnew/Node24_86113335
+46.5921s 5 DRSApp:SendInterest(): Send Interest /Node11/drsapp/86113335
+46.6027s 7 DRSApp:OnInterest(): Received Interest: /Node24/drsapp/anythingnew/Node24_86113335
+46.6114s 0 DRSApp:OnInterest(): Received Interest: /Node11/drsapp/anythingnew/Node11_86113335
+46.6117s 0 DRSApp:OnInterest(): Received Interest: /Node11/drsapp/86113335
+46.6117s 0 DRSApp:SendData(): Send Data for: /Node11/drsapp/86113335
+46.6435s 7 DRSApp:OnData(): Received Data for: /Node11/drsapp/86113335
+46.6541s 5 DRSApp:OnData(): Received Data for: /Node11/drsapp/86113335
+46.8452s 7 DRSApp:GenMessage(): Gen Msg: I'm Node24 at 86113337
+46.8452s 7 DRSApp:SendInterest(): Send Interest /Node11/drsapp/somethingnew/Node24_86113337/Node24/drsapp/86113337
+46.8452s 7 DRSApp:SendData(): Send Data for: /Node24/drsapp/anythingnew/Node24_86113335
+46.8571s 5 DRSApp:OnData(): Received Data for: /Node24/drsapp/anythingnew/Node24_86113335
+46.8571s 5 DRSApp:SendInterest(): Send Interest /Node24/drsapp/anythingnew/Node24_86113337
+46.8571s 5 DRSApp:SendInterest(): Send Interest /Node24/drsapp/86113337
+46.8676s 7 DRSApp:OnInterest(): Received Interest: /Node24/drsapp/anythingnew/Node24_86113337
+46.868s 7 DRSApp:OnInterest(): Received Interest: /Node24/drsapp/86113337
+46.868s 7 DRSApp:SendData(): Send Data for: /Node24/drsapp/86113337
+46.8774s 0 DRSApp:OnInterest(): Received Interest: /Node11/drsapp/somethingnew/Node24_86113337/Node24/drsapp/86113337
+46.8774s 0 DRSApp:SendData(): Send Data for: /Node11/drsapp/anythingnew/Node11_86113335
+46.8774s 0 DRSApp:SendData(): Send Data for: /Node11/drsapp/somethingnew/Node24_86113337/Node24/drsapp/86113337
+46.8774s 0 DRSApp:SendInterest(): Send Interest /Node24/drsapp/86113337
+46.8786s 5 DRSApp:OnData(): Received Data for: /Node24/drsapp/86113337
+46.913s 7 DRSApp:OnData(): Received Data for: /Node11/drsapp/anythingnew/Node11_86113335
+46.913s 7 DRSApp:SendInterest(): Send Interest /Node11/drsapp/anythingnew/Node11_86113338
+46.913s 7 DRSApp:SendData(): Send Data for: /Node24/drsapp/anythingnew/Node24_86113337
+46.913s 7 DRSApp:SendInterest(): Send Interest /Node24/drsapp/86113337
+46.913s 7 DRSApp:OnData(): Received Data for: /Node24/drsapp/86113337
+46.9139s 7 DRSApp:OnData(): Received Data for: /Node11/drsapp/somethingnew/Node24_86113337/Node24/drsapp/86113337
+46.9139s 7 DRSApp:SendInterest(): Send Interest /Node11/drsapp/anythingnew/Node11_86113338
+46.9254s 5 DRSApp:OnData(): Received Data for: /Node24/drsapp/anythingnew/Node24_86113337
+46.9254s 5 DRSApp:SendInterest(): Send Interest /Node24/drsapp/anythingnew/Node24_86113339
+46.9254s 5 DRSApp:SendInterest(): Send Interest /Node24/drsapp/86113337
+46.9254s 5 DRSApp:OnData(): Received Data for: /Node24/drsapp/86113337
+46.9359s 7 DRSApp:OnInterest(): Received Interest: /Node24/drsapp/anythingnew/Node24_86113339
+46.9446s 0 DRSApp:OnInterest(): Received Interest: /Node11/drsapp/anythingnew/Node11_86113338
+46.9455s 0 DRSApp:OnInterest(): Received Interest: /Node11/drsapp/anythingnew/Node11_86113338
+46.9462s 0 DRSApp:OnData(): Received Data for: /Node24/drsapp/86113337
+47.0027s 5 DRSApp:GenServerPeriod(): MY LEVEL=2, MY SERVER=Node24
+47.9694s 5 DRSApp:GenMessage(): Gen Msg: I'm Node22 at 86113343
+47.9694s 5 DRSApp:SendInterest(): Send Interest /Node24/drsapp/somethingnew/Node22_86113343/Node22/drsapp/86113343
+47.9802s 7 DRSApp:OnInterest(): Received Interest: /Node24/drsapp/somethingnew/Node22_86113343/Node22/drsapp/86113343
+47.9802s 7 DRSApp:SendInterest(): Send Interest /Node11/drsapp/somethingnew/Node24_86113343/Node22/drsapp/86113343
+47.9802s 7 DRSApp:SendData(): Send Data for: /Node24/drsapp/anythingnew/Node24_86113339
+47.9802s 7 DRSApp:SendData(): Send Data for: /Node24/drsapp/somethingnew/Node22_86113343/Node22/drsapp/86113343
+47.9802s 7 DRSApp:SendInterest(): Send Interest /Node22/drsapp/86113343
+47.991s 5 DRSApp:OnData(): Received Data for: /Node24/drsapp/somethingnew/Node22_86113343/Node22/drsapp/86113343
+47.991s 5 DRSApp:SendInterest(): Send Interest /Node24/drsapp/anythingnew/Node24_86113339
+47.9914s 5 DRSApp:OnInterest(): Received Interest: /Node22/drsapp/86113343
+47.9914s 5 DRSApp:SendData(): Send Data for: /Node22/drsapp/86113343
+48.0021s 7 DRSApp:OnData(): Received Data for: /Node22/drsapp/86113343
+48.0124s 0 DRSApp:OnInterest(): Received Interest: /Node11/drsapp/somethingnew/Node24_86113343/Node22/drsapp/86113343
+48.0124s 0 DRSApp:SendData(): Send Data for: /Node11/drsapp/anythingnew/Node11_86113338
+48.0124s 0 DRSApp:SendData(): Send Data for: /Node11/drsapp/somethingnew/Node24_86113343/Node22/drsapp/86113343
+48.0124s 0 DRSApp:SendInterest(): Send Interest /Node22/drsapp/86113343
+48.0134s 5 DRSApp:OnData(): Received Data for: /Node24/drsapp/anythingnew/Node24_86113339
+48.0134s 5 DRSApp:SendInterest(): Send Interest /Node24/drsapp/anythingnew/Node24_86113343
+48.0134s 5 DRSApp:SendInterest(): Send Interest /Node22/drsapp/86113343
+48.0134s 5 DRSApp:OnData(): Received Data for: /Node22/drsapp/86113343
+48.0239s 7 DRSApp:OnInterest(): Received Interest: /Node24/drsapp/anythingnew/Node24_86113343
+48.045s 7 DRSApp:OnData(): Received Data for: /Node11/drsapp/somethingnew/Node24_86113343/Node22/drsapp/86113343
+48.045s 7 DRSApp:SendInterest(): Send Interest /Node11/drsapp/anythingnew/Node11_86113338
+48.0976s 0 DRSApp:OnData(): Received Data for: /Node22/drsapp/86113343
+48.1121s 7 DRSApp:OnData(): Received Data for: /Node11/drsapp/anythingnew/Node11_86113338
+48.1121s 7 DRSApp:SendInterest(): Send Interest /Node11/drsapp/anythingnew/Node11_86113346
+48.1121s 7 DRSApp:SendData(): Send Data for: /Node24/drsapp/anythingnew/Node24_86113343
+48.1121s 7 DRSApp:SendInterest(): Send Interest /Node22/drsapp/86113343
+48.1121s 7 DRSApp:OnData(): Received Data for: /Node22/drsapp/86113343
+48.1245s 5 DRSApp:OnData(): Received Data for: /Node24/drsapp/anythingnew/Node24_86113343
+48.1245s 5 DRSApp:SendInterest(): Send Interest /Node24/drsapp/anythingnew/Node24_86113348
+48.1245s 5 DRSApp:SendInterest(): Send Interest /Node22/drsapp/86113343
+48.1245s 5 DRSApp:OnData(): Received Data for: /Node22/drsapp/86113343
+48.135s 7 DRSApp:OnInterest(): Received Interest: /Node24/drsapp/anythingnew/Node24_86113348
+48.1437s 0 DRSApp:OnInterest(): Received Interest: /Node11/drsapp/anythingnew/Node11_86113346
+48.5442s 0 DRSApp:GenMessage(): Gen Msg: I'm Node11 at 86113350
+48.5442s 0 DRSApp:SendData(): Send Data for: /Node11/drsapp/anythingnew/Node11_86113346
+48.5798s 7 DRSApp:OnData(): Received Data for: /Node11/drsapp/anythingnew/Node11_86113346
+48.5798s 7 DRSApp:SendInterest(): Send Interest /Node11/drsapp/anythingnew/Node11_86113350
+48.5798s 7 DRSApp:SendData(): Send Data for: /Node24/drsapp/anythingnew/Node24_86113348
+48.5798s 7 DRSApp:SendInterest(): Send Interest /Node11/drsapp/86113350
+48.5921s 5 DRSApp:OnData(): Received Data for: /Node24/drsapp/anythingnew/Node24_86113348
+48.5921s 5 DRSApp:SendInterest(): Send Interest /Node24/drsapp/anythingnew/Node24_86113350
+48.5921s 5 DRSApp:SendInterest(): Send Interest /Node11/drsapp/86113350
+48.6027s 7 DRSApp:OnInterest(): Received Interest: /Node24/drsapp/anythingnew/Node24_86113350
+48.6114s 0 DRSApp:OnInterest(): Received Interest: /Node11/drsapp/anythingnew/Node11_86113350
+48.6117s 0 DRSApp:OnInterest(): Received Interest: /Node11/drsapp/86113350
+48.6117s 0 DRSApp:SendData(): Send Data for: /Node11/drsapp/86113350
+48.6435s 7 DRSApp:OnData(): Received Data for: /Node11/drsapp/86113350
+48.6541s 5 DRSApp:OnData(): Received Data for: /Node11/drsapp/86113350
+48.8452s 7 DRSApp:GenMessage(): Gen Msg: I'm Node24 at 86113352
+48.8452s 7 DRSApp:SendInterest(): Send Interest /Node11/drsapp/somethingnew/Node24_86113352/Node24/drsapp/86113352
+48.8452s 7 DRSApp:SendData(): Send Data for: /Node24/drsapp/anythingnew/Node24_86113350
+48.8571s 5 DRSApp:OnData(): Received Data for: /Node24/drsapp/anythingnew/Node24_86113350
+48.8571s 5 DRSApp:SendInterest(): Send Interest /Node24/drsapp/anythingnew/Node24_86113352
+48.8571s 5 DRSApp:SendInterest(): Send Interest /Node24/drsapp/86113352
+48.8676s 7 DRSApp:OnInterest(): Received Interest: /Node24/drsapp/anythingnew/Node24_86113352
+48.868s 7 DRSApp:OnInterest(): Received Interest: /Node24/drsapp/86113352
+48.868s 7 DRSApp:SendData(): Send Data for: /Node24/drsapp/86113352
+48.8774s 0 DRSApp:OnInterest(): Received Interest: /Node11/drsapp/somethingnew/Node24_86113352/Node24/drsapp/86113352
+48.8774s 0 DRSApp:SendData(): Send Data for: /Node11/drsapp/anythingnew/Node11_86113350
+48.8774s 0 DRSApp:SendData(): Send Data for: /Node11/drsapp/somethingnew/Node24_86113352/Node24/drsapp/86113352
+48.8774s 0 DRSApp:SendInterest(): Send Interest /Node24/drsapp/86113352
+48.8786s 5 DRSApp:OnData(): Received Data for: /Node24/drsapp/86113352
+48.913s 7 DRSApp:OnData(): Received Data for: /Node11/drsapp/anythingnew/Node11_86113350
+48.913s 7 DRSApp:SendInterest(): Send Interest /Node11/drsapp/anythingnew/Node11_86113353
+48.913s 7 DRSApp:SendData(): Send Data for: /Node24/drsapp/anythingnew/Node24_86113352
+48.913s 7 DRSApp:SendInterest(): Send Interest /Node24/drsapp/86113352
+48.913s 7 DRSApp:OnData(): Received Data for: /Node24/drsapp/86113352
+48.9139s 7 DRSApp:OnData(): Received Data for: /Node11/drsapp/somethingnew/Node24_86113352/Node24/drsapp/86113352
+48.9139s 7 DRSApp:SendInterest(): Send Interest /Node11/drsapp/anythingnew/Node11_86113353
+48.9254s 5 DRSApp:OnData(): Received Data for: /Node24/drsapp/anythingnew/Node24_86113352
+48.9254s 5 DRSApp:SendInterest(): Send Interest /Node24/drsapp/anythingnew/Node24_86113354
+48.9254s 5 DRSApp:SendInterest(): Send Interest /Node24/drsapp/86113352
+48.9254s 5 DRSApp:OnData(): Received Data for: /Node24/drsapp/86113352
+48.9359s 7 DRSApp:OnInterest(): Received Interest: /Node24/drsapp/anythingnew/Node24_86113354
+48.9446s 0 DRSApp:OnInterest(): Received Interest: /Node11/drsapp/anythingnew/Node11_86113353
+48.9455s 0 DRSApp:OnInterest(): Received Interest: /Node11/drsapp/anythingnew/Node11_86113353
+48.9462s 0 DRSApp:OnData(): Received Data for: /Node24/drsapp/86113352
+49.0861s 7 DRSApp:GenServerPeriod(): MY LEVEL=3, MY SERVER=Node11
+49.3047s 5 DRSApp:GenServerPeriod(): MY LEVEL=2, MY SERVER=Node24
+49.4846s 0 DRSApp:GenServerPeriod(): MY LEVEL=6, MY SERVER=
+49.9694s 5 DRSApp:GenMessage(): Gen Msg: I'm Node22 at 86113358
+49.9694s 5 DRSApp:SendInterest(): Send Interest /Node24/drsapp/somethingnew/Node22_86113358/Node22/drsapp/86113358
+49.9802s 7 DRSApp:OnInterest(): Received Interest: /Node24/drsapp/somethingnew/Node22_86113358/Node22/drsapp/86113358
+49.9802s 7 DRSApp:SendInterest(): Send Interest /Node11/drsapp/somethingnew/Node24_86113358/Node22/drsapp/86113358
+49.9802s 7 DRSApp:SendData(): Send Data for: /Node24/drsapp/anythingnew/Node24_86113354
+49.9802s 7 DRSApp:SendData(): Send Data for: /Node24/drsapp/somethingnew/Node22_86113358/Node22/drsapp/86113358
+49.9802s 7 DRSApp:SendInterest(): Send Interest /Node22/drsapp/86113358
+49.991s 5 DRSApp:OnData(): Received Data for: /Node24/drsapp/somethingnew/Node22_86113358/Node22/drsapp/86113358
+49.991s 5 DRSApp:SendInterest(): Send Interest /Node24/drsapp/anythingnew/Node24_86113354
+49.9914s 5 DRSApp:OnInterest(): Received Interest: /Node22/drsapp/86113358
+49.9914s 5 DRSApp:SendData(): Send Data for: /Node22/drsapp/86113358

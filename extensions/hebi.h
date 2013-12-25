@@ -16,13 +16,13 @@ struct xml_string_writer : pugi::xml_writer
 	
 void SplitStringByIndent(std::string &s, char indent);
 std::string GetSubStringByIndent(const std::string &s, char indent, int seq);
-int MyStringFinder(const std::string &s, char indent, int seq)
+int MyStringFinder(const std::string &s, char indent, int seq);
 boost::tuple<long, long, long, long> GetPosixTime();
 long GetPosixTime_Hours();
 long GetPosixTime_Minutes();
 long GetPosixTime_Seconds();
 long GetPosixTime_Milli();
-long GetPosixTime_TotalMilli()
+long GetPosixTime_TotalMilli();
 
 
 } //hebi

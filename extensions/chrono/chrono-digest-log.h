@@ -1,8 +1,8 @@
 /*
- * Digest, EventName, EventSeq
- *
+ * FILENAME: chrono-digest-log.h
  */
 #include <boost/tuple/tuple.hpp>
+#include <map>
 
 namespace ns3 {
 

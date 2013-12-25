@@ -19,6 +19,8 @@
 #include "ns3/ndn-fib.h"
 #include "ns3/random-variable.h"
 #include "ns3/core-module.h"
+#include "../hebi.h"
+#include<boost/foreach.hpp>
 
 NS_LOG_COMPONENT_DEFINE("DRSApp");
 
@@ -46,13 +48,12 @@ void DRSApp::StartApplication()
 	ndn::App::StartApplication();
 	Init();
 	ConfigFib();
-	//Simulator::Schedule(Seconds(0), &DRSApp::ServerSelectPeriod, this);
-	//Simulator::Schedule(Seconds(2), &DRSApp::GenMessagePeriod, this);
+	Simulator::Schedule(Seconds(2), &DRSApp::GenServerPeriod, this);
+	Simulator::Schedule(Seconds(2), &DRSApp::GenMessagePeriod, this);
 	//Simulator::Schedule(Seconds(0), &DRSApp::AnythingNewInterestPeriod, this);
 }
 void DRSApp::Init()
 {
-	m_is_anyserver_sent = false;
 	m_server = "";
 	m_level = 0;
 	m_name = Names::FindName(GetNode());
@@ -65,15 +66,74 @@ void DRSApp::ConfigFib()
 	prefix = Create<ndn::Name>("/"+m_name);
 	fib->Add(*prefix, m_face, 0);
 }
+/*===================================================================================
+ * 				Periods
+ *==================================================================================*/
+void DRSApp::GenServerPeriod()
+{
+	UniformVariable rand(0, std::numeric_limits<uint32_t>::max());
+	NS_LOG_DEBUG("MY LEVEL="<<m_level<<", MY SERVER="<<m_server);
+	if (m_server == "" && m_level!=6) {
+		SendInterest("/broadcast/drsapp/anyserver/"+std::to_string(m_level)+"/"+std::to_string(rand.GetValue()));
+		NS_LOG_DEBUG("I'll wait for "<<Strategy()<<" milliseconds for anyserver");
+		Simulator::Schedule(MilliSeconds(Strategy()), &DRSApp::AddLevel, this);
+	}
+	double delay = 3*rand.GetValue()/std::numeric_limits<uint32_t>::max();
+	Simulator::Schedule(Seconds(2.0+delay), &DRSApp::GenServerPeriod, this);
+}
+void DRSApp::AddLevel()
+{
+	if (m_server!="") return;
+	if (m_level==6) return; //top
+	NS_LOG_DEBUG("Not received data, so my level ++ to "<<m_level+1);
+	m_level++;
+}
+int DRSApp::Strategy()
+{
+	switch(m_level) {
+		case 0: return 10;
+		case 1: return 20;
+		case 2: return 40;
+		case 3: return 100;
+		case 4: return 200;
+		case 5: return 400;
+	}
+}
+void DRSApp::AnythingNewInterestPeriod()
+{
+	SendAnythingNewInterest();
+	Simulator::Schedule(Seconds(1.0), &DRSApp::AnythingNewInterestPeriod, this);
+}
+void DRSApp::GenMessagePeriod()
+{
+	GenMessage();
+	Simulator::Schedule(Seconds(2.0), &DRSApp::GenMessagePeriod, this);
+}
+void DRSApp::GenMessage()
+{
+	long time = hebi::GetPosixTime_TotalMilli();
+	std::string msg = "I'm " + m_name + " at " + std::to_string(time);
+	m_messages[time] = msg;
+	NS_LOG_DEBUG("Gen Msg: "<<msg);
+	std::string dataname = "/"+m_name+"/drsapp/"+std::to_string(time);
+	DRSRecord _record(m_name, time, dataname);
+	m_recordContainer.Insert(_record);
+	/* send something new */
+	SendSomethingNewInterest(time, dataname);
+	ProcessPendingInterest();
+}
 void DRSApp::StopApplication()
 {
 	ndn::App::StopApplication();
 }
+/*======================================================================================
+ * 				On Interest and On Data
+ *=====================================================================================*/
 /*
  * 0: ANYSERVER INTEREST:	/broadcast/drsapp/anyserver/<level>
  * 1: ANYTHINGNEW INTEREST:	/<name>/   /anythingnew/<label>
  * 				/<name>/   /anythingnew/<label>:<label>:<label>
- * 2: SOMETHINGNEW INTEREST:	/<name>/   /somethingnew/<name>/<dataname>
+ * 2: SOMETHINGNEW INTEREST:	/<name>/   /somethingnew/<label>/<dataname>
  * 3: DATA INTEREST:		/<name>/   /<time>
  */
 int DRSApp::GetNameType(std::string name)
@@ -90,6 +150,7 @@ int DRSApp::GetNameType(std::string name)
 }
 void DRSApp::OnInterest(Ptr<const ndn::Interest> interest)
 {
+	NS_LOG_DEBUG("Received Interest: "<<interest->GetName());
 	ndn::App::OnInterest(interest);
 	int type = GetNameType(interest->GetName().toUri());
 	switch(type) {
@@ -101,6 +162,7 @@ void DRSApp::OnInterest(Ptr<const ndn::Interest> interest)
 }
 void DRSApp::OnData(Ptr<const ndn::Data> contentObject)
 {
+	NS_LOG_DEBUG("Received Data for: "<<contentObject->GetName());
 	int type = GetNameType(contentObject->GetName().toUri());
 	switch(type) {
 		case 0: ProcessAnyserverData(contentObject); break;
@@ -109,342 +171,166 @@ void DRSApp::OnData(Ptr<const ndn::Data> contentObject)
 		case 3: ProcessDataData(contentObject); break;
 	}
 }
-/*
- * /.../.../anyserver/<level>
- */
+/*==========================================================================================
+ * 				Process 4x2
+ *=========================================================================================*/
+/*------------------------------
+ * 	Anyserver
+ *-----------------------------*/
 void DRSApp::ProcessAnyserverInterest(Ptr<const ndn::Interest> interest)
 {
-	int level = atoi(hebi::GetSubStringByIndent(interest->GetName().toUri(), '/', 4));
-	if (level<m_level)
+	int level = atoi((hebi::GetSubStringByIndent(interest->GetName().toUri(), '/', 4)).c_str());
+	NS_LOG_DEBUG("My Level is "<<m_level<<", received level is "<<level);
+	if (level<m_level) {
 		SendData(interest->GetName(), m_name);
+	}
 }
-/*
- * /.../.../anythingnew/<label>:<label>:<label>
- * <label> = alice_125264
- */
+void DRSApp::ProcessAnyserverData(Ptr<const ndn::Data> contentObject)
+{
+	if (atoi(hebi::GetSubStringByIndent(contentObject->GetName().toUri(), '/', 4).c_str()) == m_level) {
+		std::string s = GetStringFromData(contentObject);
+		m_server = s;
+		NS_LOG_DEBUG("My Server is Set to: "<<m_server);
+	} else {
+		NS_LOG_DEBUG("Too Late!!!");
+	}
+}
+/*--------------------------------
+ * 	Anything New
+ *-------------------------------*/
 void DRSApp::ProcessAnythingNewInterest(Ptr<const ndn::Interest> interest)
 {
 	std::string label = hebi::GetSubStringByIndent(interest->GetName().toUri(), '/', 4);
 	int index = m_recordContainer.GetLatestIndexByMultiLabels(label); // suitable for one lable
 	if (index == m_recordContainer.GetRecordSize()-1) {
-		m_pending_interest = interest;
+		m_pendingInterest = interest;
 	} else {
 		std::string xml = m_recordContainer.GetAfterIndexAsXML(index);
 		SendData(interest->GetName(), xml);
 	}
 }
-/*
- * /<server>/.../somethingnew/<m_name>/<dataname>
- * <dataname>: /<name>/drsapp/<time>
- */
+void DRSApp::ProcessAnythingNewData(Ptr<const ndn::Data> contentObject)
+{
+	std::string xml = GetStringFromData(contentObject);
+	/* insert the new record, together with my own label */
+	long time = hebi::GetPosixTime_TotalMilli();
+	std::vector<std::string> vs = m_recordContainer.InsertMultiByXML(xml, m_name, time);
+	/* send anything new interest */
+	SendAnythingNewInterest();
+	/* process pending interest */
+	ProcessPendingInterest();
+	/* send data interest */
+	BOOST_FOREACH(std::string s, vs) {
+		SendInterest(s);
+	}
+}
+/*---------------------------------
+ * 	Something New
+ *--------------------------------*/
 void DRSApp::ProcessSomethingNewInterest(Ptr<const ndn::Interest> interest)
 {
 	//std::string dataname = hebi::GetSubStringByIndent(interest->GetName().toUri(), '/', 5);
 	int index = hebi::MyStringFinder(interest->GetName().toUri(), '/', 5);
-	std::string dataname = interest->GetName().toUri().substr(index+1);
-	/* send something new interest */
-	if (m_server!="")
-		SendInterest("/"+m_server+"/drsapp/somethingnew/"+m_name+"/"+dataname);
+	std::string dataname = interest->GetName().toUri().substr(index);
 	/* create record */
 	long time = hebi::GetPosixTime_TotalMilli();
-	DRSRecord _record = DRSRecord::CreateDRSRecord(m_name, time, dataname);
+	//DRSRecord _record = new DRSRecord(m_name, time, dataname);
+	DRSRecord _record(m_name, time, dataname);
+	/* send something new interest */
+	SendSomethingNewInterest(time, dataname);
 	/* insert record */
 	m_recordContainer.Insert(_record);
 	/* process pending interest */
-	if (m_pendingInterest!=NULL) {
-		ProcessAnythingNewInterest(m_pendingInterest);
-	}
+	ProcessPendingInterest();
 	/* send data(time) back */
 	SendData(interest->GetName(), std::to_string(time));
 	/* send data interest */
 	SendInterest(dataname);
 }
-/*
- * /<myname>/.../<time>
- */
-void DRSApp::ProcessDataInterest(Ptr<const ndn::Interest> interest)
-{
-	long time = atoi(hebi::GetSubStringByIndent(interest->GetName().toUri(), '/', 3));
-	SendData(interest->GetName(), m_messages[time]);
-}
-void DRSApp::ProcessAnyserverData(Ptr<const ndn::Data> contentObject)
-{
-}
-void DRSApp::ProcessAnythingNewData(Ptr<const ndn::Data> contentObject)
-{
-}
 void DRSApp::ProcessSomethingNewData(Ptr<const ndn::Data> contentObject)
 {
+	std::string oldlabel = hebi::GetSubStringByIndent(contentObject->GetName().toUri(), '/', 4);
+	std::string oldname = oldlabel.substr(0, oldlabel.find('_'));
+	long oldtime = atoi(oldlabel.substr(oldlabel.find('_')+1).c_str());
+	long newtime = atoi((GetStringFromData(contentObject)).c_str());
+	m_recordContainer.AddLabelByLabel(m_server, newtime, oldname, oldtime);
+	/* send anything new interest */
+	SendAnythingNewInterest();
+}
+/*---------------------------------
+ * 	Data Interest
+ *--------------------------------*/
+void DRSApp::ProcessDataInterest(Ptr<const ndn::Interest> interest)
+{
+	long time = atoi((hebi::GetSubStringByIndent(interest->GetName().toUri(), '/', 3)).c_str());
+	SendData(interest->GetName(), m_messages[time]);
 }
 void DRSApp::ProcessDataData(Ptr<const ndn::Data> contentObject)
 {
+	/* only log should be ok */
 }
 
-/*
- * 1. select server
- * Future work: reselect.
- * 2. send anything new interest
- */
-void DRSApp::ServerSelectPeriod()
-{
-	double delay = 0;
-	if (m_server=="") {
-		if (m_level == 6) ; //6 is top level
-		else if (m_is_anyserver_sent == true) {
-			m_level++;
-			m_is_anyserver_sent = false;
-		} else {
-			std::stringstream ss;
-			ss<<m_level;
-			delay = 3*(double)rand()/RAND_MAX;
-			Simulator::Schedule(Seconds(delay), &DRSApp::SendInterest, this, "/broadcast/drsapp/anyserver/"+ss.str());
-			m_is_anyserver_sent = true;
-		}
-	}
-	/* heatbeat to detect server fail. I don't intent to implement it. */
-	else {
-		;
-	}
-	int wait_time = 3*m_level+delay; // add wait_time by level to ensure the area is increasing
-	Simulator::Schedule(Seconds(wait_time), &DRSApp::ServerSelectPeriod, this); //need modify for a configuable time
-}
-void DRSApp::AnythingNewInterestPeriod()
-{
-	if (m_server!="")
-		SendAnythingNewInterest();
-	Simulator::Schedule(Seconds(1.0), &DRSApp::AnythingNewInterestPeriod, this);
-}
-/*
- * call GenMessage() periodly
- */
-void DRSApp::GenMessagePeriod()
-{
-	double delay=0;
-	delay = (double)rand()/RAND_MAX;
-	GenMessage();
-	Simulator::Schedule(Seconds(delay), &DRSApp::GenMessagePeriod, this);
-}
-/* 
- * Gen message
- * procedure:
- * 	1. Create Message;
- * 	2. update local data
- * 	3. process all pending interest
- * 	4. send something new interest
- */
-void DRSApp::GenMessage()
-{
-	time_t _time = time(NULL);
-	std::string _time_str = ctime(&_time);
-	std::string _msg_str = "I'm "+m_name+" at " + _time_str.erase(_time_str.size()-1);
-	Message _msg;
-	_msg.SetContent(_msg_str);
-	int index = m_msg_container.Size();
-	if (UpdateLocal(_msg)) {
-		NS_LOG_DEBUG("Gened message: "<<_msg_str);
-		ProcessAllPendingInterests();
-		if (m_server!="") //future work: resend this??
-			SendSomethingNewInterest(index);
-	}
-}
-/* 
- * 1. add my own label. Only add label in this function.
- * 2. update local
- */
-bool DRSApp::UpdateLocal(Message _msg)
-{
-	time_t _time = time(NULL);
-	std::string _time_str = ctime(&_time);
-	_msg.AddLabel(m_name, _time);
-	m_msg_container.Add(_msg);
-	return true; //future work: return status implies whether the message already exist
-}
-/*
- * FORMAT: /<client-name>/drsapp/giveme/<index>
- */
-void DRSApp::ProcessGiveMeInterest(Ptr<const ndn::Interest> interest, int index)
-{
-	std::string message_str = m_msg_container.ToXMLAfterIndex(index);
-	SendData(interest->GetName().toUri(), message_str);
-}
-/*
- * check if the interest can be satisfied. If yes, send data.
- * Future Work: set interest timeout
- * Name format: /<server-name>/drsapp/anythingnew/xxx_12341:xxx_43253:
- * Procedure:
- * 	1. for every label, check a index in m_msg_container
- * 	2. get a most recent label
- * 	3. Convert messages after the most recent label into a single XML.
- * 	4. Send the XML.
- */
-bool DRSApp::ProcessPendingInterest(Ptr<const ndn::Interest> interest)
-{
-	std::string labels = interest->GetName().toUri();
-	std::cout<<labels<<std::endl;
-	SplitString(labels, '/');
-	std::stringstream ss(labels);
-	int index=-1;
-	if(!(ss>>labels>>labels>>labels>>labels))
-		index = 0; // the client has nothing, so send all to him
-	SplitString(labels, ':');
-	ss.clear();
-	ss.str(labels);
-	std::string stmp, name, label;
-	bool no_record = true;
-	while(ss>>stmp) {
-		if (index==0) break;
-		SplitString(stmp, '_');
-		std::stringstream ss2(stmp);
-		ss2>>name>>label;
-		time_t labelTime = static_cast<time_t>(atoi(label.c_str()));
-		int i = m_msg_container.GetIndexNewerThan(name, labelTime);
-		if (i!=-2)
-			no_record = false;
-		if (i>index) 
-			index = i;
-	}
-	if (no_record) index = 0; //no even one time fit, so send all to him
-	if (index != -1) {
-		std::string message_str = m_msg_container.ToXMLAfterIndex(index);
-		SendData(interest->GetName().toUri(), message_str);
-		return true;
-	}
-	return false;
-}
-/*
- * 1. go over the m_pendingInterests
- * 2. if one is processed and sent, remove it
- */
-void DRSApp::ProcessAllPendingInterests()
-{
-	for (int i=0;i<m_pendingInterests.size();i++) {
-		if (ProcessPendingInterest(m_pendingInterests[i]))
-			m_pendingInterests.erase(m_pendingInterests.begin()+i);
-	}
-}
-/*
- * send something new based on latest labels
- * Entry: index is the new message's start index in m_msg_container. The server will send back the index, so the client can use it to return all messages after this index.
- * FORMAT:
- * 	/<server-name>/drsapp/somethingnew/<my-name>/<random_number>
- * Future work:
- * 	1. as below
- * 	2. latest label? or the triggered label by a parameter?
- * 	3. what if don't receive giveme new interest?
- */
-void DRSApp::SendSomethingNewInterest(int index)
-{
-	std::string name = "/"+m_server+"/drsapp/somethingnew/"+m_name;
-	name += "/"+std::to_string(index);
-	SendInterest(name);
-}
-/*
- * send anything new to server
- * FORMAT:
- * 	/<server-name>/drsapp/anythingnew/<time-label>
- */
+/*=========================================================================================
+ * 				UTILS
+ *========================================================================================*/
 void DRSApp::SendAnythingNewInterest()
 {
-	std::string name = "/"+m_server+"/drsapp/anythingnew";
-	std::string latestLabels = m_msg_container.GetLatestLabels(m_server);
-	name += "/"+latestLabels;
-	SendInterest(name);
+	if (m_server!="") {
+		std::string stmp;
+		if (m_recordContainer.HasName(m_server)) {
+			stmp = m_recordContainer.GetNewestLabelByName(m_server);
+		} else {
+			stmp = m_recordContainer.GetAllNewestLabels();
+		}
+		SendInterest("/"+m_server+"/drsapp/anythingnew/"+stmp);
+	}
 }
-/*
- * send give me interests to client
- * FORMAT:
- * 	/<client-name>/drsapp/giveme/<index>
- */
-void DRSApp::SendGiveMeInterest(std::string clientName, std::string index)
+void DRSApp::SendSomethingNewInterest(long myTime, std::string dataName)
 {
-	std::string name = "/"+clientName+"/drsapp/giveme";
-	name += "/"+index;
-	SendInterest(name);
+	if (m_server!="") {
+		SendInterest("/"+m_server+"/drsapp/somethingnew/"+m_name+"_"+std::to_string(myTime)+"/"+dataName);
+	}
+}
+void DRSApp::ProcessPendingInterest()
+{
+	if (m_pendingInterest!=NULL) {
+		ProcessAnythingNewInterest(m_pendingInterest);
+	}
 }
 
-void DRSApp::ProcessReceivedMessages(const Ptr<const ndn::Data> contentObject, bool need_send_somethingnew)
-{
-	int index = m_msg_container.Size();
-	int size = contentObject->GetPayload()->GetSize();
-	const unsigned char *data = contentObject->GetPayload()->PeekData();
-	pugi::xml_document doc;
-	doc.load_buffer(data, size);
-	//doc.save(std::cout);
-	pugi::xml_node node = doc.child("packet").child("message"); //first child??
-	bool is_updated = false;
-	for(;node;node=node.next_sibling()) {
-		Message _msg;
-		std::string _content(node.child("content").text().get());
-		_msg.SetContent(_content);
-		pugi::xml_node label = node.child("label").child("li");
-		for (;label;label=label.next_sibling()) {
-			std::string _name(label.child("name").text().get());
-			time_t _time = static_cast<time_t>(label.child("time").text().as_int());
-			_msg.AddLabel(_name, _time);
-		}
-		is_updated |= UpdateLocal(_msg);
-	}
-	if (is_updated) {
-		ProcessAllPendingInterests();
-		if (need_send_somethingnew) //if this update is triggered by the server, obviously don't need send Something New Interest
-			SendSomethingNewInterest(index);
-	}
-}
-void DRSApp::ProcessAnyServerData(const Ptr<const ndn::Data> &contentObject)
+std::string DRSApp::GetStringFromData(Ptr<const ndn::Data> contentObject)
 {
 	int size = contentObject->GetPayload()->GetSize();
 	const unsigned char *data = contentObject->GetPayload()->PeekData();
-	std::string msg(reinterpret_cast<const char *>(data), size);
-	m_server = msg;
-	NS_LOG_DEBUG("My server changed to "<<m_server);
+	std::string s(reinterpret_cast<const char*>(data), size);
+	return s;
 }
 
-void DRSApp::SendInterest(std::string name)
+/*===================================================================================
+ * 				Stable Functions
+ *==================================================================================*/
+void DRSApp::SendData(const std::string &name, const std::string &msg)
 {
-	Ptr<ndn::Name> prefix = Create<ndn::Name>(name);
-	Ptr<ndn::Interest> interest = Create<ndn::Interest>();
-	UniformVariable rand(0, std::numeric_limits<uint32_t>::max());
-	interest->SetNonce(rand.GetValue());
-	interest->SetName(prefix);
-	interest->SetInterestLifetime(Seconds(1.0));
-	NS_LOG_DEBUG("Sending Interest packet for " << *prefix);
-	m_transmittedInterests(interest, this, m_face);
-	m_face->ReceiveInterest(interest);
+	const ndn::Name _name(name);
+	SendData(_name, msg);
 }
-/* 
- * substitute indent with space
- */
-void DRSApp::SplitString(std::string &name, char indent)
+void DRSApp::SendData(const ndn::Name &name, const std::string &msg)
 {
-	int index;
-	for(;;) {
-		index = name.find(indent);
-		if (index == -1)
-			break;
-		else {
-			name[index] = ' ';
-		}
-	}
-}
-
-void ChronoApp::SendData(const std::string &name, const std::string &msg)
-{
-	SendData(Create<ndn::Name>(name), msg);
-}
-void ChronoApp::SendData(const Ptr<ndn::Name> &name, const std::string &msg)
-{
+	NS_LOG_DEBUG("Send Data for: "<<name);
 	Ptr<Packet> packet = Create<Packet>(msg);
 	Ptr<ndn::Data> data = Create<ndn::Data>(packet);
 	data->SetName(name);
 	m_transmittedDatas(data, this, m_face);
 	m_face->ReceiveData(data);
 }
-void ChronoApp::SendInterest(cosnt std::string &name)
+void DRSApp::SendInterest(const std::string &name)
 {
-	SendInterest(Create<ndn::Name>(name));
+	const ndn::Name _name(name);
+	SendInterest(_name);
 }
-void ChronoApp::SendInterest(const Ptr<ndn::Name> &name)
+void DRSApp::SendInterest(const ndn::Name &name)
 {
+	NS_LOG_DEBUG("Send Interest "<<name);
 	Ptr<ndn::Interest> interest = Create<ndn::Interest>();
 	UniformVariable rand(0, std::numeric_limits<uint32_t>::max());
 	interest->SetNonce(rand.GetValue());

@@ -1,10 +1,11 @@
-#include "message-container.h"
-#include "message.h"
-#include "pugixml.h"
+#include "drs-record-container.h"
+#include "drs-record.h"
+#include "../pugixml.h"
 #include<algorithm>
+#include<boost/foreach.hpp>
 #include<sstream>
 
-#include "hebi.h"
+#include "../hebi.h"
 namespace ns3 {
 
 
@@ -16,7 +17,7 @@ void DRSRecordContainer::Insert(DRSRecord record)
 {
 	m_records.push_back(record);
 	typedef std::map<std::string, time_t> m_map_type;
-	BOOST_FOREACH(const m_map_type::value_type &m, record.m_labels) {
+	BOOST_FOREACH(const m_map_type::value_type &m, record.m_label) {
 		m_nameTimeIndex[m.first][m.second] = m_records.size()-1;
 	}
 }
@@ -47,7 +48,7 @@ int DRSRecordContainer::GetLatestIndexBySingleLabel(std::string name, time_t tim
 int DRSRecordContainer::GetLatestIndexBySingleLabel(std::string label)
 {
 	std::string name = label.substr(0, label.find("_"));
-	time_t time = atoi(label.substr(label.find("_")+1));
+	time_t time = atoi((label.substr(label.find("_")+1)).c_str());
 	return GetLatestIndexBySingleLabel(name, time);
 }
 int DRSRecordContainer::GetLatestIndexByMultiLabels(std::vector<boost::tuple<std::string, time_t> > v)
@@ -92,8 +93,11 @@ std::string DRSRecordContainer::GetAfterIndexAsXML(int index)
 	pugi::xml_document doctmp;
 	/* from index +1 */
 	for (int i=index+1;i<m_records.size();i++) {
-		doctmp.load(m_records[i].AsXML());
-		doc.append_child("li").append_copy(doctmp);
+		doctmp.load(m_records[i].AsXML().c_str());
+		pugi::xml_node li = doc.append_child("li");
+		/* the following 2 lines are very KengDie */
+		li.append_copy(doctmp.document_element());
+		li.append_copy(doctmp.document_element().next_sibling());
 	}
 	hebi::xml_string_writer writer;
 	doc.save(writer);
@@ -103,31 +107,54 @@ std::string DRSRecordContainer::GetAfterIndexAsXML(int index)
  * Return:
  * 	vector<dataname>
  */
-std::vector<std::string> DRSRecordContainer::InsertMultiByXML(std::string xml)
+std::vector<std::string> DRSRecordContainer::InsertMultiByXML(std::string xml, std::string newname, long newtime)
 {
 	pugi::xml_document doc;
-	doc.load(xml);
+	doc.load(xml.c_str());
 	pugi::xml_node li;
 	pugi::xml_node label;
 	std::vector<std::string> v;
-	for (li=doc.child("li");li;li=li.next_sibling) {
-		DRSRecord _record = DRSRecord::CreateDRSRecordFromXMLNode(li);
+	for (li=doc.child("li");li;li=li.next_sibling()) {
+		DRSRecord _record(li);
+		_record.m_label[newname] = newtime; // add my own timelabel
 		Insert(_record);
 		v.push_back(_record.m_dataName);
 	}
 	return v;
 }
 /*
+ * no <li>
+ * no use
  * Return:
  * 	dataname
  */
 std::string DRSRecordContainer::InsertSingleByXML(std::string xml)
 {
 	pugi::xml_document doc;
-	doc.load(xml);
-	DRSRecord _record = DRSRecord::CreateDRSRecordFromXMLNode(doc);
+	doc.load(xml.c_str());
+	//DRSRecord _record = DRSRecord::CreateDRSRecordFromXMLNode(doc);
+	DRSRecord _record(doc);
 	Insert(_record);
 	return _record.m_dataName;
+}
+
+bool DRSRecordContainer::HasName(std::string name)
+{
+	return (m_nameTimeIndex.find(name) != m_nameTimeIndex.end());
+}
+std::string DRSRecordContainer::GetNewestLabelByName(std::string name)
+{
+	long time = (--m_nameTimeIndex[name].end())->first;
+	return name+"_"+std::to_string(time);
+}
+std::string DRSRecordContainer::GetAllNewestLabels()
+{
+	std::string result;
+	BOOST_FOREACH(m_map_type::value_type &mi, m_nameTimeIndex) {
+		result += GetNewestLabelByName(mi.first);
+		result += ":";
+	}
+	return result;
 }
 
 

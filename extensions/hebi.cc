@@ -22,9 +22,9 @@ std::string GetSubStringByIndent(const std::string &s, char indent, int seq)
 		begin = s.find(indent, begin+1);
 	end = s.find(indent, begin+1);
 	if (end==-1)
-		return s.substr(begin);
+		return s.substr(begin+1);
 	else
-		return s.substr(begin, end-begin);
+		return s.substr(begin+1, end-begin);
 }
 int MyStringFinder(const std::string &s, char indent, int seq)
 {

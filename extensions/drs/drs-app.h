@@ -3,9 +3,11 @@
 #include "ns3/ndn-app.h"
 #include "drs-record-container.h"
 #include "drs-record.h"
+#include "ns3/ndn-app-face.h"
+#include "ns3/random-variable.h"
 namespace ns3 {
 
-class ChatApp : public ndn::App
+class DRSApp : public ndn::App
 {
 public:
 	static TypeId GetTypeId();
@@ -16,7 +18,15 @@ public:
 private:
 	void ConfigFib();
 	void Init();
+	/* periods */
+	void GenServerPeriod();
+	void AddLevel();
+	int Strategy();
+	void AnythingNewInterestPeriod();
+	void GenMessagePeriod();
+	void GenMessage();
 
+	/* process 4x2 */
 	void ProcessAnyserverInterest(Ptr<const ndn::Interest> interest);
 	void ProcessAnythingNewInterest(Ptr<const ndn::Interest> interest);
 	void ProcessSomethingNewInterest(Ptr<const ndn::Interest> interest);
@@ -25,39 +35,26 @@ private:
 	void ProcessAnythingNewData(Ptr<const ndn::Data> contentObject);
 	void ProcessSomethingNewData(Ptr<const ndn::Data> contentObject);
 	void ProcessDataData(Ptr<const ndn::Data> contentObject);
-
-	void ServerSelectPeriod();
-	void GenMessagePeriod();
-	void AnythingNewInterestPeriod();
-
-
-	void ProcessAllPendingInterests();
-	bool ProcessPendingInterest(Ptr<const ndn::Interest> interest);
-	void ProcessGiveMeInterest(Ptr<const ndn::Interest> interest, int index);
-
-	void ProcessAnyServerData(const Ptr<const ndn::Data> &contentObject);
-	void ProcessReceivedMessages(const Ptr<const ndn::Data> contentObject, bool need_send_somethingnew);
-
-	void SendInterest(std::string name);
+	/* utils */
+	int GetNameType(std::string name);
+	std::string GetStringFromData(Ptr<const ndn::Data> contentObject);
 	void SendAnythingNewInterest();
-	void SendSomethingNewInterest(int index);
-	void SendGiveMeInterest(std::string clientName, std::string index);
+	void SendSomethingNewInterest(long myTime, std::string dataName);
+	void ProcessPendingInterest();
+	/* stable functions */
+	void SendData(const std::string &name, const std::string &msg);
+	void SendData(const ndn::Name &name, const std::string &msg);
+	void SendInterest(const std::string &name);
+	void SendInterest(const ndn::Name &name);
 
-	void SendData(std::string name, const std::string msg);
-	void GenMessage();
-	bool UpdateLocal(Message _msg);
 
-	virtual void SplitString(std::string &name, char indent);
-
-	std::string m_server;
-	bool m_is_anyserver_sent;
-	std::string m_name;
+	/* new */
 	int m_level;
-	MessageContainer m_msg_container;
-	std::vector<Ptr<const ndn::Interest> > m_pendingInterest;
-
+	std::string m_server;
+	std::string m_name;
 	DRSRecordContainer m_recordContainer;
 	std::map<long, std::string> m_messages;
+	Ptr<const ndn::Interest> m_pendingInterest; // may there be many different pending interests?
 };
 
 } //end namespace ns3

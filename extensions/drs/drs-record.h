@@ -2,14 +2,15 @@
 #define MESSAGE_H_
 #include<iostream>
 #include<map>
-#include "pugixml.h"
+#include "../pugixml.h"
 
 namespace ns3 {
 
 class DRSRecord
 {
-friend class DRSRecordContainer;
 public:
+	DRSRecord(pugi::xml_node root_node);
+	DRSRecord(std::string name, time_t time, std::string dataname);
 	void AddLabel(std::string name, time_t time);
 	std::string AsXML();
 	DRSRecord CreateDRSRecordFromXMLNode(pugi::xml_node);

@@ -1,3 +1,6 @@
+/*
+ * FILENAME: chrono-digest-log.cc
+ */
 #include "chrono-digest-log.h"
 #include <boost/foreach.hpp>
 
