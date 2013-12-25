@@ -111,8 +111,9 @@ void DRSApp::GenMessagePeriod()
 }
 void DRSApp::GenMessage()
 {
-	//long time = hebi::GetPosixTime_TotalMilli();
 	double time = Simulator::Now().GetSeconds();
+	/* DEBUG: must convert, or the double is not the same as you see */
+	time = hebi::ConvertDouble(time);
 	std::string msg = "I'm " + m_name + " at " + std::to_string(time);
 	m_messages[time] = msg;
 	NS_LOG_DEBUG("Gen Msg: "<<msg);
@@ -202,14 +203,11 @@ void DRSApp::ProcessAnyserverData(Ptr<const ndn::Data> contentObject)
 void DRSApp::ProcessAnythingNewInterest(Ptr<const ndn::Interest> interest)
 {
 	std::string label = hebi::GetSubStringByIndent(interest->GetName().toUri(), '/', 4);
-	NS_LOG_DEBUG(label);
 	int index = m_recordContainer.GetLatestIndexByMultiLabels(label); // suitable for one lable
 	if (index == m_recordContainer.GetRecordSize()-1) {
 		m_pendingInterest = interest;
 	} else {
-		NS_LOG_DEBUG(index);
 		std::string xml = m_recordContainer.GetAfterIndexAsXML(index);
-		NS_LOG_DEBUG(xml);
 		SendData(interest->GetName(), xml);
 	}
 }
@@ -219,15 +217,17 @@ void DRSApp::ProcessAnythingNewData(Ptr<const ndn::Data> contentObject)
 	/* insert the new record, together with my own label */
 	//long time = hebi::GetPosixTime_TotalMilli();
 	double time = Simulator::Now().GetSeconds();
-	std::vector<std::string> vs = m_recordContainer.InsertMultiByXML(xml, m_name, time);
-	NS_LOG_DEBUG(xml);
+	time = hebi::ConvertDouble(time);
+	std::vector<std::string> vs = m_recordContainer.InsertMultiByXML(xml, m_name, time, m_server);
 	/* send anything new interest */
 	SendAnythingNewInterest();
 	/* process pending interest */
 	ProcessPendingInterest();
 	/* send data interest */
 	BOOST_FOREACH(std::string s, vs) {
-		SendInterest(s);
+		/* DEBUG: don't sent for my own message */
+		if (s.find(m_name) == -1)
+			SendInterest(s);
 	}
 }
 /*---------------------------------
@@ -239,9 +239,8 @@ void DRSApp::ProcessSomethingNewInterest(Ptr<const ndn::Interest> interest)
 	int index = hebi::MyStringFinder(interest->GetName().toUri(), '/', 5);
 	std::string dataname = interest->GetName().toUri().substr(index);
 	/* create record */
-	//double time = hebi::GetPosixTime_TotalMilli();
 	double time = Simulator::Now().GetSeconds();
-	//DRSRecord _record = new DRSRecord(m_name, time, dataname);
+	time = hebi::ConvertDouble(time);
 	DRSRecord _record(m_name, time, dataname);
 	/* send something new interest */
 	SendSomethingNewInterest(time, dataname);
@@ -274,6 +273,7 @@ void DRSApp::ProcessDataInterest(Ptr<const ndn::Interest> interest)
 }
 void DRSApp::ProcessDataData(Ptr<const ndn::Data> contentObject)
 {
+	NS_LOG_DEBUG(GetStringFromData(contentObject));
 	/* only log should be ok */
 }
 
@@ -342,7 +342,7 @@ void DRSApp::SendInterest(const ndn::Name &name)
 	UniformVariable rand(0, std::numeric_limits<uint32_t>::max());
 	interest->SetNonce(rand.GetValue());
 	interest->SetName(name);
-	interest->SetInterestLifetime(Seconds(1.0)); //????
+	interest->SetInterestLifetime(Seconds(5.0)); //????
 	m_transmittedInterests(interest, this, m_face);
 	m_face->ReceiveInterest(interest);
 }

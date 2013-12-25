@@ -33,23 +33,14 @@ void DRSRecordContainer::AddLabelByLabel(std::string newname, double newtime, st
 {
 	int index = m_nameTimeIndex[oldname][oldtime];
 	m_records[index].AddLabel(newname, newtime);
+	m_nameTimeIndex[newname][newtime] = index;
 }
 /*
  * return nameTimeIndex[name][time]
  */
 int DRSRecordContainer::GetLatestIndexBySingleLabel(std::string name, double time)
 {
-	std::cout<<"\t"<<name<<" "<<time<<std::endl;
-	printf("%lf\n", time);
-	std::map<double, int>::iterator iter;
-	for (iter=m_nameTimeIndex[name].begin();iter!=m_nameTimeIndex[name].end();iter++) {
-		printf("%lf\t%lf\n", time, iter->first);
-		if (time == iter->first)
-			std::cout<<iter->first<<", "<<iter->second<<std::endl;
-		if (atof(std::to_string(time).c_str()) == (iter->first))
-			std::cout<<"yes"<<std::endl;
-	}
-	std::cout<<m_nameTimeIndex[name][time]<<std::endl;
+	/* FUTURE: use compare, not equal */
 	return m_nameTimeIndex[name][time];
 }
 /*
@@ -118,7 +109,7 @@ std::string DRSRecordContainer::GetAfterIndexAsXML(int index)
  * Return:
  * 	vector<dataname>
  */
-std::vector<std::string> DRSRecordContainer::InsertMultiByXML(std::string xml, std::string newname, double newtime)
+std::vector<std::string> DRSRecordContainer::InsertMultiByXML(std::string xml, std::string newname, double newtime, std::string serverName)
 {
 	pugi::xml_document doc;
 	doc.load(xml.c_str());
@@ -127,6 +118,13 @@ std::vector<std::string> DRSRecordContainer::InsertMultiByXML(std::string xml, s
 	std::vector<std::string> v;
 	for (li=doc.child("li");li;li=li.next_sibling()) {
 		DRSRecord _record(li);
+
+		/* 
+		 * the xml is received from server. If I send somethingnew to server, I've already have the newest label, so if this is the label, just ignore it. Or there will be multi record for the same dataname, resulting in fetching 2 copy of a message. */
+		if (this->m_nameTimeIndex[serverName][_record.m_label[serverName]] != 0)
+			std::cout<<"DUPLICATED"<<std::endl;
+
+
 		_record.m_label[newname] = newtime; // add my own timelabel
 		Insert(_record);
 		v.push_back(_record.m_dataName);
@@ -143,7 +141,6 @@ std::string DRSRecordContainer::InsertSingleByXML(std::string xml)
 {
 	pugi::xml_document doc;
 	doc.load(xml.c_str());
-	//DRSRecord _record = DRSRecord::CreateDRSRecordFromXMLNode(doc);
 	DRSRecord _record(doc);
 	Insert(_record);
 	return _record.m_dataName;

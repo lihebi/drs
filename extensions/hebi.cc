@@ -78,6 +78,16 @@ long GetPosixTime_TotalMilli()
 	return td.total_milliseconds();
 }
 
+bool CheckDouble(double d)
+{
+	double tmp = atof(std::to_string(d).c_str());
+	return tmp==d;
+}
+double ConvertDouble(double d)
+{
+	return atof(std::to_string(d).c_str());
+}
+
 
 } //hebi
 

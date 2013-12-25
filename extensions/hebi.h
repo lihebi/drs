@@ -23,6 +23,8 @@ long GetPosixTime_Minutes();
 long GetPosixTime_Seconds();
 long GetPosixTime_Milli();
 long GetPosixTime_TotalMilli();
+bool CheckDouble(double d);
+double ConvertDouble(double d);
 
 
 } //hebi

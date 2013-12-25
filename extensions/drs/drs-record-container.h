@@ -18,7 +18,7 @@ public:
 	int GetLatestIndexByMultiLabels(std::vector<boost::tuple<std::string, double> > v);
 	int GetLatestIndexByMultiLabels(std::string labels);
 	std::string GetAfterIndexAsXML(int index);
-	std::vector<std::string> InsertMultiByXML(std::string xml, std::string newname, double newtime);
+	std::vector<std::string> InsertMultiByXML(std::string xml, std::string newname, double newtime, std::string serverName);
 	std::string InsertSingleByXML(std::string xml);
 	std::string GetAllNewestLabels();
 	std::string GetNewestLabelByName(std::string name);
