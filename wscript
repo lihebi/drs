@@ -70,24 +70,26 @@ def configure(conf):
         conf.define ('NS3_ASSERT_ENABLE', 1)
 
 def build (bld):
+    bld.env['LIB_PYEMBED'] = bld.env['LIB_PYEMBED'] + ["crypto"]
     deps = 'BOOST BOOST_IOSTREAMS ' + ' '.join (['ns3_'+dep for dep in MANDATORY_NS3_MODULES + OTHER_NS3_MODULES]).upper ()
 
     common = bld.objects (
         target = "extensions",
-        features = ["cxx"],
+        features = ["cxx", 'cxxshlib'],
         source = bld.path.ant_glob(['extensions/**/*.cc']),
         use = deps,
-        cxxflags = [bld.env.CXX11_CMD, '-std=c++11'], # add c++11 by Hebi
+        lib = ['crypto'],
+        cxxflags = ['-lcrypto', bld.env.CXX11_CMD, '-std=c++11'], # add c++11 by Hebi
         )
 
     for scenario in bld.path.ant_glob (['scenarios/*.cc']):
         name = str(scenario)[:-len(".cc")]
         app = bld.program (
             target = name,
-            features = ['cxx'],
+            features = ['cxx', 'cxxprogram'],
             source = [scenario],
             use = deps + " extensions",
-            includes = "extensions"
+            includes = "extensions",
             )
 
 def shutdown (ctx):

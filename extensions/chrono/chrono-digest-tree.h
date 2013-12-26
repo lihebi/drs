@@ -16,9 +16,13 @@ public:
 	std::string GetCurrentStateAsXML();
 	std::vector<boost::tuple<std::string, int> > CompareCurrentStateByXML(std::string xml);
 	std::string GetRootDigest();
+	void InitRootDigest();
+	int GetSeqByName(std::string name);
 
 private:
 	void UpdateRootDigest();
+	std::string SHA256(std::string s);
+	void HashPrinter(char *dst_buf, unsigned char *src_buf, int size);
 
 	std::string m_root_digest;
 	/* name ---> seq */

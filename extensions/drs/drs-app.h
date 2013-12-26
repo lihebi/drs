@@ -28,7 +28,7 @@ private:
 
 	/* process 4x2 */
 	void ProcessAnyserverInterest(Ptr<const ndn::Interest> interest);
-	void ProcessAnythingNewInterest(Ptr<const ndn::Interest> interest);
+	void ProcessAnythingNewInterest(Ptr<const ndn::Interest> interest, std::string exclude="");
 	void ProcessSomethingNewInterest(Ptr<const ndn::Interest> interest);
 	void ProcessDataInterest(Ptr<const ndn::Interest> interest);
 	void ProcessAnyserverData(Ptr<const ndn::Data> contentObject);

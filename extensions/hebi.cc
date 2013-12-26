@@ -24,7 +24,7 @@ std::string GetSubStringByIndent(const std::string &s, char indent, int seq)
 	if (end==-1)
 		return s.substr(begin+1);
 	else
-		return s.substr(begin+1, end-begin);
+		return s.substr(begin+1, end-begin-1); //DEBUG
 }
 int MyStringFinder(const std::string &s, char indent, int seq)
 {

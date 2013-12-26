@@ -49,8 +49,8 @@ void DRSApp::StartApplication()
 	Init();
 	ConfigFib();
 	Simulator::Schedule(Seconds(2), &DRSApp::GenServerPeriod, this);
-	Simulator::Schedule(Seconds(2), &DRSApp::GenMessagePeriod, this);
-	//Simulator::Schedule(Seconds(0), &DRSApp::AnythingNewInterestPeriod, this);
+	Simulator::Schedule(Seconds(20), &DRSApp::GenMessagePeriod, this);
+	Simulator::Schedule(Seconds(20), &DRSApp::AnythingNewInterestPeriod, this);
 }
 void DRSApp::Init()
 {
@@ -78,8 +78,8 @@ void DRSApp::GenServerPeriod()
 		NS_LOG_DEBUG("I'll wait for "<<Strategy()<<" milliseconds for anyserver");
 		Simulator::Schedule(MilliSeconds(Strategy()), &DRSApp::AddLevel, this);
 	}
-	double delay = 3*rand.GetValue()/std::numeric_limits<uint32_t>::max();
-	Simulator::Schedule(Seconds(2.0+delay), &DRSApp::GenServerPeriod, this);
+	double delay = rand.GetValue()/std::numeric_limits<uint32_t>::max();
+	Simulator::Schedule(Seconds(delay), &DRSApp::GenServerPeriod, this);
 }
 void DRSApp::AddLevel()
 {
@@ -102,7 +102,7 @@ int DRSApp::Strategy()
 void DRSApp::AnythingNewInterestPeriod()
 {
 	SendAnythingNewInterest();
-	Simulator::Schedule(Seconds(1.0), &DRSApp::AnythingNewInterestPeriod, this);
+	Simulator::Schedule(Seconds(5.0), &DRSApp::AnythingNewInterestPeriod, this);
 }
 void DRSApp::GenMessagePeriod()
 {
@@ -200,7 +200,7 @@ void DRSApp::ProcessAnyserverData(Ptr<const ndn::Data> contentObject)
 /*--------------------------------
  * 	Anything New
  *-------------------------------*/
-void DRSApp::ProcessAnythingNewInterest(Ptr<const ndn::Interest> interest)
+void DRSApp::ProcessAnythingNewInterest(Ptr<const ndn::Interest> interest, std::string exclude)
 {
 	std::string label = hebi::GetSubStringByIndent(interest->GetName().toUri(), '/', 4);
 	int index = m_recordContainer.GetLatestIndexByMultiLabels(label); // suitable for one lable
@@ -208,14 +208,25 @@ void DRSApp::ProcessAnythingNewInterest(Ptr<const ndn::Interest> interest)
 		m_pendingInterest = interest;
 	} else {
 		std::string xml = m_recordContainer.GetAfterIndexAsXML(index);
+		if (exclude!="")
+			xml = exclude + xml;
 		SendData(interest->GetName(), xml);
 	}
 }
 void DRSApp::ProcessAnythingNewData(Ptr<const ndn::Data> contentObject)
 {
 	std::string xml = GetStringFromData(contentObject);
+	if (xml[0]!='<') {
+		std::string name = xml.substr(0, xml.find('<'));
+		if (name==m_name) {
+			NS_LOG_DEBUG("Excluded!!!");
+			return;
+		}
+		else {
+			xml = xml.substr(xml.find('<'));
+		}
+	}
 	/* insert the new record, together with my own label */
-	//long time = hebi::GetPosixTime_TotalMilli();
 	double time = Simulator::Now().GetSeconds();
 	time = hebi::ConvertDouble(time);
 	std::vector<std::string> vs = m_recordContainer.InsertMultiByXML(xml, m_name, time, m_server);
@@ -235,9 +246,11 @@ void DRSApp::ProcessAnythingNewData(Ptr<const ndn::Data> contentObject)
  *--------------------------------*/
 void DRSApp::ProcessSomethingNewInterest(Ptr<const ndn::Interest> interest)
 {
-	//std::string dataname = hebi::GetSubStringByIndent(interest->GetName().toUri(), '/', 5);
 	int index = hebi::MyStringFinder(interest->GetName().toUri(), '/', 5);
 	std::string dataname = interest->GetName().toUri().substr(index);
+	/* used for exclude */
+	std::string label = hebi::GetSubStringByIndent(interest->GetName().toUri(), '/', 4);
+	label = label.substr(0, label.find('_'));
 	/* create record */
 	double time = Simulator::Now().GetSeconds();
 	time = hebi::ConvertDouble(time);
@@ -247,7 +260,10 @@ void DRSApp::ProcessSomethingNewInterest(Ptr<const ndn::Interest> interest)
 	/* insert record */
 	m_recordContainer.Insert(_record);
 	/* process pending interest */
-	ProcessPendingInterest();
+	//ProcessPendingInterest();
+	if (m_pendingInterest!=NULL) {
+		ProcessAnythingNewInterest(m_pendingInterest, label);
+	}
 	/* send data(time) back */
 	SendData(interest->GetName(), std::to_string(time));
 	/* send data interest */
@@ -337,7 +353,7 @@ void DRSApp::SendInterest(const std::string &name)
 }
 void DRSApp::SendInterest(const ndn::Name &name)
 {
-	NS_LOG_DEBUG("Send Interest "<<name);
+	NS_LOG_DEBUG("Send Interest for: "<<name);
 	Ptr<ndn::Interest> interest = Create<ndn::Interest>();
 	UniformVariable rand(0, std::numeric_limits<uint32_t>::max());
 	interest->SetNonce(rand.GetValue());
