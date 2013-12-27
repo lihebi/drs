@@ -87,6 +87,16 @@ double ConvertDouble(double d)
 {
 	return atof(std::to_string(d).c_str());
 }
+std::string GetEnv(const std::string &var)
+{
+	const char *val = ::getenv(var.c_str());
+	if (val == 0) return "";
+	else return val;
+}
+int GetEnvAsInt(const std::string &var)
+{
+	return atoi(GetEnv(var).c_str());
+}
 
 
 } //hebi

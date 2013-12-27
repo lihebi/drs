@@ -42,11 +42,13 @@ main(int argc, char** argv)
 	}
 	/* create app */
 	ndn::AppHelper appHelper("DRSApp");
-	srand(time(NULL));
-	for (int i=0;i<chatterNodes.GetN();i++) {
+	//srand(time(NULL));
+	//for (int i=0;i<chatterNodes.GetN();i++) {
 		/* random start */
-		appHelper.Install(chatterNodes.Get(i)).Start(Seconds(5*(double)rand()/RAND_MAX));
-	}
+	//	appHelper.Install(chatterNodes.Get(i)).Start(Seconds(5*(double)rand()/RAND_MAX));
+	//}
+	NS_LOG_DEBUG("xx");
+	appHelper.Install(chatterNodes);
 	/* routing configure */
 	ndn::GlobalRoutingHelper routingHelper;
 	routingHelper.InstallAll();

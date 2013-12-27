@@ -41,6 +41,7 @@ private:
 	void SendAnythingNewInterest();
 	void SendSomethingNewInterest(double myTime, std::string dataName);
 	void ProcessPendingInterest();
+	double GetRand();
 	/* stable functions */
 	void SendData(const std::string &name, const std::string &msg);
 	void SendData(const ndn::Name &name, const std::string &msg);
@@ -55,6 +56,32 @@ private:
 	DRSRecordContainer m_recordContainer;
 	std::map<double, std::string> m_messages;
 	Ptr<const ndn::Interest> m_pendingInterest; // may there be many different pending interests?
+
+	void ReadEnv();
+	int m_env_GSPSO;
+	int m_env_GMPSO;
+	int m_env_ANPSO;
+
+	int m_env_GSPSF;
+	int m_env_GMPSF;
+	int m_env_ANPSF;
+
+	int m_env_ANPO;
+	int m_env_GMPO;
+	int m_env_GSPO;
+
+	int m_env_ANPF;
+	int m_env_GMPF;
+	int m_env_GSPF;
+
+	int m_env_ILT;
+	int m_env_TL;
+	int m_env_S0;
+	int m_env_S1;
+	int m_env_S2;
+	int m_env_S3;
+	int m_env_S4;
+	int m_env_S5;
 };
 
 } //end namespace ns3

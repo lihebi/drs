@@ -2,6 +2,7 @@
 
 #include<boost/date_time/posix_time/posix_time.hpp>
 #include<boost/tuple/tuple.hpp>
+#include<cstdlib>
 
 
 namespace hebi {
@@ -25,6 +26,8 @@ long GetPosixTime_Milli();
 long GetPosixTime_TotalMilli();
 bool CheckDouble(double d);
 double ConvertDouble(double d);
+std::string GetEnv(const std::string &var);
+int GetEnvAsInt(const std::string &var);
 
 
 } //hebi
