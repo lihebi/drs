@@ -28,7 +28,7 @@ private:
 
 	/* process 4x2 */
 	void ProcessAnyserverInterest(Ptr<const ndn::Interest> interest);
-	void ProcessAnythingNewInterest(Ptr<const ndn::Interest> interest, std::string exclude="");
+	void ProcessAnythingNewInterest(Ptr<const ndn::Interest> interest);
 	void ProcessSomethingNewInterest(Ptr<const ndn::Interest> interest);
 	void ProcessDataInterest(Ptr<const ndn::Interest> interest);
 	void ProcessAnyserverData(Ptr<const ndn::Data> contentObject);
@@ -41,6 +41,7 @@ private:
 	void SendAnythingNewInterest();
 	void SendSomethingNewInterest(double myTime, std::string dataName);
 	void ProcessPendingInterest();
+	double GetRand();
 	/* stable functions */
 	void SendData(const std::string &name, const std::string &msg);
 	void SendData(const ndn::Name &name, const std::string &msg);
@@ -55,6 +56,32 @@ private:
 	DRSRecordContainer m_recordContainer;
 	std::map<double, std::string> m_messages;
 	Ptr<const ndn::Interest> m_pendingInterest; // may there be many different pending interests?
+
+	void ReadEnv();
+	double m_env_GSPSO;
+	double m_env_GMPSO;
+	double m_env_ANPSO;
+
+	double m_env_GSPSF;
+	double m_env_GMPSF;
+	double m_env_ANPSF;
+
+	double m_env_ANPO;
+	double m_env_GMPO;
+	double m_env_GSPO;
+
+	double m_env_ANPF;
+	double m_env_GMPF;
+	double m_env_GSPF;
+
+	double m_env_ILT;
+	int m_env_TL;
+	int m_env_S0;
+	int m_env_S1;
+	int m_env_S2;
+	int m_env_S3;
+	int m_env_S4;
+	int m_env_S5;
 };
 
 } //end namespace ns3

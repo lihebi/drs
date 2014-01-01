@@ -28,6 +28,7 @@ namespace ns3 {
 
 NS_OBJECT_ENSURE_REGISTERED(DRSApp);
 
+
 TypeId DRSApp::GetTypeId()
 {
 	static TypeId tid = TypeId("DRSApp")
@@ -46,11 +47,39 @@ void DRSApp::StartApplication()
 {
 	NS_LOG_DEBUG(Simulator::Now().GetSeconds());
 	ndn::App::StartApplication();
+	ReadEnv();
 	Init();
 	ConfigFib();
-	Simulator::Schedule(Seconds(2), &DRSApp::GenServerPeriod, this);
-	Simulator::Schedule(Seconds(20), &DRSApp::GenMessagePeriod, this);
-	Simulator::Schedule(Seconds(20), &DRSApp::AnythingNewInterestPeriod, this);
+	Simulator::Schedule(Seconds(m_env_GSPSO+GetRand()*m_env_GSPSF), &DRSApp::GenServerPeriod, this);
+	Simulator::Schedule(Seconds(m_env_GMPSO+GetRand()*m_env_GMPSF), &DRSApp::GenMessagePeriod, this);
+	Simulator::Schedule(Seconds(m_env_ANPSO+GetRand()*m_env_ANPSF), &DRSApp::AnythingNewInterestPeriod, this);
+}
+void DRSApp::ReadEnv()
+{
+	m_env_GSPSO = hebi::GetEnvAsDouble("DRS_GEN_SERVER_PERIOD_START_OFFSET");
+	m_env_GMPSO = hebi::GetEnvAsDouble("DRS_GEN_MESSAGE_PERIOD_START_OFFSET");
+	m_env_ANPSO = hebi::GetEnvAsDouble("DRS_ANYTHING_NEW_PERIOD_START_OFFSET");
+
+	m_env_GSPSF = hebi::GetEnvAsDouble("DRS_GEN_SERVER_PERIOD_START_FACTOR");
+	m_env_GMPSF = hebi::GetEnvAsDouble("DRS_GEN_MESSAGE_PERIOD_START_FACTOR");
+	m_env_ANPSF = hebi::GetEnvAsDouble("DRS_ANYTHING_NEW_PERIOD_START_FACTOR");
+
+	m_env_ANPO = hebi::GetEnvAsDouble("DRS_ANYTHING_NEW_PERIOD_OFFSET");
+	m_env_GMPO = hebi::GetEnvAsDouble("DRS_GEN_MESSAGE_PERIOD_OFFFSET");
+	m_env_GSPO = hebi::GetEnvAsDouble("DRS_GEN_SERVER_PERIOD_OFFSET");
+
+	m_env_ANPF = hebi::GetEnvAsDouble("DRS_ANYTHING_NEW_PERIOD_FACTOR");
+	m_env_GMPF = hebi::GetEnvAsDouble("DRS_GEN_MESSAGE_PERIOD_FACTOR");
+	m_env_GSPF = hebi::GetEnvAsDouble("DRS_GEN_SERVER_PERIOD_FACTOR");
+
+	m_env_ILT = hebi::GetEnvAsDouble("DRS_INTEREST_LIFE_TIME");
+	m_env_TL = hebi::GetEnvAsInt("DRS_TOP_LEVEL");
+	m_env_S0 = hebi::GetEnvAsInt("DRS_STRATEGY_0");
+	m_env_S1 = hebi::GetEnvAsInt("DRS_STRATEGY_1");
+	m_env_S2 = hebi::GetEnvAsInt("DRS_STRATEGY_2");
+	m_env_S3 = hebi::GetEnvAsInt("DRS_STRATEGY_3");
+	m_env_S4 = hebi::GetEnvAsInt("DRS_STRATEGY_4");
+	m_env_S5 = hebi::GetEnvAsInt("DRS_STRATEGY_5");
 }
 void DRSApp::Init()
 {
@@ -73,41 +102,40 @@ void DRSApp::GenServerPeriod()
 {
 	UniformVariable rand(0, std::numeric_limits<uint32_t>::max());
 	NS_LOG_DEBUG("MY LEVEL="<<m_level<<", MY SERVER="<<m_server);
-	if (m_server == "" && m_level!=6) {
+	if (m_server == "" && m_level!=m_env_TL) {
 		SendInterest("/broadcast/drsapp/anyserver/"+std::to_string(m_level)+"/"+std::to_string(rand.GetValue()));
 		NS_LOG_DEBUG("I'll wait for "<<Strategy()<<" milliseconds for anyserver");
 		Simulator::Schedule(MilliSeconds(Strategy()), &DRSApp::AddLevel, this);
 	}
-	double delay = rand.GetValue()/std::numeric_limits<uint32_t>::max();
-	Simulator::Schedule(Seconds(delay), &DRSApp::GenServerPeriod, this);
+	Simulator::Schedule(Seconds(m_env_GSPO+m_env_GSPF*GetRand()), &DRSApp::GenServerPeriod, this);
+}
+int DRSApp::Strategy() // ms
+{
+	switch(m_level) {
+		case 0: return m_env_S0;
+		case 1: return m_env_S1;
+		case 2: return m_env_S2;
+		case 3: return m_env_S3;
+		case 4: return m_env_S4;
+		case 5: return m_env_S5;
+	}
 }
 void DRSApp::AddLevel()
 {
 	if (m_server!="") return;
-	if (m_level==6) return; //top
+	if (m_level==m_env_TL) return; //top
 	NS_LOG_DEBUG("Not received data, so my level ++ to "<<m_level+1);
 	m_level++;
-}
-int DRSApp::Strategy()
-{
-	switch(m_level) {
-		case 0: return 10;
-		case 1: return 20;
-		case 2: return 40;
-		case 3: return 100;
-		case 4: return 200;
-		case 5: return 400;
-	}
 }
 void DRSApp::AnythingNewInterestPeriod()
 {
 	SendAnythingNewInterest();
-	Simulator::Schedule(Seconds(5.0), &DRSApp::AnythingNewInterestPeriod, this);
+	Simulator::Schedule(Seconds(m_env_ANPO+m_env_ANPF*GetRand()), &DRSApp::AnythingNewInterestPeriod, this);
 }
 void DRSApp::GenMessagePeriod()
 {
 	GenMessage();
-	Simulator::Schedule(Seconds(2.0), &DRSApp::GenMessagePeriod, this);
+	Simulator::Schedule(Seconds(m_env_GMPO+m_env_GMPF*GetRand()), &DRSApp::GenMessagePeriod, this);
 }
 void DRSApp::GenMessage()
 {
@@ -200,32 +228,21 @@ void DRSApp::ProcessAnyserverData(Ptr<const ndn::Data> contentObject)
 /*--------------------------------
  * 	Anything New
  *-------------------------------*/
-void DRSApp::ProcessAnythingNewInterest(Ptr<const ndn::Interest> interest, std::string exclude)
+void DRSApp::ProcessAnythingNewInterest(Ptr<const ndn::Interest> interest)
 {
 	std::string label = hebi::GetSubStringByIndent(interest->GetName().toUri(), '/', 4);
+	/* another try */
 	int index = m_recordContainer.GetLatestIndexByMultiLabels(label); // suitable for one lable
 	if (index == m_recordContainer.GetRecordSize()-1) {
 		m_pendingInterest = interest;
 	} else {
 		std::string xml = m_recordContainer.GetAfterIndexAsXML(index);
-		if (exclude!="")
-			xml = exclude + xml;
 		SendData(interest->GetName(), xml);
 	}
 }
 void DRSApp::ProcessAnythingNewData(Ptr<const ndn::Data> contentObject)
 {
 	std::string xml = GetStringFromData(contentObject);
-	if (xml[0]!='<') {
-		std::string name = xml.substr(0, xml.find('<'));
-		if (name==m_name) {
-			NS_LOG_DEBUG("Excluded!!!");
-			return;
-		}
-		else {
-			xml = xml.substr(xml.find('<'));
-		}
-	}
 	/* insert the new record, together with my own label */
 	double time = Simulator::Now().GetSeconds();
 	time = hebi::ConvertDouble(time);
@@ -248,9 +265,6 @@ void DRSApp::ProcessSomethingNewInterest(Ptr<const ndn::Interest> interest)
 {
 	int index = hebi::MyStringFinder(interest->GetName().toUri(), '/', 5);
 	std::string dataname = interest->GetName().toUri().substr(index);
-	/* used for exclude */
-	std::string label = hebi::GetSubStringByIndent(interest->GetName().toUri(), '/', 4);
-	label = label.substr(0, label.find('_'));
 	/* create record */
 	double time = Simulator::Now().GetSeconds();
 	time = hebi::ConvertDouble(time);
@@ -260,10 +274,7 @@ void DRSApp::ProcessSomethingNewInterest(Ptr<const ndn::Interest> interest)
 	/* insert record */
 	m_recordContainer.Insert(_record);
 	/* process pending interest */
-	//ProcessPendingInterest();
-	if (m_pendingInterest!=NULL) {
-		ProcessAnythingNewInterest(m_pendingInterest, label);
-	}
+	ProcessPendingInterest();
 	/* send data(time) back */
 	SendData(interest->GetName(), std::to_string(time));
 	/* send data interest */
@@ -271,13 +282,16 @@ void DRSApp::ProcessSomethingNewInterest(Ptr<const ndn::Interest> interest)
 }
 void DRSApp::ProcessSomethingNewData(Ptr<const ndn::Data> contentObject)
 {
-	std::string oldlabel = hebi::GetSubStringByIndent(contentObject->GetName().toUri(), '/', 4);
-	std::string oldname = oldlabel.substr(0, oldlabel.find('_'));
-	double oldtime = atof(oldlabel.substr(oldlabel.find('_')+1).c_str());
+	// all the thing are debugged out!!!
+	//std::string oldlabel = hebi::GetSubStringByIndent(contentObject->GetName().toUri(), '/', 4);
+	//std::string oldname = oldlabel.substr(0, oldlabel.find('_'));
+	//double oldtime = atof(oldlabel.substr(oldlabel.find('_')+1).c_str());
 	double newtime = atof((GetStringFromData(contentObject)).c_str());
-	m_recordContainer.AddLabelByLabel(m_server, newtime, oldname, oldtime);
+	m_recordContainer.exclude[newtime] = m_server;
+	NS_LOG_DEBUG("Excluded: "<<m_server<<" "<<newtime);
+	//m_recordContainer.AddLabelByLabel(m_server, newtime, oldname, oldtime);
 	/* send anything new interest */
-	SendAnythingNewInterest();
+	//SendAnythingNewInterest();
 }
 /*---------------------------------
  * 	Data Interest
@@ -310,6 +324,8 @@ void DRSApp::SendAnythingNewInterest()
 }
 void DRSApp::SendSomethingNewInterest(double myTime, std::string dataName)
 {
+	/* exclude dataname */
+	m_recordContainer.excludeDataName[dataName]=1;
 	if (m_server!="") {
 		SendInterest("/"+m_server+"/drsapp/somethingnew/"+m_name+"_"+std::to_string(myTime)+"/"+dataName);
 	}
@@ -327,6 +343,11 @@ std::string DRSApp::GetStringFromData(Ptr<const ndn::Data> contentObject)
 	const unsigned char *data = contentObject->GetPayload()->PeekData();
 	std::string s(reinterpret_cast<const char*>(data), size);
 	return s;
+}
+double DRSApp::GetRand()
+{
+	UniformVariable rand(0, std::numeric_limits<uint32_t>::max());
+	return rand.GetValue()/std::numeric_limits<uint32_t>::max();
 }
 
 /*===================================================================================
@@ -358,7 +379,7 @@ void DRSApp::SendInterest(const ndn::Name &name)
 	UniformVariable rand(0, std::numeric_limits<uint32_t>::max());
 	interest->SetNonce(rand.GetValue());
 	interest->SetName(name);
-	interest->SetInterestLifetime(Seconds(5.0)); //????
+	interest->SetInterestLifetime(Seconds(m_env_ILT)); //????
 	m_transmittedInterests(interest, this, m_face);
 	m_face->ReceiveInterest(interest);
 }

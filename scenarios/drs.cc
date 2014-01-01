@@ -2,6 +2,7 @@
 #include "ns3/network-module.h"
 #include "ns3/ndnSIM-module.h"
 #include "user-reader.h"
+#include "hebi.h"
 
 using namespace ns3;
 NS_LOG_COMPONENT_DEFINE("lihebi");
@@ -20,15 +21,14 @@ void my_printer(Ptr<Node> node, Time next)
 int
 main(int argc, char** argv)
 {
+	int seed = hebi::GetEnvAsInt("DRS_SEED");
+	RngSeedManager::SetSeed (seed);
 	CommandLine cmd;
 	cmd.Parse(argc, argv);
 	/* topology */
 	AnnotatedTopologyReader topologyReader("", 25);
-	topologyReader.SetFileName("topo/topo.txt");
+	topologyReader.SetFileName("topo/grid.txt");
 	topologyReader.Read();
-	UserReader userReader;
-	userReader.SetFilename("topo/user.txt");
-	userReader.Read();
 	/* NDN stack */
 	ndn::StackHelper ndnHelper;
 	ndnHelper.SetContentStore("ns3::ndn::cs::Fifo", "MaxSize", "10000");
@@ -36,29 +36,22 @@ main(int argc, char** argv)
 	ndnHelper.InstallAll();
 	/* node container */
 	NodeContainer allNodes = topologyReader.GetNodes();
-	NodeContainer chatterNodes;
-	for (int i=0;i<userReader.m_users.size();i++) {
-		chatterNodes.Add(Names::Find<Node>(userReader.m_users[i].node));
-	}
 	/* create app */
 	ndn::AppHelper appHelper("DRSApp");
-	srand(time(NULL));
-	for (int i=0;i<chatterNodes.GetN();i++) {
-		/* random start */
-		appHelper.Install(chatterNodes.Get(i)).Start(Seconds(5*(double)rand()/RAND_MAX));
-	}
+	appHelper.Install(allNodes);
 	/* routing configure */
 	ndn::GlobalRoutingHelper routingHelper;
 	routingHelper.InstallAll();
-	for (int i=0;i<chatterNodes.GetN();i++) {
-		Ptr<Node> node = chatterNodes.Get(i);
+	for (int i=0;i<allNodes.GetN();i++) {
+		Ptr<Node> node = allNodes.Get(i);
 		routingHelper.AddOrigins("/"+Names::FindName(node), node);
 		routingHelper.AddOrigins("/broadcast/drsapp", node);
 	}
 	ndn::GlobalRoutingHelper::CalculateRoutes();
 
 	/* simulator action */
-	Simulator::Stop(Seconds(50.0));
+	int stop = hebi::GetEnvAsInt("DRS_STOP_TIME");
+	Simulator::Stop(Seconds(stop));
 	ndn::L3AggregateTracer::InstallAll("aggregate-trace.txt", Seconds(1.0));
 	ndn::L3RateTracer::InstallAll("rate-trace.txt", Seconds(1.0));
 	Simulator::Run();

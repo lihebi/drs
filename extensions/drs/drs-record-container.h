@@ -23,6 +23,9 @@ public:
 	std::string GetAllNewestLabels();
 	std::string GetNewestLabelByName(std::string name);
 	bool HasName(std::string name);
+	std::map<double, std::string> exclude;
+	std::map<std::string, int> excludeDataName;
+	void AddAsLatest(DRSRecord record);
 
 private:
 	typedef std::map<std::string, std::map<double, int> > m_map_type;

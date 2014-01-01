@@ -21,6 +21,17 @@ void DRSRecordContainer::Insert(DRSRecord record)
 		m_nameTimeIndex[m.first][m.second] = m_records.size()-1;
 	}
 }
+/*
+ * not really insert.
+ * just add a point to the latest index.
+ */
+void DRSRecordContainer::AddAsLatest(DRSRecord record)
+{
+	typedef std::map<std::string, double> m_map_type;
+	BOOST_FOREACH(const m_map_type::value_type &m, record.m_label) {
+		m_nameTimeIndex[m.first][m.second] = m_records.size()-1;
+	}
+}
 int DRSRecordContainer::GetRecordSize()
 {
 	return m_records.size();
@@ -111,6 +122,7 @@ std::string DRSRecordContainer::GetAfterIndexAsXML(int index)
  */
 std::vector<std::string> DRSRecordContainer::InsertMultiByXML(std::string xml, std::string newname, double newtime, std::string serverName)
 {
+	std::cout<<xml<<std::endl;
 	pugi::xml_document doc;
 	doc.load(xml.c_str());
 	pugi::xml_node li;
@@ -121,9 +133,34 @@ std::vector<std::string> DRSRecordContainer::InsertMultiByXML(std::string xml, s
 
 		/* 
 		 * the xml is received from server. If I send somethingnew to server, I've already have the newest label, so if this is the label, just ignore it. Or there will be multi record for the same dataname, resulting in fetching 2 copy of a message. */
-		if (this->m_nameTimeIndex[serverName][_record.m_label[serverName]] != 0)
+		/*if (this->m_nameTimeIndex[serverName][_record.m_label[serverName]] != 0) {
 			std::cout<<"DUPLICATED"<<std::endl;
-
+			std::cout<<_record.m_label[serverName]<<std::endl;
+			continue;
+		}*/
+		typedef std::map<std::string, double> _map_type;
+		/*
+		 * if the new record has something same as my log, only add labels.
+		 * NO! DO NOTHING AT ALL!
+		 * if not, add every thing
+		 */
+		bool b = false;
+		BOOST_FOREACH(const _map_type::value_type &m, _record.m_label) {
+			if (this->m_nameTimeIndex[m.first][m.second]!=0) {
+				int ii = this->m_nameTimeIndex[m.first][m.second];
+				if (_record.m_dataName == this->m_records[ii].m_dataName) 
+					b = true;
+			}
+			/*if (this->exclude[m.second]==m.first) {
+				m_nameTimeIndex[m.first][m.second] = m_records.size()-1;
+				b = true;
+			}*/
+		}
+		if (b) continue;
+		if (this->excludeDataName[_record.m_dataName]==1) {
+			AddAsLatest(_record);
+			continue;
+		}
 
 		_record.m_label[newname] = newtime; // add my own timelabel
 		Insert(_record);

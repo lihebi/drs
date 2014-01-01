@@ -1,0 +1,67 @@
+router
+Node00	NA	0	0
+Node01	NA	0	1
+Node02	NA	0	2
+Node03	NA	0	3
+Node04	NA	0	4
+Node10	NA	1	0
+Node11	NA	1	1
+Node12	NA	1	2
+Node13	NA	1	3
+Node14	NA	1	4
+Node20	NA	2	0
+Node21	NA	2	1
+Node22	NA	2	2
+Node23	NA	2	3
+Node24	NA	2	4
+Node30	NA	3	0
+Node31	NA	3	1
+Node32	NA	3	2
+Node33	NA	3	3
+Node34	NA	3	4
+Node40	NA	4	0
+Node41	NA	4	1
+Node42	NA	4	2
+Node43	NA	4	3
+Node44	NA	4	4
+link
+Node00 	Node10 	10Mbps	1	10ms	10
+Node00 	Node01 	10Mbps	1	10ms	10
+Node01 	Node11 	10Mbps	1	10ms	10
+Node01 	Node02 	10Mbps	1	10ms	10
+Node02 	Node12 	10Mbps	1	10ms	10
+Node02 	Node03 	10Mbps	1	10ms	10
+Node03 	Node13 	10Mbps	1	10ms	10
+Node03 	Node04 	10Mbps	1	10ms	10
+Node04 	Node14 	10Mbps	1	10ms	10
+Node10 	Node20 	10Mbps	1	10ms	10
+Node10 	Node11 	10Mbps	1	10ms	10
+Node11 	Node21 	10Mbps	1	10ms	10
+Node11 	Node12 	10Mbps	1	10ms	10
+Node12 	Node22 	10Mbps	1	10ms	10
+Node12 	Node13 	10Mbps	1	10ms	10
+Node13 	Node23 	10Mbps	1	10ms	10
+Node13 	Node14 	10Mbps	1	10ms	10
+Node14 	Node24 	10Mbps	1	10ms	10
+Node20 	Node30 	10Mbps	1	10ms	10
+Node20 	Node21 	10Mbps	1	10ms	10
+Node21 	Node31 	10Mbps	1	10ms	10
+Node21 	Node22 	10Mbps	1	10ms	10
+Node22 	Node32 	10Mbps	1	10ms	10
+Node22 	Node23 	10Mbps	1	10ms	10
+Node23 	Node33 	10Mbps	1	10ms	10
+Node23 	Node24 	10Mbps	1	10ms	10
+Node24 	Node34 	10Mbps	1	10ms	10
+Node30 	Node40 	10Mbps	1	10ms	10
+Node30 	Node31 	10Mbps	1	10ms	10
+Node31 	Node41 	10Mbps	1	10ms	10
+Node31 	Node32 	10Mbps	1	10ms	10
+Node32 	Node42 	10Mbps	1	10ms	10
+Node32 	Node33 	10Mbps	1	10ms	10
+Node33 	Node43 	10Mbps	1	10ms	10
+Node33 	Node34 	10Mbps	1	10ms	10
+Node34 	Node44 	10Mbps	1	10ms	10
+Node40 	Node41 	10Mbps	1	10ms	10
+Node41 	Node42 	10Mbps	1	10ms	10
+Node42 	Node43 	10Mbps	1	10ms	10
+Node43 	Node44 	10Mbps	1	10ms	10

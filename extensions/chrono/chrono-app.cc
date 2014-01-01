@@ -32,6 +32,7 @@ namespace ns3 {
 
 NS_OBJECT_ENSURE_REGISTERED(ChronoApp);
 
+
 TypeId ChronoApp::GetTypeId()
 {
 	static TypeId tid = TypeId("ChronoApp")
@@ -43,10 +44,24 @@ TypeId ChronoApp::GetTypeId()
 void ChronoApp::StartApplication()
 {
 	ndn::App::StartApplication();
+	ReadEnv();
 	Init();
 	ConfigFib();
-	Simulator::Schedule(Seconds(5), &ChronoApp::SyncInterestPeriod, this);
-	Simulator::Schedule(Seconds(GetRand()*10), &ChronoApp::GenMessagePeriod, this);
+	Simulator::Schedule(Seconds(0), &ChronoApp::SyncInterestPeriod, this);
+	Simulator::Schedule(Seconds(m_env_GMPSO+m_env_GMPSF*GetRand()), &ChronoApp::GenMessagePeriod, this);
+}
+void ChronoApp::ReadEnv()
+{
+	m_env_SIPSO = hebi::GetEnvAsDouble("CHRONO_SYNC_INTEREST_PERIOD_START_OFFSET");
+	m_env_SIPSF = hebi::GetEnvAsDouble("CHRONO_SYNC_INTEREST_PERIOD_START_FACTOR");
+	m_env_SIPO = hebi::GetEnvAsDouble("CHRONO_SYNC_INTEREST_PERIOD_OFFSET");
+	m_env_SIPF = hebi::GetEnvAsDouble("CHRONO_SYNC_INTEREST_PERIOD_FACTOR");
+	m_env_GMPSO = hebi::GetEnvAsDouble("CHRONO_GEN_MESSAGE_PERIOD_START_OFFSET");
+	m_env_GMPSF = hebi::GetEnvAsDouble("CHRONO_GEN_MESSAGE_PERIOD_START_FACTOR");
+	m_env_GMPO = hebi::GetEnvAsDouble("CHRONO_GEN_MESSAGE_PERIOD_OFFSET");
+	m_env_GMPF = hebi::GetEnvAsDouble("CHRONO_GEN_MESSAGE_PERIOD_FACTOR");
+	m_env_TW = hebi::GetEnvAsDouble("CHRONO_TW");
+	m_env_ILT = hebi::GetEnvAsDouble("CHRONO_INTEREST_LIFE_TIME");
 }
 void ChronoApp::ConfigFib()
 {
@@ -66,10 +81,11 @@ void ChronoApp::Init()
 /*===========================================================================================
  * 				Periods
  *==========================================================================================*/
+
 void ChronoApp::GenMessagePeriod()
 {
 	GenMessage();
-	Simulator::Schedule(Seconds(GetRand()), &ChronoApp::GenMessagePeriod, this);
+	Simulator::Schedule(Seconds(m_env_GMPO+m_env_GMPF*GetRand()), &ChronoApp::GenMessagePeriod, this);
 }
 void ChronoApp::GenMessage()
 {
@@ -82,7 +98,7 @@ void ChronoApp::GenMessage()
 void ChronoApp::SyncInterestPeriod()
 {
 	SendSyncInterest();
-	Simulator::Schedule(Seconds(SYNC_RESEND_PERIOD), &ChronoApp::SyncInterestPeriod, this);
+	Simulator::Schedule(Seconds(m_env_SIPO+m_env_SIPF*GetRand()), &ChronoApp::SyncInterestPeriod, this);
 }
 void ChronoApp::StopApplication()
 {
@@ -138,10 +154,10 @@ void ChronoApp::ProcessSyncInterest(Ptr<const ndn::Interest> interest)
 		boost::tuple<std::string, int> t = m_digest_log.GetNameAndSeq(digest);
 		SendSyncData(interest->GetName(), t.get<0>(), t.get<1>());
 	} else {
-		NS_LOG_DEBUG("Not Know, schedule for recovery After "<<CHRONO_TW<<"s");
+		NS_LOG_DEBUG("Not Know, schedule for recovery After "<<m_env_TW<<"s");
 		double _time = hebi::ConvertDouble(Simulator::Now().GetSeconds()); //they should possibly be different..
 		m_pending_recovery_interest[_time] = interest->GetName().toUri();
-		Simulator::Schedule(Seconds(CHRONO_TW), &ChronoApp::SendRecoveryInterest, this, _time);
+		Simulator::Schedule(Seconds(m_env_TW), &ChronoApp::SendRecoveryInterest, this, _time);
 	}
 }
 void ChronoApp::ProcessSyncData(Ptr<const ndn::Data> contentObject)
@@ -152,7 +168,7 @@ void ChronoApp::ProcessSyncData(Ptr<const ndn::Data> contentObject)
 	doc.load_buffer(data, size);
 	std::string name = doc.child("name").text().get();
 	std::string seq = doc.child("seq").text().get();
-	SendInterest("/"+name+"/chronoapp/"+seq);
+		SendInterest("/"+name+"/chronoapp/"+seq);
 }
 /*----------------------------
  * 	Recovery Interest
@@ -189,7 +205,8 @@ void ChronoApp::ProcessDataData(Ptr<const ndn::Data> contentObject)
 	std::string name = hebi::GetSubStringByIndent(contentObject->GetName().toUri(), '/', 1);
 	int seq = atoi((hebi::GetSubStringByIndent(contentObject->GetName().toUri(), '/', 3)).c_str());
 	std::string content = GetStringFromData(contentObject); //log it into file
-	NS_LOG_DEBUG("THE CONTENT: "<<content);
+	if (m_digest_tree.GetSeqByName(name)<seq) //DEBUGED
+		NS_LOG_DEBUG("THE CONTENT: "<<content);
 	UpdateAll(name, seq);
 }
 /*=======================================================================================================
@@ -301,7 +318,7 @@ void ChronoApp::SendInterest(const ndn::Name &name)
 	UniformVariable rand(0, std::numeric_limits<uint32_t>::max());
 	interest->SetNonce(rand.GetValue());
 	interest->SetName(name);
-	interest->SetInterestLifetime(Seconds(5.0)); //????
+	interest->SetInterestLifetime(Seconds(m_env_ILT)); //????
 	m_transmittedInterests(interest, this, m_face);
 	m_face->ReceiveInterest(interest);
 }

@@ -62,8 +62,17 @@ private:
 	std::string m_pending_interest;
 	std::map<double, std::string> m_pending_recovery_interest;
 
-	const int CHRONO_TW = 2;
-	const int SYNC_RESEND_PERIOD = 5;
+	void ReadEnv();
+	double m_env_SIPSO;
+	double m_env_SIPSF;
+	double m_env_SIPO;
+	double m_env_SIPF;
+	double m_env_GMPSO;
+	double m_env_GMPSF;
+	double m_env_GMPO;
+	double m_env_GMPF;
+	double m_env_TW;
+	double m_env_ILT;
 };
 
 } //ns3
