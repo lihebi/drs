@@ -75,6 +75,7 @@ private:
 	double m_env_GSPF;
 
 	double m_env_ILT;
+
 	int m_env_TL;
 	int m_env_S0;
 	int m_env_S1;

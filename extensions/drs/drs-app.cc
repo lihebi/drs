@@ -73,6 +73,7 @@ void DRSApp::ReadEnv()
 	m_env_GSPF = hebi::GetEnvAsDouble("DRS_GEN_SERVER_PERIOD_FACTOR");
 
 	m_env_ILT = hebi::GetEnvAsDouble("DRS_INTEREST_LIFE_TIME");
+
 	m_env_TL = hebi::GetEnvAsInt("DRS_TOP_LEVEL");
 	m_env_S0 = hebi::GetEnvAsInt("DRS_STRATEGY_0");
 	m_env_S1 = hebi::GetEnvAsInt("DRS_STRATEGY_1");
