@@ -1,36 +1,40 @@
 Distributed Random Servers with Timed Labels for Synchronization over Named Data Network
 
 
-== Overview ==
+Overview
+========
 
-The project is an implementation for the paper: home.ustc.edu.cn/~lihebi/pdf/drstl.pdf
+The project is an implementation for [the paper](http://home.ustc.edu.cn/~lihebi/pdf/drstl.pdf)
 
-== FILeS ==
-scenarios/drs.cc: the main loop file for DRSTL
-         /chrono.cc: the main loop file for ChronoSync
-extensions/ : application codes, including drs, chrono, and common functions
-          /hebi.cc: common functions
-          /pugixml.cc: pugixml library, for XML parse
-          /userreader.cc: functions for reading user configuration files
-          /drs : main drs app source codes
-          /drs/drs-app.cc : main app class and its implementation
-              /drs-record.cc : record class
-              /drs-record-container.cc : record container class
-          /chrono : main chrono app source codes
-          /chrono/chrono-app.cc : main app class and its implementation
-                 /chrono-digest-tree.cc : digest tree class
-                 /chrono-digest-log.cc : digest log class
-                 /chrono-message.cc : message class
-topo/ : topology configuration files
-    /generator.py : script for generating topo file
-    /*.txt : topo files
+FILeS
+=====
+* scenarios/drs.cc: the main loop file for DRSTL
+*         /chrono.cc: the main loop file for ChronoSync
+* extensions/ : application codes, including drs, chrono, and common functions
+*          /hebi.cc: common functions
+*          /pugixml.cc: pugixml library, for XML parse
+*          /userreader.cc: functions for reading user configuration files
+*          /drs : main drs app source codes
+*          /drs/drs-app.cc : main app class and its implementation
+*              /drs-record.cc : record class
+*              /drs-record-container.cc : record container class
+*          /chrono : main chrono app source codes
+*          /chrono/chrono-app.cc : main app class and its implementation
+*                 /chrono-digest-tree.cc : digest tree class
+*                 /chrono-digest-log.cc : digest log class
+*                 /chrono-message.cc : message class
+*topo/ : topology configuration files
+*    /generator.py : script for generating topo file
+*    /*.txt : topo files
 
-== INSTALL ==
+INSTALL
+=======
 * install the ndn customized NS3 platform
 * install the ndnsim wrapper for NS3
 * configure the environment variables to make the env required available
 
-== USAGE ==:
+USAGE
+=====
 
 * compile the project use the code:
   ./waf
